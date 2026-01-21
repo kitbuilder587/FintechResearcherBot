@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: fintech-db
+    environment:
+      POSTGRES_USER: ${DB_USER:-fintech}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-fintech}
+      POSTGRES_DB: ${DB_NAME:-fintech_bot}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-fintech} -d ${DB_NAME:-fintech_bot}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fintech-bot
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - DATABASE_URL=postgres://${DB_USER:-fintech}:${DB_PASSWORD:-fintech}@db:5432/${DB_NAME:-fintech_bot}?sslmode=disable
+      - LLM_PROVIDER=${LLM_PROVIDER:-mock}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-deepseek/deepseek-chat}
+      - GIGACHAT_AUTH_KEY=${GIGACHAT_AUTH_KEY:-}
+      - GIGACHAT_CLIENT_ID=${GIGACHAT_CLIENT_ID:-}
+      - GIGACHAT_CLIENT_SECRET=${GIGACHAT_CLIENT_SECRET:-}
+      - TAVILY_API_KEY=${TAVILY_API_KEY:-}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

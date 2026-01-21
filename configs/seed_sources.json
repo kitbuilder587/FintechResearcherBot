@@ -1,0 +1,15 @@
+[
+    {"url": "https://www.gartner.com/en", "name": "Gartner"},
+    {"url": "https://www.deloitte.com/us/en/insights.html", "name": "Deloitte"},
+    {"url": "https://www.bcg.com", "name": "BCG"},
+    {"url": "https://www.bain.com/industry-expertise/technology/", "name": "Bain"},
+    {"url": "https://kpmg.com/xx/en/what-we-do/industries/financial-services.html", "name": "KPMG"},
+    {"url": "https://www.capgemini.com", "name": "Capgemini"},
+    {"url": "https://www.pwc.com/us/en/industries/financial-services/fintech.html", "name": "PwC"},
+    {"url": "https://www.ey.com/en_gl", "name": "EY"},
+    {"url": "https://www.mckinsey.com/featured-insights/fintech", "name": "McKinsey"},
+    {"url": "https://a16z.com/fintech/", "name": "a16z"},
+    {"url": "https://www.bis.org/topic/fintech.htm", "name": "BIS"},
+    {"url": "https://www.weforum.org/publications/", "name": "WEF"},
+    {"url": "https://www.imf.org/en/home", "name": "IMF"}
+]

@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  db:
+    environment:
+      POSTGRES_USER: fintech
+      POSTGRES_PASSWORD: fintech
+      POSTGRES_DB: fintech_bot
+    ports:
+      - "5432:5432"

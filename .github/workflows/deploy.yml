@@ -1,0 +1,146 @@
+name: Test and Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  GO_VERSION: "1.24"
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      - name: Cache Go modules
+        uses: actions/cache@v4
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Download dependencies
+        run: go mod download
+
+      - name: Run tests
+        run: go test -v -race -short ./...
+
+      - name: Build binary
+        run: go build -o bin/bot ./cmd/bot
+
+  deploy:
+    name: Deploy to VDS
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          port: ${{ secrets.VDS_PORT || 22 }}
+          script: |
+            set -e
+
+            # Переходим в директорию проекта
+            cd ~/apps/researcher-bot
+
+            # Получаем последние изменения
+            git fetch origin main
+            git reset --hard origin/main
+
+            # Копируем настройки из репы и добавляем секреты
+            cp .env.prod .env
+            cat >> .env << 'SECRETS'
+
+            # Secrets (from GitHub Actions)
+            TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+            GIGACHAT_AUTH_KEY=${{ secrets.GIGACHAT_AUTH_KEY }}
+            OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
+            TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }}
+            SECRETS
+
+            # Останавливаем старые контейнеры
+            docker compose down || true
+
+            # Собираем и запускаем
+            docker compose build --no-cache
+            docker compose up -d
+
+            # Ждём запуска
+            echo "Waiting for services to start..."
+            sleep 10
+
+            # Проверяем статус контейнеров
+            docker compose ps
+
+            # Применяем миграции через golang-migrate
+            NETWORK=$(docker inspect fintech-db --format '{{range $k, $v := .NetworkSettings.Networks}}{{$k}}{{end}}')
+            docker run --rm \
+              -v $(pwd)/migrations:/migrations \
+              --network "$NETWORK" \
+              migrate/migrate \
+              -path=/migrations \
+              -database "postgres://fintech:fintech@fintech-db:5432/fintech_bot?sslmode=disable" \
+              up
+
+            echo "Migrations applied successfully!"
+
+            echo "Deploy completed successfully!"
+
+      - name: Health Check
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          port: ${{ secrets.VDS_PORT || 22 }}
+          script: |
+            # Проверяем health endpoint
+            for i in {1..5}; do
+              if curl -sf http://localhost:8080/health > /dev/null 2>&1; then
+                echo "Health check passed!"
+                exit 0
+              fi
+              echo "Attempt $i: waiting for bot to be ready..."
+              sleep 5
+            done
+
+            echo "Health check failed!"
+            docker compose -f ~/apps/researcher-bot/docker-compose.yml logs --tail=50
+            exit 1
+
+      - name: Notify on failure
+        if: failure()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          port: ${{ secrets.VDS_PORT || 22 }}
+          script: |
+            cd ~/apps/researcher-bot
+            echo "=== DEPLOYMENT FAILED ==="
+            echo "Container status:"
+            docker compose ps
+            echo ""
+            echo "=== Bot logs ==="
+            docker compose logs --tail=100 bot
+            echo ""
+            echo "=== DB logs ==="
+            docker compose logs --tail=50 db
