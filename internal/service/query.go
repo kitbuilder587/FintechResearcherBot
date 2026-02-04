@@ -276,6 +276,7 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 }
 
 func (s *queryService) expandQuery(ctx context.Context, userQuery string, maxQueries int) ([]string, error) {
+	currentYear := time.Now().Year()
 	systemPrompt := fmt.Sprintf(`You are a search query optimizer for financial and technology research.
 
 Task: Generate 1-%d optimal web search queries.
@@ -283,12 +284,12 @@ Task: Generate 1-%d optimal web search queries.
 Rules:
 1. Queries in ENGLISH (sources are English)
 2. Use keywords, not full sentences
-3. Add year "2024" or "2025" for current topics
+3. Add year "%d" for current topics when relevant
 4. Split complex questions into sub-topics
 5. Simple questions need only 1 query
 
 Response format (JSON only):
-{"queries": ["query1", "query2"]}`, maxQueries)
+{"queries": ["query1", "query2"]}`, maxQueries, currentYear)
 
 	userPrompt := fmt.Sprintf("User question: %s", userQuery)
 
