@@ -16,6 +16,7 @@ import (
 	"github.com/kitbuilder587/fintech-bot/internal/domain"
 	"github.com/kitbuilder587/fintech-bot/internal/llm"
 	"github.com/kitbuilder587/fintech-bot/internal/metrics"
+	"github.com/kitbuilder587/fintech-bot/internal/prompts"
 	"github.com/kitbuilder587/fintech-bot/internal/repository"
 	"github.com/kitbuilder587/fintech-bot/internal/search"
 )
@@ -89,6 +90,19 @@ type queryService struct {
 	coordinator AgentCoordinator
 }
 
+type promptSource struct {
+	Index   int
+	Title   string
+	URL     string
+	Score   float64
+	Content string
+}
+
+type promptIssue struct {
+	Index int
+	Text  string
+}
+
 func NewQueryService(deps QueryServiceDeps) QueryService {
 	if deps.Config.MaxSearchQueries == 0 {
 		deps.Config.MaxSearchQueries = 3
@@ -120,6 +134,29 @@ func NewQueryService(deps QueryServiceDeps) QueryService {
 		worldModel:   deps.WorldModel,
 		coordinator:  deps.Coordinator,
 	}
+}
+
+func (s *queryService) generateAnswer(ctx context.Context, question string, results []search.SearchResult, worldContext string, strategy domain.Strategy) (string, error) {
+	if s.coordinator != nil {
+		coordResp, coordErr := s.coordinator.Process(ctx, AgentCoordinatorRequest{
+			Question:      question,
+			SearchResults: results,
+			Context:       worldContext,
+			Strategy:      strategy,
+		})
+		if coordErr != nil {
+			s.logger.Warn("coordinator processing failed, falling back to analyze",
+				zap.Error(coordErr),
+			)
+		} else if coordResp != nil && coordResp.FinalAnswer != "" {
+			s.logger.Debug("using coordinator answer",
+				zap.Int("agents_used", len(coordResp.AgentsUsed)),
+			)
+			return coordResp.FinalAnswer, nil
+		}
+	}
+
+	return s.analyze(ctx, question, results)
 }
 
 func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*domain.QueryResponse, error) {
@@ -211,39 +248,14 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 		return nil, domain.ErrNoResults
 	}
 
-	// мультиагентный анализ (если настроен координатор)
-	var answer string
-	if s.coordinator != nil {
-		coordResp, coordErr := s.coordinator.Process(ctx, AgentCoordinatorRequest{
-			Question:      req.Text,
-			SearchResults: results,
-			Context:       worldContext,
-			Strategy:      req.Strategy,
-		})
-		if coordErr != nil {
-			s.logger.Warn("coordinator processing failed, falling back to analyze",
-				zap.Error(coordErr),
-			)
-		} else if coordResp != nil && coordResp.FinalAnswer != "" {
-			answer = coordResp.FinalAnswer
-			s.logger.Debug("using coordinator answer",
-				zap.Int("agents_used", len(coordResp.AgentsUsed)),
-			)
-		}
-	}
-
-	// fallback если координатор не вернул ответ
-	if answer == "" {
-		var err error
-		answer, err = s.analyze(ctx, req.Text, results)
-		if err != nil {
-			return nil, err
-		}
+	answer, err := s.generateAnswer(ctx, req.Text, results, worldContext, req.Strategy)
+	if err != nil {
+		return nil, err
 	}
 
 	// критик проверяет ответ (опционально)
 	if s.critic != nil && req.Strategy.UseCritic {
-		answer = s.reviewWithCritic(ctx, answer, results, req.Text)
+		answer, results = s.reviewWithCritic(ctx, answer, results, req.Text, domains, worldContext, req.Strategy)
 	}
 
 	response := &domain.QueryResponse{
@@ -277,21 +289,25 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 
 func (s *queryService) expandQuery(ctx context.Context, userQuery string, maxQueries int) ([]string, error) {
 	currentYear := time.Now().Year()
-	systemPrompt := fmt.Sprintf(`You are a search query optimizer for financial and technology research.
+	systemPrompt, err := prompts.Render("query_expansion_system.tmpl", struct {
+		MaxQueries  int
+		CurrentYear int
+	}{
+		MaxQueries:  maxQueries,
+		CurrentYear: currentYear,
+	})
+	if err != nil {
+		return nil, err
+	}
 
-Task: Generate 1-%d optimal web search queries.
-
-Rules:
-1. Queries in ENGLISH (sources are English)
-2. Use keywords, not full sentences
-3. Add year "%d" for current topics when relevant
-4. Split complex questions into sub-topics
-5. Simple questions need only 1 query
-
-Response format (JSON only):
-{"queries": ["query1", "query2"]}`, maxQueries, currentYear)
-
-	userPrompt := fmt.Sprintf("User question: %s", userQuery)
+	userPrompt, err := prompts.Render("query_expansion_user.tmpl", struct {
+		UserQuery string
+	}{
+		UserQuery: userQuery,
+	})
+	if err != nil {
+		return nil, err
+	}
 
 	response, err := s.llm.CompleteWithSystem(ctx, systemPrompt, userPrompt)
 	if err != nil {
@@ -422,33 +438,18 @@ func (s *queryService) normalizeQuery(q string) string {
 }
 
 func (s *queryService) analyze(ctx context.Context, userQuery string, results []search.SearchResult) (string, error) {
-	systemPrompt := `You are an expert analyst in financial technology and banking.
-
-Rules:
-1. Answer in Russian
-2. Use ONLY information from provided sources
-3. Reference sources as [S1], [S2], etc.
-4. If information is insufficient, say so honestly
-5. Structure: key points, examples, conclusions
-6. Be objective, present different viewpoints`
-
-	var sb strings.Builder
-	sb.WriteString("Sources:\n\n")
-
-	for i, r := range results {
-		fmt.Fprintf(&sb, "[S%d] %s (%s)\n", i+1, r.Title, r.URL)
-		fmt.Fprintf(&sb, "Score: %.2f\n", r.Score)
-		content := r.Content
-		if len(content) > 2000 {
-			content = content[:2000] + "..."
-		}
-		fmt.Fprintf(&sb, "%s\n\n", content)
+	userPrompt, err := prompts.Render("analysis_user.tmpl", struct {
+		Sources   []promptSource
+		UserQuery string
+	}{
+		Sources:   promptSources(results, 2000),
+		UserQuery: userQuery,
+	})
+	if err != nil {
+		return "", err
 	}
 
-	sb.WriteString("---\n\n")
-	fmt.Fprintf(&sb, "User question: %s", userQuery)
-
-	return s.llm.CompleteWithSystem(ctx, systemPrompt, sb.String())
+	return s.llm.CompleteWithSystem(ctx, prompts.Text("analysis_system.md"), userPrompt)
 }
 
 func (s *queryService) toSourceRefs(results []search.SearchResult, trustMap map[string]domain.TrustLevel) []domain.SourceRef {
@@ -480,103 +481,239 @@ func extractDomain(url string) string {
 	return url
 }
 
-func (s *queryService) reviewWithCritic(ctx context.Context, answer string, sources []search.SearchResult, question string) string {
+func promptSources(results []search.SearchResult, maxContent int) []promptSource {
+	items := make([]promptSource, 0, len(results))
+	for i, r := range results {
+		content := r.Content
+		if maxContent > 0 && len(content) > maxContent {
+			content = content[:maxContent] + "..."
+		}
+		items = append(items, promptSource{
+			Index:   i + 1,
+			Title:   r.Title,
+			URL:     r.URL,
+			Score:   r.Score,
+			Content: content,
+		})
+	}
+	return items
+}
+
+func (s *queryService) searchForCritic(ctx context.Context, queries []string, currentSources []search.SearchResult, domains []string, strategy domain.Strategy) ([]search.SearchResult, bool) {
+	maxQueries := strategy.MaxQueries
+	if maxQueries <= 0 {
+		maxQueries = s.config.MaxSearchQueries
+	}
+	if maxQueries <= 0 {
+		maxQueries = 3
+	}
+
+	searchQueries := normalizeCriticQueries(queries, maxQueries)
+	if len(searchQueries) == 0 {
+		s.logger.Warn("verifier requested search without valid queries")
+		return currentSources, false
+	}
+
+	maxResults := strategy.MaxResults
+	if maxResults <= 0 {
+		maxResults = 15
+	}
+
+	results, err := s.searchWithCache(ctx, searchQueries, domains, maxResults)
+	if err != nil {
+		s.logger.Warn("verifier search failed",
+			zap.Error(err),
+		)
+		return currentSources, false
+	}
+	if len(results) == 0 {
+		s.logger.Info("verifier search returned no results")
+		return currentSources, false
+	}
+
+	merged, hasNew := mergeSearchResults(currentSources, results, maxResults)
+	if !hasNew {
+		s.logger.Info("verifier search returned only already known sources")
+		return currentSources, false
+	}
+
+	s.logger.Info("verifier search added sources",
+		zap.Int("queries", len(searchQueries)),
+		zap.Int("new_results", len(results)),
+		zap.Int("merged_results", len(merged)),
+	)
+
+	return merged, true
+}
+
+func normalizeCriticQueries(queries []string, maxQueries int) []string {
+	seen := make(map[string]bool)
+	result := make([]string, 0, len(queries))
+	for _, query := range queries {
+		query = strings.TrimSpace(query)
+		if query == "" {
+			continue
+		}
+		key := strings.ToLower(strings.Join(strings.Fields(query), " "))
+		if seen[key] {
+			continue
+		}
+		seen[key] = true
+		result = append(result, query)
+		if maxQueries > 0 && len(result) >= maxQueries {
+			break
+		}
+	}
+	return result
+}
+
+func mergeSearchResults(existing []search.SearchResult, extra []search.SearchResult, maxResults int) ([]search.SearchResult, bool) {
+	byURL := make(map[string]search.SearchResult, len(existing)+len(extra))
+	existingURLs := make(map[string]bool, len(existing))
+	for _, item := range existing {
+		byURL[item.URL] = item
+		existingURLs[item.URL] = true
+	}
+
+	for _, item := range extra {
+		if current, ok := byURL[item.URL]; ok {
+			if item.Score > current.Score {
+				byURL[item.URL] = item
+			}
+			continue
+		}
+		byURL[item.URL] = item
+	}
+
+	merged := make([]search.SearchResult, 0, len(byURL))
+	for _, item := range byURL {
+		merged = append(merged, item)
+	}
+
+	sort.Slice(merged, func(i, j int) bool {
+		if merged[i].Score == merged[j].Score {
+			return merged[i].URL < merged[j].URL
+		}
+		return merged[i].Score > merged[j].Score
+	})
+
+	if maxResults > 0 && len(merged) > maxResults {
+		merged = merged[:maxResults]
+	}
+
+	for _, item := range merged {
+		if !existingURLs[item.URL] {
+			return merged, true
+		}
+	}
+
+	return merged, false
+}
+
+func (s *queryService) reviewWithCritic(ctx context.Context, answer string, sources []search.SearchResult, question string, domains []string, worldContext string, strategy domain.Strategy) (string, []search.SearchResult) {
 	currentAnswer := answer
+	currentSources := sources
 
 	for attempt := 0; attempt <= s.criticConfig.MaxRetries; attempt++ {
-		result, err := s.critic.Review(ctx, currentAnswer, sources, question)
+		result, err := s.critic.Review(ctx, currentAnswer, currentSources, question)
 		if err != nil {
 			s.logger.Warn("critic review failed, returning current answer",
 				zap.Error(err),
 				zap.Int("attempt", attempt),
 			)
-			return currentAnswer
+			return currentAnswer, currentSources
 		}
 
 		s.logger.Info("critic review completed",
 			zap.Bool("approved", result.Approved),
 			zap.Int("issues_count", len(result.Issues)),
+			zap.Bool("needs_search", result.NeedsSearch),
+			zap.Int("search_queries_count", len(result.SearchQueries)),
 			zap.Int("attempt", attempt),
 		)
 
+		needsRevision := result.NeedsRevisionStrict(s.criticConfig.StrictMode)
+
+		if result.NeedsSearch {
+			if attempt >= s.criticConfig.MaxRetries {
+				s.logger.Info("max critic retries reached before verifier search",
+					zap.Int("max_retries", s.criticConfig.MaxRetries),
+				)
+				return currentAnswer, currentSources
+			}
+
+			updatedSources, ok := s.searchForCritic(ctx, result.SearchQueries, currentSources, domains, strategy)
+			if ok {
+				updatedAnswer, err := s.generateAnswer(ctx, question, updatedSources, worldContext, strategy)
+				if err != nil {
+					s.logger.Warn("failed to regenerate answer after verifier search",
+						zap.Error(err),
+					)
+					if !needsRevision {
+						return currentAnswer, currentSources
+					}
+				} else {
+					currentAnswer = updatedAnswer
+					currentSources = updatedSources
+					continue
+				}
+			} else if !needsRevision {
+				return currentAnswer, currentSources
+			}
+		}
+
 		if !result.NeedsRevisionStrict(s.criticConfig.StrictMode) {
-			return currentAnswer
+			return currentAnswer, currentSources
 		}
 
 		if attempt >= s.criticConfig.MaxRetries {
 			s.logger.Info("max critic retries reached, returning last answer",
 				zap.Int("max_retries", s.criticConfig.MaxRetries),
 			)
-			return currentAnswer
+			return currentAnswer, currentSources
 		}
 
-		improvedAnswer, err := s.improveAnswer(ctx, currentAnswer, result, sources, question)
+		improvedAnswer, err := s.improveAnswer(ctx, currentAnswer, result, currentSources, question)
 		if err != nil {
 			s.logger.Warn("failed to improve answer, returning current",
 				zap.Error(err),
 			)
-			return currentAnswer
+			return currentAnswer, currentSources
 		}
 
 		currentAnswer = improvedAnswer
 	}
 
-	return currentAnswer
+	return currentAnswer, currentSources
 }
 
 func (s *queryService) improveAnswer(ctx context.Context, currentAnswer string, criticResult *domain.CriticResult, sources []search.SearchResult, question string) (string, error) {
-	systemPrompt := `You are an expert analyst in financial technology and banking.
-
-Your task is to improve an answer based on reviewer feedback.
-
-Rules:
-1. Answer in Russian
-2. Use ONLY information from provided sources
-3. Reference sources as [S1], [S2], etc.
-4. Fix ALL issues mentioned by the reviewer
-5. Keep the good parts of the original answer
-6. Be objective, present different viewpoints`
-
-	var sb strings.Builder
-	sb.WriteString("=== REVIEWER FEEDBACK ===\n")
-	sb.WriteString("The answer was reviewed and has the following issues:\n\n")
-
+	issues := make([]promptIssue, 0, len(criticResult.Issues))
 	for i, issue := range criticResult.Issues {
-		fmt.Fprintf(&sb, "%d. %s\n", i+1, issue)
+		issues = append(issues, promptIssue{Index: i + 1, Text: issue})
 	}
 
-	if len(criticResult.Suggestions) > 0 {
-		sb.WriteString("\nSuggestions for improvement:\n")
-		for i, suggestion := range criticResult.Suggestions {
-			fmt.Fprintf(&sb, "- %s\n", suggestion)
-			if i >= 2 {
-				break
-			}
-		}
+	suggestions := criticResult.Suggestions
+	if len(suggestions) > 3 {
+		suggestions = suggestions[:3]
 	}
 
-	sb.WriteString("\n=== ORIGINAL ANSWER ===\n")
-	sb.WriteString(currentAnswer)
-	sb.WriteString("\n\n")
-
-	sb.WriteString("=== SOURCES ===\n")
-	for i, src := range sources {
-		fmt.Fprintf(&sb, "[S%d] %s (%s)\n", i+1, src.Title, src.URL)
-		content := src.Content
-		if len(content) > 1500 {
-			content = content[:1500] + "..."
-		}
-		fmt.Fprintf(&sb, "%s\n\n", content)
+	userPrompt, err := prompts.Render("answer_improvement_user.tmpl", struct {
+		Issues        []promptIssue
+		Suggestions   []string
+		CurrentAnswer string
+		Sources       []promptSource
+		Question      string
+	}{
+		Issues:        issues,
+		Suggestions:   suggestions,
+		CurrentAnswer: currentAnswer,
+		Sources:       promptSources(sources, 1500),
+		Question:      question,
+	})
+	if err != nil {
+		return "", err
 	}
 
-	sb.WriteString("=== ORIGINAL QUESTION ===\n")
-	sb.WriteString(question)
-	sb.WriteString("\n\n")
-
-	sb.WriteString("=== INSTRUCTIONS ===\n")
-	sb.WriteString("Please fix these issues and provide an improved answer. ")
-	sb.WriteString("Keep using only the provided sources. ")
-	sb.WriteString("Make sure all claims are properly cited.")
-
-	return s.llm.CompleteWithSystem(ctx, systemPrompt, sb.String())
+	return s.llm.CompleteWithSystem(ctx, prompts.Text("answer_improvement_system.md"), userPrompt)
 }

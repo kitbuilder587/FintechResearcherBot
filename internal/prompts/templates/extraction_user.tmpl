@@ -1,0 +1,19 @@
+Extract key facts and entities from this research answer.
+
+Answer:
+{{.Answer}}
+
+{{if .Sources}}Sources used:
+{{range .Sources}}- {{.Title}}: {{.URL}}
+{{end}}
+{{end}}Response format (JSON):
+{
+  "facts": [
+    {"content": "...", "source_url": "...", "confidence": 0.9}
+  ],
+  "entities": [
+    {"name": "Klarna", "type": "company", "attributes": {"founded": "2005"}}
+  ]
+}
+
+Entity types: company, person, concept, product, market

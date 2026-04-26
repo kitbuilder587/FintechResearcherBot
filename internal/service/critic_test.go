@@ -228,6 +228,37 @@ func TestCriticService_Suggestions(t *testing.T) {
 	}
 }
 
+func TestCriticService_NeedsSearch(t *testing.T) {
+	logger := zap.NewNop()
+	llmClient := llmMock.New()
+	llmClient.Response = `{"approved": false, "issues": ["missing current data"], "suggestions": [], "confidence": 0.7, "needs_search": true, "search_queries": ["fintech funding 2026"]}`
+
+	config := domain.CriticConfig{
+		MaxRetries: 3,
+		StrictMode: false,
+	}
+
+	svc := NewCriticService(llmClient, logger, config)
+
+	sources := []search.SearchResult{
+		{Title: "Source 1", URL: "https://example.com/1", Content: "Content 1"},
+	}
+
+	result, err := svc.Review(context.Background(), "Test answer", sources, "Test question")
+	if err != nil {
+		t.Fatalf("Review() error = %v", err)
+	}
+	if result == nil {
+		t.Fatal("nil result")
+	}
+	if !result.NeedsSearch {
+		t.Error("expected NeedsSearch = true")
+	}
+	if len(result.SearchQueries) != 1 || result.SearchQueries[0] != "fintech funding 2026" {
+		t.Errorf("SearchQueries = %v, want fintech funding 2026", result.SearchQueries)
+	}
+}
+
 func TestCriticService_EmptySources(t *testing.T) {
 	logger := zap.NewNop()
 	llmClient := llmMock.New()

@@ -52,6 +52,18 @@ func (m *MockCritic) WithRejected(issues []string) *MockCritic {
 	return m
 }
 
+func (m *MockCritic) WithNeedsSearch(queries []string) *MockCritic {
+	m.Results = append(m.Results, &domain.CriticResult{
+		Approved:      false,
+		Issues:        []string{"additional sources needed"},
+		Suggestions:   nil,
+		Confidence:    0.6,
+		NeedsSearch:   true,
+		SearchQueries: queries,
+	})
+	return m
+}
+
 func (m *MockCritic) WithError(err error) *MockCritic {
 	m.Errors = append(m.Errors, err)
 	return m
@@ -70,6 +82,48 @@ func (m *MockCritic) Review(ctx context.Context, answer string, sources []search
 		return m.Results[callIdx], nil
 	}
 	return &domain.CriticResult{Approved: true, Confidence: 0.9}, nil
+}
+
+type sequenceSearchClient struct {
+	responses []search.SearchResult
+	batches   [][]search.SearchResult
+	errors    []error
+	requests  []search.SearchRequest
+	callCount int
+	mu        sync.Mutex
+}
+
+func (c *sequenceSearchClient) Search(ctx context.Context, req search.SearchRequest) (*search.SearchResponse, error) {
+	c.mu.Lock()
+	callIdx := c.callCount
+	c.callCount++
+	c.requests = append(c.requests, req)
+
+	var results []search.SearchResult
+	if callIdx < len(c.batches) {
+		results = c.batches[callIdx]
+	} else {
+		results = c.responses
+	}
+
+	var err error
+	if callIdx < len(c.errors) {
+		err = c.errors[callIdx]
+	}
+	c.mu.Unlock()
+
+	if err != nil {
+		return nil, err
+	}
+	if len(results) == 0 {
+		return nil, search.ErrEmptyResults
+	}
+
+	return &search.SearchResponse{
+		Query:        req.Query,
+		Results:      results,
+		ResponseTime: 0.5,
+	}, nil
 }
 
 func TestQueryService_Process(t *testing.T) {
@@ -301,6 +355,180 @@ func TestQueryService_CriticRejectedThenApproved(t *testing.T) {
 	}
 	if llmCallCount != 3 {
 		t.Errorf("LLM called %d times, want 3", llmCallCount)
+	}
+}
+
+func TestQueryService_CriticRequestsSearch(t *testing.T) {
+	logger := zap.NewNop()
+
+	sourceRepo := repository.NewMockSourceRepository()
+	searchClient := &sequenceSearchClient{
+		batches: [][]search.SearchResult{
+			{
+				{Title: "Initial", URL: "https://example.com/initial", Content: "Initial content", Score: 0.7},
+			},
+			{
+				{Title: "Additional", URL: "https://example.com/additional", Content: "Additional content", Score: 0.95},
+			},
+		},
+	}
+	cacheClient := memory.New()
+
+	llmCallCount := 0
+	llmClient := &trackingLLMClient{
+		responses: []string{
+			`{"queries": ["fintech revenue"]}`,
+			"Initial answer [S1]",
+			"Regenerated answer with additional source [S1] [S2]",
+		},
+		callCount: &llmCallCount,
+	}
+
+	mockCritic := NewMockCritic().
+		WithNeedsSearch([]string{"fintech revenue latest data"}).
+		WithApproved()
+
+	sourceRepo.Create(context.Background(), &domain.Source{
+		UserID: 1,
+		URL:    "https://example.com",
+		Name:   "Example",
+	})
+
+	svc := NewQueryService(QueryServiceDeps{
+		Sources: sourceRepo,
+		LLM:     llmClient,
+		Search:  searchClient,
+		Cache:   cacheClient,
+		Logger:  logger,
+		Critic:  mockCritic,
+		CriticConfig: domain.CriticConfig{
+			MaxRetries: 2,
+			StrictMode: false,
+		},
+		Config: QueryConfig{
+			MaxSearchQueries:   3,
+			MaxResultsPerQuery: 5,
+			CacheTTL:           time.Hour,
+			SearchTimeout:      10 * time.Second,
+		},
+	})
+
+	strategy := domain.StandardStrategy()
+	strategy.UseCritic = true
+
+	resp, err := svc.Process(context.Background(), &domain.QueryRequest{
+		UserID:   1,
+		Text:     "What is fintech revenue?",
+		Strategy: strategy,
+	})
+
+	if err != nil {
+		t.Fatalf("Process() error = %v", err)
+	}
+	if resp == nil {
+		t.Fatal("nil response")
+	}
+	if resp.Text != "Regenerated answer with additional source [S1] [S2]" {
+		t.Errorf("Response = %q, want regenerated answer", resp.Text)
+	}
+	if mockCritic.CallCount != 2 {
+		t.Errorf("Critic called %d times, want 2", mockCritic.CallCount)
+	}
+	if searchClient.callCount != 2 {
+		t.Errorf("Search called %d times, want 2", searchClient.callCount)
+	}
+	if len(searchClient.requests) < 2 || searchClient.requests[1].Query != "fintech revenue latest data" {
+		t.Errorf("Verifier search query = %v, want fintech revenue latest data", searchClient.requests)
+	}
+	if llmCallCount != 3 {
+		t.Errorf("LLM called %d times, want 3", llmCallCount)
+	}
+	if len(resp.Sources) != 2 {
+		t.Fatalf("Sources = %d, want 2", len(resp.Sources))
+	}
+	if resp.Sources[0].URL != "https://example.com/additional" {
+		t.Errorf("First source URL = %q, want additional source first", resp.Sources[0].URL)
+	}
+	if len(mockCritic.LastSources) != 2 {
+		t.Errorf("Last critic sources = %d, want 2", len(mockCritic.LastSources))
+	}
+}
+
+func TestQueryService_CriticRequestsSearchWithoutQueries(t *testing.T) {
+	logger := zap.NewNop()
+
+	sourceRepo := repository.NewMockSourceRepository()
+	searchClient := &sequenceSearchClient{
+		batches: [][]search.SearchResult{
+			{
+				{Title: "Initial", URL: "https://example.com/initial", Content: "Initial content", Score: 0.7},
+			},
+		},
+	}
+	cacheClient := memory.New()
+
+	llmCallCount := 0
+	llmClient := &trackingLLMClient{
+		responses: []string{
+			`{"queries": ["fintech revenue"]}`,
+			"Initial answer [S1]",
+			"Improved answer [S1]",
+		},
+		callCount: &llmCallCount,
+	}
+
+	mockCritic := NewMockCritic().
+		WithNeedsSearch([]string{"", "   "}).
+		WithApproved()
+
+	sourceRepo.Create(context.Background(), &domain.Source{
+		UserID: 1,
+		URL:    "https://example.com",
+		Name:   "Example",
+	})
+
+	svc := NewQueryService(QueryServiceDeps{
+		Sources: sourceRepo,
+		LLM:     llmClient,
+		Search:  searchClient,
+		Cache:   cacheClient,
+		Logger:  logger,
+		Critic:  mockCritic,
+		CriticConfig: domain.CriticConfig{
+			MaxRetries: 2,
+			StrictMode: false,
+		},
+		Config: QueryConfig{
+			MaxSearchQueries:   3,
+			MaxResultsPerQuery: 5,
+			CacheTTL:           time.Hour,
+			SearchTimeout:      10 * time.Second,
+		},
+	})
+
+	strategy := domain.StandardStrategy()
+	strategy.UseCritic = true
+
+	resp, err := svc.Process(context.Background(), &domain.QueryRequest{
+		UserID:   1,
+		Text:     "What is fintech revenue?",
+		Strategy: strategy,
+	})
+
+	if err != nil {
+		t.Fatalf("Process() error = %v", err)
+	}
+	if resp == nil {
+		t.Fatal("nil response")
+	}
+	if resp.Text != "Improved answer [S1]" {
+		t.Errorf("Response = %q, want improved answer", resp.Text)
+	}
+	if searchClient.callCount != 1 {
+		t.Errorf("Search called %d times, want 1", searchClient.callCount)
+	}
+	if mockCritic.CallCount != 2 {
+		t.Errorf("Critic called %d times, want 2", mockCritic.CallCount)
 	}
 }
 

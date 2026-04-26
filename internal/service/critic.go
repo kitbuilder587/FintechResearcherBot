@@ -3,33 +3,17 @@ package service
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"strings"
 
 	"go.uber.org/zap"
 
 	"github.com/kitbuilder587/fintech-bot/internal/domain"
 	"github.com/kitbuilder587/fintech-bot/internal/llm"
+	"github.com/kitbuilder587/fintech-bot/internal/prompts"
 	"github.com/kitbuilder587/fintech-bot/internal/search"
 )
 
-const CriticSystemPrompt = `You are a critical reviewer for financial research answers.
-
-Your task: Evaluate if the answer is accurate, complete, and well-sourced.
-
-Check for:
-1. ACCURACY: Are all claims supported by the provided sources?
-2. COMPLETENESS: Does it fully answer the question?
-3. HALLUCINATIONS: Are there any facts not from sources?
-4. STRUCTURE: Is it well-organized?
-
-Response format (JSON only):
-{
-  "approved": true/false,
-  "issues": ["issue1", "issue2"],
-  "suggestions": ["suggestion1"],
-  "confidence": 0.0-1.0
-}`
+var CriticSystemPrompt = prompts.Text("critic_system.md")
 
 type CriticService struct {
 	llm    llm.Client
@@ -78,46 +62,54 @@ func (s *CriticService) Review(ctx context.Context, answer string, sources []sea
 }
 
 func (s *CriticService) buildPrompt(answer string, sources []search.SearchResult, question string) string {
-	var sb strings.Builder
-
-	sb.WriteString("=== ORIGINAL QUESTION ===\n")
-	sb.WriteString(question)
-	sb.WriteString("\n\n")
-
-	sb.WriteString("=== SOURCES PROVIDED ===\n")
-	if len(sources) == 0 {
-		sb.WriteString("No sources provided.\n")
-	} else {
-		for i, src := range sources {
-			fmt.Fprintf(&sb, "[S%d] %s (%s)\n", i+1, src.Title, src.URL)
-			content := src.Content
-			if len(content) > 1500 {
-				content = content[:1500] + "..."
-			}
-			fmt.Fprintf(&sb, "Content: %s\n\n", content)
-		}
+	type sourceData struct {
+		Index   int
+		Title   string
+		URL     string
+		Content string
 	}
 
-	sb.WriteString("=== ANSWER TO REVIEW ===\n")
-	sb.WriteString(answer)
-	sb.WriteString("\n\n")
+	sourceItems := make([]sourceData, 0, len(sources))
+	for i, src := range sources {
+		content := src.Content
+		if len(content) > 1500 {
+			content = content[:1500] + "..."
+		}
+		sourceItems = append(sourceItems, sourceData{
+			Index:   i + 1,
+			Title:   src.Title,
+			URL:     src.URL,
+			Content: content,
+		})
+	}
 
-	sb.WriteString("=== INSTRUCTIONS ===\n")
-	sb.WriteString("Please evaluate the answer above. Check if all claims are supported by the sources, ")
-	sb.WriteString("if the answer is complete, and if there are any hallucinations or unsupported facts. ")
-	sb.WriteString("Respond with JSON only.")
+	prompt, err := prompts.Render("critic_user.tmpl", struct {
+		Question string
+		Sources  []sourceData
+		Answer   string
+	}{
+		Question: question,
+		Sources:  sourceItems,
+		Answer:   answer,
+	})
+	if err != nil {
+		s.logger.Error("failed to render critic prompt", zap.Error(err))
+		return ""
+	}
 
-	return sb.String()
+	return prompt
 }
 
 func (s *CriticService) parseResponse(llmResponse string) *domain.CriticResult {
 	jsonStr := extractJSON(llmResponse)
 
 	var result struct {
-		Approved    bool     `json:"approved"`
-		Issues      []string `json:"issues"`
-		Suggestions []string `json:"suggestions"`
-		Confidence  float64  `json:"confidence"`
+		Approved      bool     `json:"approved"`
+		Issues        []string `json:"issues"`
+		Suggestions   []string `json:"suggestions"`
+		Confidence    float64  `json:"confidence"`
+		NeedsSearch   bool     `json:"needs_search"`
+		SearchQueries []string `json:"search_queries"`
 	}
 
 	if err := json.Unmarshal([]byte(jsonStr), &result); err != nil {
@@ -127,18 +119,22 @@ func (s *CriticService) parseResponse(llmResponse string) *domain.CriticResult {
 		)
 
 		return &domain.CriticResult{
-			Approved:    true,
-			Issues:      []string{"critic_parse_failed: could not parse LLM response"},
-			Suggestions: nil,
-			Confidence:  0.3,
+			Approved:      true,
+			Issues:        []string{"critic_parse_failed: could not parse LLM response"},
+			Suggestions:   nil,
+			Confidence:    0.3,
+			NeedsSearch:   false,
+			SearchQueries: nil,
 		}
 	}
 
 	return &domain.CriticResult{
-		Approved:    result.Approved,
-		Issues:      result.Issues,
-		Suggestions: result.Suggestions,
-		Confidence:  result.Confidence,
+		Approved:      result.Approved,
+		Issues:        result.Issues,
+		Suggestions:   result.Suggestions,
+		Confidence:    result.Confidence,
+		NeedsSearch:   result.NeedsSearch,
+		SearchQueries: result.SearchQueries,
 	}
 }
 

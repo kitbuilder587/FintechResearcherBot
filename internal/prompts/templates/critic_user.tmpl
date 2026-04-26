@@ -1,0 +1,16 @@
+=== ORIGINAL QUESTION ===
+{{.Question}}
+
+=== SOURCES PROVIDED ===
+{{if .Sources}}{{range .Sources}}[S{{.Index}}] {{.Title}} ({{.URL}})
+Content: {{.Content}}
+
+{{end}}{{else}}No sources provided.
+{{end}}
+=== ANSWER TO REVIEW ===
+{{.Answer}}
+
+=== INSTRUCTIONS ===
+Please evaluate the answer above. Check if all claims are supported by the sources, if the answer is complete, and if there are any hallucinations or unsupported facts.
+If important information is missing from the provided sources, set "needs_search" to true and provide concrete English search queries.
+Respond with JSON only.

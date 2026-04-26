@@ -1,0 +1,12 @@
+Вопрос: {{.Question}}
+{{if .Context}}
+
+Контекст: {{.Context}}
+{{end}}{{if .Sources}}
+
+Источники:
+{{range .Sources}}[S{{.Index}}] {{.Title}}
+URL: {{.URL}}
+Содержание: {{.Content}}
+
+{{end}}{{end}}

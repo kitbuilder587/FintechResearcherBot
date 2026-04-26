@@ -11,6 +11,7 @@ import (
 
 	"github.com/kitbuilder587/fintech-bot/internal/domain"
 	"github.com/kitbuilder587/fintech-bot/internal/llm"
+	"github.com/kitbuilder587/fintech-bot/internal/prompts"
 	"go.uber.org/zap"
 )
 
@@ -169,15 +170,25 @@ func (c *Coordinator) synthesize(ctx context.Context, responses []AgentResponse,
 		fmt.Fprintf(&buf, "[Expert %d: %s]\n%s\n\n", i+1, r.AgentName, r.Content)
 	}
 
-	sysPrompt := `Ты - Synthesizer, синтезируешь ответы нескольких экспертов в один связный текст.
+	sysPrompt, err := prompts.Render("synthesizer_system.tmpl", struct {
+		Responses string
+	}{
+		Responses: buf.String(),
+	})
+	if err != nil {
+		return "", err
+	}
 
-Ответы экспертов:
-` + buf.String() + `
+	userPrompt, err := prompts.Render("synthesizer_user.tmpl", struct {
+		Question string
+	}{
+		Question: question,
+	})
+	if err != nil {
+		return "", err
+	}
 
-Отвечай на русском. Объедини точки зрения экспертов, выдели где они согласны, а где расходятся.
-Сохраняй ссылки на источники [S1], [S2] и т.д. Структура: сначала общая картина, потом детали, в конце выводы.`
-
-	return c.llm.CompleteWithSystem(ctx, sysPrompt, "User question: "+question)
+	return c.llm.CompleteWithSystem(ctx, sysPrompt, userPrompt)
 }
 
 func (c *Coordinator) maxAgentsFor(s domain.Strategy) int {

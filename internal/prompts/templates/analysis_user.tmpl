@@ -1,0 +1,9 @@
+Sources:
+
+{{range .Sources}}[S{{.Index}}] {{.Title}} ({{.URL}})
+Score: {{printf "%.2f" .Score}}
+{{.Content}}
+
+{{end}}---
+
+User question: {{.UserQuery}}
