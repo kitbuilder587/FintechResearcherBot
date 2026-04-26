@@ -4,6 +4,7 @@ package agent
 
 import (
 	"github.com/kitbuilder587/fintech-bot/internal/llm"
+	"github.com/kitbuilder587/fintech-bot/internal/prompts"
 	"go.uber.org/zap"
 )
 
@@ -14,7 +15,6 @@ type agentSpec struct {
 	prompt    string
 }
 
-// TODO: вынести промпты в отдельные файлы или конфиг, чтобы можно было менять без пересборки
 var specs = map[AgentType]agentSpec{
 	AgentTech: {
 		name: "tech-specialist",
@@ -29,28 +29,7 @@ var specs = map[AgentType]agentSpec{
 			"infrastructure planning",
 			"protocol implementation",
 		},
-		prompt: `Вы - эксперт по техническим аспектам финтех-индустрии.
-
-Ваша специализация:
-- API дизайн и интеграции
-- Безопасность и криптография
-- Blockchain и распределенные системы
-- Инфраструктура и масштабирование
-- Протоколы и стандарты
-
-При анализе фокусируйтесь на:
-1. Технических деталях реализации
-2. Архитектурных решениях
-3. Вопросах безопасности
-4. Интеграционных паттернах
-
-Ссылайтесь на источники как [S1], [S2] и т.д.
-
-В конце ответа обязательно добавьте секцию:
-Инсайты:
-- Ключевой инсайт 1
-- Ключевой инсайт 2
-- Ключевой инсайт 3`,
+		prompt: prompts.Text("agent_tech_system.md"),
 	},
 
 	AgentMarket: {
@@ -66,26 +45,7 @@ var specs = map[AgentType]agentSpec{
 			"investment trends",
 			"revenue forecasting",
 		},
-		prompt: `Вы - эксперт по рыночному анализу финтех-индустрии.
-
-Ваша специализация:
-- Анализ размеров рынка и сегментов
-- Оценка конкурентного ландшафта
-- M&A активность и сделки
-- Инвестиционные тренды и раунды финансирования
-- Прогнозирование выручки и роста
-
-При анализе фокусируйтесь на:
-1. Конкретных числах и данных
-2. Источниках информации (ссылайтесь как [S1], [S2] и т.д.)
-3. Сравнении с конкурентами
-4. Трендах роста
-
-В конце ответа обязательно добавьте секцию:
-Инсайты:
-- Ключевой инсайт 1
-- Ключевой инсайт 2
-- Ключевой инсайт 3`,
+		prompt: prompts.Text("agent_market_system.md"),
 	},
 
 	AgentRegulatory: {
@@ -102,29 +62,7 @@ var specs = map[AgentType]agentSpec{
 			"PSD2 and open banking",
 			"Central Bank regulations",
 		},
-		prompt: `Вы - эксперт по регуляторным и юридическим аспектам финтех-индустрии.
-
-Ваша специализация:
-- Законодательство и нормативные акты
-- Лицензирование финансовой деятельности
-- Compliance и соответствие требованиям
-- GDPR и защита персональных данных
-- PSD2 и открытый банкинг
-- Требования ЦБ РФ
-
-При анализе фокусируйтесь на:
-1. Конкретных законах и нормативных актах
-2. Требованиях регуляторов
-3. Рисках несоответствия
-4. Практических рекомендациях
-
-Ссылайтесь на источники как [S1], [S2] и т.д.
-
-В конце ответа обязательно добавьте секцию:
-Инсайты:
-- Ключевой инсайт 1
-- Ключевой инсайт 2
-- Ключевой инсайт 3`,
+		prompt: prompts.Text("agent_regulatory_system.md"),
 	},
 
 	AgentTrends: {
@@ -140,28 +78,7 @@ var specs = map[AgentType]agentSpec{
 			"AI and machine learning",
 			"future of fintech",
 		},
-		prompt: `Вы - эксперт по инновациям и трендам в финтех-индустрии.
-
-Ваша специализация:
-- Анализ стартап-экосистемы
-- Новые технологические тренды
-- AI и машинное обучение в финтехе
-- Emerging technologies
-- Прогнозирование будущего индустрии
-
-При анализе фокусируйтесь на:
-1. Новейших технологиях и подходах
-2. Перспективных стартапах
-3. Трендах развития
-4. Прогнозах экспертов
-
-Ссылайтесь на источники как [S1], [S2] и т.д.
-
-В конце ответа обязательно добавьте секцию:
-Инсайты:
-- Ключевой инсайт 1
-- Ключевой инсайт 2
-- Ключевой инсайт 3`,
+		prompt: prompts.Text("agent_trends_system.md"),
 	},
 }
 
@@ -183,7 +100,13 @@ func NewAgent(t AgentType, llmClient llm.Client, log *zap.Logger) *SpecializedAg
 }
 
 // FIXME: legacy функции для обратной совместимости, потом убрать
-func NewTechAgent(c llm.Client, l *zap.Logger) *SpecializedAgent       { return NewAgent(AgentTech, c, l) }
-func NewMarketAgent(c llm.Client, l *zap.Logger) *SpecializedAgent     { return NewAgent(AgentMarket, c, l) }
-func NewRegulatoryAgent(c llm.Client, l *zap.Logger) *SpecializedAgent { return NewAgent(AgentRegulatory, c, l) }
-func NewTrendsAgent(c llm.Client, l *zap.Logger) *SpecializedAgent     { return NewAgent(AgentTrends, c, l) }
+func NewTechAgent(c llm.Client, l *zap.Logger) *SpecializedAgent { return NewAgent(AgentTech, c, l) }
+func NewMarketAgent(c llm.Client, l *zap.Logger) *SpecializedAgent {
+	return NewAgent(AgentMarket, c, l)
+}
+func NewRegulatoryAgent(c llm.Client, l *zap.Logger) *SpecializedAgent {
+	return NewAgent(AgentRegulatory, c, l)
+}
+func NewTrendsAgent(c llm.Client, l *zap.Logger) *SpecializedAgent {
+	return NewAgent(AgentTrends, c, l)
+}

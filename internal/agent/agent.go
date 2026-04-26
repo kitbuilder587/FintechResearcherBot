@@ -9,6 +9,7 @@ import (
 
 	"github.com/kitbuilder587/fintech-bot/internal/domain"
 	"github.com/kitbuilder587/fintech-bot/internal/llm"
+	"github.com/kitbuilder587/fintech-bot/internal/prompts"
 	"github.com/kitbuilder587/fintech-bot/internal/search"
 	"go.uber.org/zap"
 )
@@ -97,7 +98,7 @@ func NewBaseAgent(name string, expertise, keywords []string, systemPrompt string
 	}
 }
 
-func (b *BaseAgent) Name() string      { return b.name }
+func (b *BaseAgent) Name() string        { return b.name }
 func (b *BaseAgent) Expertise() []string { return b.expertise }
 
 // CanHandle возвращает уверенность что агент может обработать вопрос (по ключевым словам)
@@ -131,7 +132,10 @@ func (b *BaseAgent) Process(ctx context.Context, req AgentRequest) (*AgentRespon
 		return nil, err
 	}
 
-	userPrompt := buildUserPrompt(req)
+	userPrompt, err := buildUserPrompt(req)
+	if err != nil {
+		return nil, err
+	}
 
 	content, err := b.llmClient.CompleteWithSystem(ctx, b.systemPrompt, userPrompt)
 	if err != nil {
@@ -153,27 +157,33 @@ func (b *BaseAgent) Process(ctx context.Context, req AgentRequest) (*AgentRespon
 	}, nil
 }
 
-func buildUserPrompt(req AgentRequest) string {
-	var sb strings.Builder
-
-	sb.WriteString("Вопрос: ")
-	sb.WriteString(req.Question)
-	sb.WriteString("\n\n")
-
-	if req.Context != "" {
-		sb.WriteString("Контекст: ")
-		sb.WriteString(req.Context)
-		sb.WriteString("\n\n")
+func buildUserPrompt(req AgentRequest) (string, error) {
+	type sourceData struct {
+		Index   int
+		Title   string
+		URL     string
+		Content string
 	}
 
-	if len(req.SearchResults) > 0 {
-		sb.WriteString("Источники:\n")
-		for i, r := range req.SearchResults {
-			fmt.Fprintf(&sb, "[S%d] %s\nURL: %s\nСодержание: %s\n\n", i+1, r.Title, r.URL, r.Content)
-		}
+	sources := make([]sourceData, 0, len(req.SearchResults))
+	for i, r := range req.SearchResults {
+		sources = append(sources, sourceData{
+			Index:   i + 1,
+			Title:   r.Title,
+			URL:     r.URL,
+			Content: r.Content,
+		})
 	}
 
-	return sb.String()
+	return prompts.Render("agent_user.tmpl", struct {
+		Question string
+		Context  string
+		Sources  []sourceData
+	}{
+		Question: req.Question,
+		Context:  req.Context,
+		Sources:  sources,
+	})
 }
 
 // parseInsights вытаскивает инсайты из ответа LLM

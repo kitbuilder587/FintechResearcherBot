@@ -1,0 +1,22 @@
+=== REVIEWER FEEDBACK ===
+The answer was reviewed and has the following issues:
+
+{{range .Issues}}{{.Index}}. {{.Text}}
+{{end}}{{if .Suggestions}}
+
+Suggestions for improvement:
+{{range .Suggestions}}- {{.}}
+{{end}}{{end}}
+
+=== ORIGINAL ANSWER ===
+{{.CurrentAnswer}}
+
+=== SOURCES ===
+{{range .Sources}}[S{{.Index}}] {{.Title}} ({{.URL}})
+{{.Content}}
+
+{{end}}=== ORIGINAL QUESTION ===
+{{.Question}}
+
+=== INSTRUCTIONS ===
+Please fix these issues and provide an improved answer. Keep using only the provided sources. Make sure all claims are properly cited.

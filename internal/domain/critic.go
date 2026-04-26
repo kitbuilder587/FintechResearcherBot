@@ -1,10 +1,12 @@
 package domain
 
 type CriticResult struct {
-	Approved    bool
-	Issues      []string
-	Suggestions []string
-	Confidence  float64 // 0.0-1.0
+	Approved      bool
+	Issues        []string
+	Suggestions   []string
+	Confidence    float64
+	NeedsSearch   bool
+	SearchQueries []string
 }
 
 type CriticConfig struct {

@@ -12,31 +12,14 @@ import (
 
 	"github.com/kitbuilder587/fintech-bot/internal/domain"
 	"github.com/kitbuilder587/fintech-bot/internal/llm"
+	"github.com/kitbuilder587/fintech-bot/internal/prompts"
 	"github.com/kitbuilder587/fintech-bot/internal/repository"
 	"github.com/kitbuilder587/fintech-bot/internal/search"
 )
 
 const MaxContextSize = 2000
 
-const ExtractionSystemPrompt = `You are a fact extraction assistant. Extract key facts and named entities from research answers.
-Always respond with valid JSON only, no markdown formatting.`
-
-const ExtractionUserPromptTemplate = `Extract key facts and entities from this research answer.
-
-Answer:
-%s
-
-%sResponse format (JSON):
-{
-  "facts": [
-    {"content": "...", "source_url": "...", "confidence": 0.9}
-  ],
-  "entities": [
-    {"name": "Klarna", "type": "company", "attributes": {"founded": "2005"}}
-  ]
-}
-
-Entity types: company, person, concept, product, market`
+var ExtractionSystemPrompt = prompts.Text("extraction_system.md")
 
 type WorldModelService struct {
 	repo   repository.WorldModelRepository
@@ -244,18 +227,32 @@ func (s *WorldModelService) GetUserKnowledge(ctx context.Context, userID int64) 
 }
 
 func (s *WorldModelService) buildExtractionPrompt(answer string, sources []search.SearchResult) string {
-	var sourcesSection string
-	if len(sources) > 0 {
-		var builder strings.Builder
-		builder.WriteString("Sources used:\n")
-		for _, src := range sources {
-			builder.WriteString(fmt.Sprintf("- %s: %s\n", src.Title, src.URL))
-		}
-		builder.WriteString("\n")
-		sourcesSection = builder.String()
+	type sourceData struct {
+		Title string
+		URL   string
 	}
 
-	return fmt.Sprintf(ExtractionUserPromptTemplate, answer, sourcesSection)
+	sourceItems := make([]sourceData, 0, len(sources))
+	for _, src := range sources {
+		sourceItems = append(sourceItems, sourceData{
+			Title: src.Title,
+			URL:   src.URL,
+		})
+	}
+
+	prompt, err := prompts.Render("extraction_user.tmpl", struct {
+		Answer  string
+		Sources []sourceData
+	}{
+		Answer:  answer,
+		Sources: sourceItems,
+	})
+	if err != nil {
+		s.logger.Error("failed to render extraction prompt", zap.Error(err))
+		return ""
+	}
+
+	return prompt
 }
 
 func (s *WorldModelService) parseExtractionResponse(response string) (*extractionResponse, error) {
