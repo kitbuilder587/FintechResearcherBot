@@ -1,0 +1,16 @@
+{
+  "run_id": "exp-ab-giga-stable-no-coord-llmrel-20260506-1325",
+  "strategy": "standard",
+  "change": "gigachat fixed searxng direct analyze no critic no expansion no world model judged by gpt-5.5 llm relevance",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "answer_relevance_mode": "llm",
+  "question_count": 10,
+  "avg_faithfulness": 0.19900791754829023,
+  "avg_answer_relevance": 0.6799999999999999,
+  "avg_input_tokens": 944,
+  "avg_output_tokens": 417,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

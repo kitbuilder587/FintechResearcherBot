@@ -21,10 +21,18 @@ type Message struct {
 
 type ChatResponse struct {
 	Choices []Choice `json:"choices"`
+	Usage   Usage    `json:"usage"`
 }
 
 type Choice struct {
 	Message Message `json:"message"`
+}
+
+type Usage struct {
+	InputTokens  int     `json:"prompt_tokens"`
+	OutputTokens int     `json:"completion_tokens"`
+	TotalTokens  int     `json:"total_tokens"`
+	CostUSD      float64 `json:"-"`
 }
 
 func NewChatRequest(model, system, prompt string) ChatRequest {

@@ -88,6 +88,12 @@ func TestDefaults(t *testing.T) {
 	if cfg.LLM.Provider != "mock" {
 		t.Errorf("LLM.Provider = %v, want mock", cfg.LLM.Provider)
 	}
+	if cfg.Search.Provider != "searxng" {
+		t.Errorf("Search.Provider = %v, want searxng", cfg.Search.Provider)
+	}
+	if cfg.Search.SearXNG.BaseURL != "http://searxng:8080" {
+		t.Errorf("Search.SearXNG.BaseURL = %v, want http://searxng:8080", cfg.Search.SearXNG.BaseURL)
+	}
 }
 
 func TestGetEnvIntOrDefault(t *testing.T) {
@@ -112,6 +118,23 @@ func TestGetEnvIntOrDefault(t *testing.T) {
 				t.Errorf("getEnvIntOrDefault() = %v, want %v", got, tt.want)
 			}
 		})
+	}
+}
+
+func TestOpenRouterAPIURLAlias(t *testing.T) {
+	clearEnvVars()
+	os.Setenv("TELEGRAM_BOT_TOKEN", "test_token")
+	os.Setenv("DATABASE_URL", "postgres://localhost:5432/test")
+	os.Setenv("OPENROUTER_API_URL", "https://api.aiproductiv.ru/v1")
+	defer clearEnvVars()
+
+	cfg, err := Load()
+	if err != nil {
+		t.Fatalf("Load() error = %v", err)
+	}
+
+	if cfg.LLM.OpenRouter.BaseURL != "https://api.aiproductiv.ru/v1" {
+		t.Errorf("OpenRouter.BaseURL = %v, want API URL alias", cfg.LLM.OpenRouter.BaseURL)
 	}
 }
 
@@ -205,16 +228,74 @@ func TestValidate_ValidStrategies(t *testing.T) {
 	}
 }
 
+func TestSearchProvider(t *testing.T) {
+	tests := []struct {
+		name     string
+		envValue string
+		want     string
+		wantErr  error
+	}{
+		{
+			name: "default provider",
+			want: "searxng",
+		},
+		{
+			name:     "tavily provider",
+			envValue: "tavily",
+			want:     "tavily",
+		},
+		{
+			name:     "invalid provider",
+			envValue: "invalid",
+			wantErr:  ErrInvalidSearch,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			clearEnvVars()
+			os.Setenv("TELEGRAM_BOT_TOKEN", "test_token")
+			os.Setenv("DATABASE_URL", "postgres://localhost:5432/test")
+			if tt.envValue != "" {
+				os.Setenv("SEARCH_PROVIDER", tt.envValue)
+			}
+			defer clearEnvVars()
+
+			cfg, err := Load()
+
+			if tt.wantErr != nil {
+				if err != tt.wantErr {
+					t.Errorf("Load() error = %v, want %v", err, tt.wantErr)
+				}
+				return
+			}
+			if err != nil {
+				t.Fatalf("Load() error = %v", err)
+			}
+			if cfg.Search.Provider != tt.want {
+				t.Errorf("Search.Provider = %v, want %v", cfg.Search.Provider, tt.want)
+			}
+		})
+	}
+}
+
 func clearEnvVars() {
 	envVars := []string{
 		"TELEGRAM_BOT_TOKEN",
 		"DATABASE_URL",
 		"LLM_PROVIDER",
 		"OPENROUTER_API_KEY",
+		"OPENROUTER_API_URL",
+		"OPENROUTER_BASE_URL",
 		"OPENROUTER_MODEL",
 		"GIGACHAT_CLIENT_ID",
 		"GIGACHAT_CLIENT_SECRET",
+		"SEARCH_PROVIDER",
 		"TAVILY_API_KEY",
+		"TAVILY_BASE_URL",
+		"TAVILY_TIMEOUT_SEC",
+		"SEARXNG_BASE_URL",
+		"SEARXNG_TIMEOUT_SEC",
 		"LOG_LEVEL",
 		"SOURCE_TIMEOUT_SEC",
 		"TOTAL_TIMEOUT_SEC",

@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-c-no-critic-20260505-1944",
+  "strategy": "standard",
+  "change": "disable critic loop",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.37245337904941467,
+  "avg_answer_relevance": 0.7533374214711154,
+  "avg_input_tokens": 3263,
+  "avg_output_tokens": 2701,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

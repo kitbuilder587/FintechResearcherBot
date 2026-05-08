@@ -2,9 +2,12 @@ package agent
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
+	"os"
 	"regexp"
+	"strconv"
 	"strings"
 
 	"github.com/kitbuilder587/fintech-bot/internal/domain"
@@ -51,6 +54,7 @@ type AgentRequest struct {
 	SearchResults []search.SearchResult
 	Context       string // от World Model
 	Strategy      domain.Strategy
+	Mandate       string
 }
 
 func (r AgentRequest) Validate() error {
@@ -142,19 +146,109 @@ func (b *BaseAgent) Process(ctx context.Context, req AgentRequest) (*AgentRespon
 		b.logger.Error("LLM call failed", zap.Error(err))
 		return nil, fmt.Errorf("llm call failed: %w", err)
 	}
+	content = normalizeCitationEscapes(content)
+
+	parsed := structuredAgentOutput{Confidence: -1}
+	if structuredOutputEnabled() {
+		parsed = parseStructuredAgentOutput(content)
+		if parsed.Answer != "" {
+			content = parsed.Answer
+		}
+	}
 
 	conf := b.CanHandle(req.Question)
 	if conf < 0.5 {
 		conf = 0.5
+	}
+	if parsed.Confidence >= 0 && parsed.Confidence <= 1 {
+		conf = parsed.Confidence
+	}
+
+	sourceRefs := parseSourceRefs(content)
+	if len(parsed.SourceRefs) > 0 {
+		sourceRefs = uniqueSourceRefs(parsed.SourceRefs)
+	}
+	insights := parseInsights(content)
+	if len(parsed.Claims) > 0 {
+		insights = parsed.Claims
 	}
 
 	return &AgentResponse{
 		AgentName:  b.name,
 		Content:    content,
 		Confidence: conf,
-		SourceRefs: parseSourceRefs(content),
-		Insights:   parseInsights(content),
+		SourceRefs: sourceRefs,
+		Insights:   insights,
 	}, nil
+}
+
+type structuredAgentOutput struct {
+	Answer     string   `json:"answer"`
+	Claims     []string `json:"claims"`
+	SourceRefs []string `json:"source_refs"`
+	Confidence float64  `json:"confidence"`
+}
+
+func parseStructuredAgentOutput(content string) structuredAgentOutput {
+	content = extractJSONObject(content)
+	var out structuredAgentOutput
+	if err := json.Unmarshal([]byte(content), &out); err != nil {
+		return parseLenientStructuredAgentOutput(content)
+	}
+	return out
+}
+
+func parseLenientStructuredAgentOutput(content string) structuredAgentOutput {
+	out := structuredAgentOutput{Confidence: -1}
+
+	answerRe := regexp.MustCompile(`(?s)"answer"\s*:\s*"(.*?)"\s*,\s*"(claims|source_refs|confidence)"`)
+	if match := answerRe.FindStringSubmatch(content); len(match) > 1 {
+		out.Answer = cleanJSONStringFragment(match[1])
+	}
+
+	confRe := regexp.MustCompile(`"confidence"\s*:\s*([0-9.]+)`)
+	if match := confRe.FindStringSubmatch(content); len(match) > 1 {
+		if value, err := strconv.ParseFloat(match[1], 64); err == nil {
+			out.Confidence = value
+		}
+	}
+
+	out.SourceRefs = parseSourceRefs(content)
+	return out
+}
+
+func cleanJSONStringFragment(value string) string {
+	value = strings.ReplaceAll(value, `\n`, "\n")
+	value = strings.ReplaceAll(value, `\"`, `"`)
+	value = normalizeCitationEscapes(value)
+	return strings.TrimSpace(value)
+}
+
+func normalizeCitationEscapes(value string) string {
+	value = strings.ReplaceAll(value, `\[`, `[`)
+	value = strings.ReplaceAll(value, `\]`, `]`)
+	return value
+}
+
+func extractJSONObject(content string) string {
+	start := strings.Index(content, "{")
+	if start == -1 {
+		return content
+	}
+
+	depth := 0
+	for i := start; i < len(content); i++ {
+		switch content[i] {
+		case '{':
+			depth++
+		case '}':
+			depth--
+			if depth == 0 {
+				return content[start : i+1]
+			}
+		}
+	}
+	return content[start:]
 }
 
 func buildUserPrompt(req AgentRequest) (string, error) {
@@ -176,14 +270,23 @@ func buildUserPrompt(req AgentRequest) (string, error) {
 	}
 
 	return prompts.Render("agent_user.tmpl", struct {
-		Question string
-		Context  string
-		Sources  []sourceData
+		Question   string
+		Context    string
+		Sources    []sourceData
+		Mandate    string
+		Structured bool
 	}{
-		Question: req.Question,
-		Context:  req.Context,
-		Sources:  sources,
+		Question:   req.Question,
+		Context:    req.Context,
+		Sources:    sources,
+		Mandate:    req.Mandate,
+		Structured: structuredOutputEnabled(),
 	})
+}
+
+func structuredOutputEnabled() bool {
+	value := strings.ToLower(strings.TrimSpace(os.Getenv("AGENT_STRUCTURED_OUTPUT_ENABLED")))
+	return value == "1" || value == "true" || value == "yes"
 }
 
 // parseInsights вытаскивает инсайты из ответа LLM
@@ -211,12 +314,23 @@ func parseSourceRefs(content string) []string {
 	re := regexp.MustCompile(`\[S(\d+)\]`)
 	matches := re.FindAllStringSubmatch(content, -1)
 
+	refs := make([]string, 0, len(matches))
+	for _, m := range matches {
+		if len(m) > 0 {
+			refs = append(refs, m[0])
+		}
+	}
+	return uniqueSourceRefs(refs)
+}
+
+func uniqueSourceRefs(items []string) []string {
 	seen := make(map[string]bool)
 	var refs []string
-	for _, m := range matches {
-		if len(m) > 0 && !seen[m[0]] {
-			seen[m[0]] = true
-			refs = append(refs, m[0])
+	for _, item := range items {
+		item = strings.TrimSpace(item)
+		if item != "" && !seen[item] {
+			seen[item] = true
+			refs = append(refs, item)
 		}
 	}
 	return refs

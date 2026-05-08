@@ -1,0 +1,1125 @@
+{
+  "run_id": "exp-r55-no-coord-20260506-1124",
+  "rows": [
+    {
+      "question": "What are the main fintech funding trends in 2025?",
+      "answer": "## Ключевые пункты\n\n1. **Недостаточно данных для ответа о трендах финансирования fintech в 2025 году.**  \n   В предоставленных источниках указаны только названия организаций и ссылки на их сайты или разделы публикаций, но нет конкретных выдержек, цифр, отчетов или тезисов о fintech funding trends в 2025 году [S1]–[S15].\n\n2. **Источники потенциально релевантны, но содержимого недостаточно.**  \n   В списке есть международные организации, банки, исследовательские и венчурные платформы, которые обычно могут публиковать аналитику по fintech, например IMF [S4], BIS [S8], S&P Global [S7], Accenture [S9], Goldman Sachs [S11], a16z [S13]. Однако в предоставленном материале нет конкретной информации из этих публикаций.\n\n3. **Нельзя объективно выделить “главные тренды” без данных.**  \n   Чтобы назвать тренды — например, рост или снижение венчурного финансирования, интерес к AI-fintech, платежам, embedded finance, regtech, digital assets или B2B-инфраструктуре — нужны фактические сведения из источников. В текущем наборе таких сведений нет.\n\n## Примеры\n\n- Источник BIS указан как страница по теме fintech [S8], но без конкретных данных о финансировании в 2025 году.\n- Источник a16z указан как fintech-раздел [S13], но без тезисов о венчурных инвестициях или сделках.\n- Источник Goldman Sachs посвящен искусственному интеллекту [S11], но из предоставленного описания нельзя сделать вывод о его влиянии на fintech funding в 2025 году.\n- Источники HSBC и Barclays представлены как страницы с мнениями и инсайтами [S5], [S6], но без конкретных материалов по инвестиционным трендам.\n\n## Выводы\n\nНа основе предоставленных источников **невозможно надежно определить основные тренды финансирования fintech в 2025 году**. Список содержит только ссылки на организации и разделы публикаций, но не содержит фактических данных, аналитических выводов или статистики.\n\nДля полноценного ответа потребовались бы конкретные выдержки из отчетов, например: объемы инвестиций, динамика по сравнению с 2024 годом, распределение по регионам, стадиям финансирования и сегментам fintech.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 868,
+      "output_tokens": 726,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.8245614035087719,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "How do PSD2 and open banking rules affect fintech product strategy in Europe?",
+      "answer": "## Ключевые моменты\n\n1. **Недостаточно данных для содержательного анализа PSD2 и open banking.**  \n   В предоставленных источниках указаны только названия организаций и ссылки на их сайты — World Bank, WEF, IMF, BIS, HSBC, Barclays, S&P Global, Accenture и др. [S1]–[S15]. Конкретных выдержек, тезисов, данных или публикаций о PSD2, open banking и их влиянии на стратегию финтех-продуктов в Европе в материалах нет.\n\n2. **Нельзя надежно описать влияние на продуктовую стратегию без фактической базы.**  \n   Чтобы объективно ответить, нужны данные о:\n   - требованиях PSD2;\n   - правилах доступа к банковским счетам через API;\n   - регулировании согласия клиента;\n   - требованиях к безопасности и аутентификации;\n   - влиянии на бизнес-модели финтехов;\n   - примерах европейских банков или финтех-компаний.\n\n3. **Предоставленные источники потенциально релевантны, но не содержат конкретной информации в запросе.**  \n   Например, BIS имеет раздел по fintech [S8], HSBC и Barclays публикуют материалы о цифровых инновациях и банковских инсайтах [S5], [S6], Accenture — аналитические материалы [S9], но в предоставленном наборе нет конкретного текста, который можно было бы использовать для вывода.\n\n## Примеры того, что нельзя утверждать на основе этих источников\n\nНа основании только предоставленных ссылок нельзя достоверно утверждать, что PSD2:\n\n- усиливает конкуренцию между банками и финтехами;\n- заставляет финтехи строить продукты вокруг API-доступа;\n- меняет подход к клиентскому согласию и управлению данными;\n- создает новые возможности для платежных сервисов;\n- повышает требования к комплаенсу и кибербезопасности.\n\nЭти утверждения могут быть верными в общем контексте, но они **не подтверждены предоставленными материалами** [S1]–[S15].\n\n## Возможные точки зрения — при наличии данных\n\nЕсли бы были предоставлены конкретные материалы, анализ можно было бы построить по нескольким перспективам:\n\n- **Финтех-компании:** как регулирование влияет на продуктовые функции, интеграции, API, монетизацию и пользовательский опыт.\n- **Банки:** как open banking меняет роль банков как поставщиков инфраструктуры и данных.\n- **Регуляторы:** как PSD2 балансирует инновации, конкуренцию, безопасность и защиту потребителей.\n- **Инвесторы:** как регулирование влияет на привлекательность финтех-бизнес-моделей.\n\nОднако в текущем наборе источников таких данных нет.\n\n## Выводы\n\n- На основе предоставленных источников невозможно дать полноценный ответ на вопрос: **«Как PSD2 и правила open banking влияют на продуктовую стратегию финтехов в Европе?»**\n- Источники представлены только как ссылки на организации и тематические страницы, без конкретного содержания о PSD2 или open banking [S1]–[S15].\n- Для корректного анализа нужны релевантные выдержки из документов регуляторов, банковских исследований или аналитических отчетов, прямо описывающих PSD2, open banking и европейский финтех-рынок.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 874,
+      "output_tokens": 964,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.5208333333333334,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "What operational and credit risks should a neobank monitor when launching lending products?",
+      "answer": "## Ключевые пункты\n\n1. **Информации недостаточно для содержательного ответа.**  \n   В предоставленных источниках указаны только названия организаций и ссылки — World Bank [S1], WEF [S2], Payments Association [S3], IMF [S4], BIS fintech topic page [S8], Accenture [S9], Goldman Sachs AI insights [S11] и др. — но нет выдержек, данных или тезисов о рисках нео-банковского кредитования.\n\n2. **Нельзя объективно перечислить операционные и кредитные риски, опираясь только на эти материалы.**  \n   Поскольку источники не содержат конкретного текста о запуске lending products, скоринге, collections, fraud, underwriting, capital adequacy, loan-loss provisioning или operational resilience, я не могу корректно утверждать, какие именно риски выделяют эти организации.\n\n3. **Можно лишь отметить, какие источники потенциально релевантны для такой темы.**  \n   Например, BIS имеет раздел по fintech [S8], IMF и World Bank обычно публикуют материалы по финансовой стабильности и регулированию [S4], [S1], Payments Association — по платежной инфраструктуре [S3], а банковские и консалтинговые источники могут содержать практические обзоры цифровых финансов [S5]–[S14]. Но конкретные выводы из них в предоставленном наборе отсутствуют.\n\n## Примеры того, чего не хватает\n\nЧтобы ответить на вопрос о рисках запуска кредитных продуктов нео-банком, нужны источники с содержанием, например:\n\n- описание рисков цифрового кредитования;\n- требования к кредитному скорингу и управлению портфелем;\n- данные о дефолтах, fraud, model risk, cyber risk;\n- рекомендации регуляторов по fintech lending;\n- кейсы банков или финтех-компаний.\n\nВ предоставленных источниках таких фрагментов нет — есть только ссылки на сайты [S1]–[S15].\n\n## Выводы\n\n- На основании предоставленных источников **невозможно надежно перечислить операционные и кредитные риски**, которые должен мониторить нео-банк при запуске кредитных продуктов.  \n- Для корректного ответа нужно предоставить конкретные отчеты, статьи или выдержки из источников, например из BIS, IMF, World Bank, Payments Association или банковских аналитических материалов [S1], [S3], [S4], [S8].  \n- Если вы пришлете текстовые выдержки или конкретные документы, я смогу структурировать риски по категориям: операционные, кредитные, модельные, регуляторные, технологические и риски мошенничества — строго с привязкой к источникам.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 874,
+      "output_tokens": 966,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.7301587301587301,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "How are payment companies reducing fraud while meeting compliance requirements?",
+      "answer": "## Ключевые моменты\n\n- В предоставленных источниках указаны только названия организаций и ссылки на их сайты — например, World Bank [S1], WEF [S2], Payments Association [S3], IMF [S4], BIS [S8], HSBC [S5], Barclays [S6] и другие.\n- Конкретной информации о том, **какими именно методами платежные компании снижают мошенничество и одновременно соблюдают требования комплаенса**, в предоставленных материалах нет.\n- Поэтому на основании только этих источников нельзя достоверно описать конкретные технологии, процессы или практики, такие как мониторинг транзакций, KYC/AML, поведенческая аналитика, искусственный интеллект, токенизация или обмен данными между участниками рынка.\n\n## Примеры\n\n- Источник Payments Association [S3] потенциально может содержать отраслевые материалы о платежах и борьбе с мошенничеством, но в предоставленном фрагменте есть только ссылка на сайт, без содержания.\n- BIS [S8] может быть релевантен для тем финтеха, регулирования и платежных систем, но конкретных выводов или данных в предоставленном тексте нет.\n- IMF [S4] и World Bank [S1] могут рассматривать вопросы финансовой стабильности, регулирования и инклюзии, однако в предоставленных источниках отсутствуют детали по антифрод-практикам платежных компаний.\n- HSBC [S5], Barclays [S6], Goldman Sachs [S11], Morgan Stanley [S14], Accenture [S9] и другие источники могут публиковать мнения о цифровых инновациях, ИИ и финтехе, но конкретные сведения из этих публикаций не приведены.\n\n## Разные точки зрения\n\n- **Регуляторная перспектива:** источники вроде BIS, IMF и World Bank могли бы рассматривать баланс между безопасностью платежей, финансовой стабильностью и соблюдением требований регулирования [S1], [S4], [S8].\n- **Отраслевая перспектива:** Payments Association могла бы описывать практические подходы платежных компаний к снижению мошенничества [S3].\n- **Банковская и инвестиционная перспектива:** HSBC, Barclays, UBS, Goldman Sachs и Morgan Stanley могли бы рассматривать влияние цифровых инноваций и технологий на платежную безопасность и комплаенс [S5], [S6], [S10], [S11], [S14].\n- **Консалтинговая перспектива:** Accenture могла бы освещать операционные и технологические модели для борьбы с мошенничеством [S9].\n\nОднако это лишь оценка релевантности источников по их названию и тематике; конкретных утверждений из них в предоставленных данных нет.\n\n## Выводы\n\nНа основании предоставленных источников нельзя надежно ответить, **как именно платежные компании уменьшают мошенничество при соблюдении комплаенс-требований**. Для полноценного анализа нужны конкретные выдержки, отчеты или статьи из указанных организаций. Сейчас доступна только информация о самих источниках и ссылках на них, без фактического содержания.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 866,
+      "output_tokens": 836,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.5753424657534246,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "What are the most important AI use cases and risks in fintech?",
+      "answer": "## Ключевые пункты\n\n- По предоставленным источникам нельзя достоверно определить «самые важные» варианты использования AI в финтехе и связанные риски, потому что в материалах указаны только названия организаций и ссылки, без содержательных выдержек, данных, выводов или классификаций [S1]–[S15].\n- Среди источников есть релевантные площадки по теме финтеха, цифровых инноваций, AI и технологических изменений: BIS по финтеху [S8], HSBC по digital innovation [S5], Goldman Sachs по artificial intelligence [S11], a16z по fintech [S13], Morgan Stanley по technology disruption [S14]. Однако конкретные тезисы из этих публикаций не приведены.\n- Поэтому любые утверждения о конкретных use cases — например, кредитный скоринг, антифрод, персонализация, комплаенс или автоматизация поддержки — были бы основаны на внешних знаниях, а не на предоставленных источниках. В рамках заданных правил я не могу их использовать.\n\n## Примеры\n\nНа основе предоставленного списка можно лишь указать, какие источники потенциально могли бы содержать информацию:\n\n- BIS имеет раздел по финтеху, что может быть релевантно для регуляторных и инфраструктурных аспектов AI в финансовых технологиях [S8].\n- Goldman Sachs имеет раздел об artificial intelligence, что потенциально связано с применением AI в финансовом секторе [S11].\n- HSBC публикует материалы по digital innovation, что может затрагивать цифровые банковские и финтех-темы [S5].\n- a16z имеет раздел fintech, потенциально отражающий взгляд венчурного капитала и стартап-экосистемы [S13].\n- IMF и World Bank могут быть релевантны для макрофинансовых, инклюзивных и регуляторных аспектов, но конкретные материалы не предоставлены [S1], [S4].\n\n## Разные точки зрения\n\n- **Регуляторная и системная перспектива** могла бы быть представлена BIS, IMF и World Bank [S1], [S4], [S8].\n- **Банковская перспектива** могла бы быть представлена HSBC, Barclays, UBS, Goldman Sachs и Morgan Stanley [S5], [S6], [S10], [S11], [S14], [S15].\n- **Индустриальная и венчурная перспектива** могла бы быть представлена Accenture, Payments Association, SVB и a16z [S3], [S9], [S12], [S13].\n- Но в предоставленных данных нет конкретных выводов этих организаций, поэтому сравнить их позиции по существу невозможно.\n\n## Выводы\n\nПредоставленной информации недостаточно, чтобы объективно назвать наиболее важные AI use cases и риски в финтехе. Для полноценного ответа нужны выдержки или тезисы из отчетов/публикаций по указанным ссылкам: например, конкретные разделы о применении AI, рисках моделей, регулировании, операционной устойчивости, кибербезопасности, защите данных и влиянии на клиентов.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 870,
+      "output_tokens": 963,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "How is stablecoin regulation changing the crypto payments market?",
+      "answer": "## Ключевые моменты\n\n1. **Недостаточно данных для содержательного анализа.**  \n   В предоставленных источниках указаны только названия организаций и ссылки на их сайты — World Bank, IMF, BIS, WEF, Payments Association, HSBC, Barclays, S&P Global и др. [S1]–[S15]. Конкретных тезисов, отчетов, статистики или выдержек о регулировании стейблкоинов и рынке криптоплатежей в материалах нет.\n\n2. **Нельзя объективно утверждать, как именно меняется рынок.**  \n   Чтобы ответить на вопрос «как регулирование стейблкоинов меняет рынок криптоплатежей», нужны данные о:\n   - новых законах и нормативных режимах;\n   - требованиях к резервам стейблкоинов;\n   - лицензировании эмитентов;\n   - правилах AML/KYC;\n   - влиянии на банки, финтех-компании, платежные сети и криптобиржи;\n   - изменении объемов транзакций и структуры участников рынка.  \n   В предоставленном наборе источников такой информации нет.\n\n3. **Источники потенциально релевантны, но не содержат конкретики в переданном виде.**  \n   Например, BIS имеет раздел по финтеху [S8], IMF и World Bank часто публикуют материалы о финансовой стабильности и платежных системах [S1], [S4], WEF — о цифровых финансах [S2], Payments Association — о платежной индустрии [S3]. Однако в предоставленных данных нет конкретных публикаций или фактов, на которые можно опереться.\n\n## Примеры\n\nНа основании переданных источников можно лишь сказать следующее:\n\n- **BIS** указан как источник по теме финтеха [S8], но нет конкретного материала о стейблкоинах.  \n- **IMF** указан как источник [S4], но нет выдержек о рисках или регулировании стейблкоинов.  \n- **Payments Association** указан как источник по платежной отрасли [S3], но нет данных о влиянии регулирования на криптоплатежи.  \n- **Банковские и аналитические источники** — HSBC, Barclays, S&P Global, UBS, Goldman Sachs, Morgan Stanley — перечислены [S5]–[S7], [S10]–[S11], [S14]–[S15], но без конкретных аналитических выводов.\n\n## Выводы\n\n- На основе предоставленных источников **нельзя достоверно описать**, как регулирование стейблкоинов меняет рынок криптоплатежей.  \n- Можно лишь отметить, что список источников включает международные финансовые организации, банки и аналитические компании, которые потенциально могут освещать эту тему [S1]–[S15].  \n- Для полноценного ответа нужны конкретные документы, например отчеты BIS, IMF, World Bank, WEF или отраслевые исследования Payments Association с данными о стейблкоинах, регулировании и платежном рынке.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 866,
+      "output_tokens": 825,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.6,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "Какие ключевые регуляторные тренды ЦБ РФ влияют на российские банки и финтех-компании?",
+      "answer": "## Ключевые моменты\n\n- В предоставленных источниках нет конкретной информации о регуляторных трендах Банка России / ЦБ РФ, влияющих на российские банки и финтех-компании.\n- Источники представляют собой общие страницы международных организаций, банков, консалтинговых компаний и исследовательских платформ — например World Bank [S1], IMF [S4], BIS [S8], WEF [S2], S&P Global [S7], Accenture [S9], HSBC [S5], Barclays [S6].\n- На основании этих источников нельзя объективно перечислить именно российские регуляторные тренды ЦБ РФ, такие как регулирование цифрового рубля, открытых API, киберустойчивости, антифрода, биометрии, маркетплейсов, цифровых финансовых активов или надзора за экосистемами — потому что такие сведения в предоставленных материалах отсутствуют.\n\n## Примеры того, чего не хватает для ответа\n\nДля полноценного анализа потребовались бы источники, содержащие данные именно по регулированию Банка России, например:\n\n- официальные документы и доклады ЦБ РФ;\n- стратегии развития финансового рынка РФ;\n- нормативные акты и указания Банка России;\n- материалы о регулировании финтеха, цифрового рубля, СБП, открытых API, антифрод-механизмов и цифровых финансовых активов.\n\nВ текущем наборе источников есть только ссылки на международные и корпоративные исследовательские ресурсы, например BIS по теме финтеха [S8], IMF [S4], World Bank [S1], WEF [S2], Payments Association [S3], но без приведённых выдержек или данных о России и ЦБ РФ.\n\n## Разные точки зрения\n\n- **С международной перспективы** источники вроде BIS, IMF, World Bank и WEF могут быть полезны для анализа глобальных трендов регулирования финтеха и банковского сектора [S1], [S2], [S4], [S8].\n- **С точки зрения банков и индустрии** материалы HSBC, Barclays, UBS, Goldman Sachs, Morgan Stanley, Accenture и S&P Global могут отражать взгляды финансовых организаций и аналитиков на цифровые инновации, AI, финтех и технологическую трансформацию [S5], [S6], [S7], [S9], [S10], [S11], [S14], [S15].\n- **Однако для вопроса о ЦБ РФ** этих данных недостаточно: источники не содержат конкретных сведений о российской регуляторной повестке.\n\n## Выводы\n\nНа основе предоставленных источников невозможно достоверно назвать ключевые регуляторные тренды ЦБ РФ для российских банков и финтех-компаний. Информации недостаточно.\n\nДля корректного ответа нужны дополнительные источники непосредственно от Банка России или материалы, где анализируется регулирование российского финансового рынка.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 896,
+      "output_tokens": 850,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.18055555555555555,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "How does embedded finance change distribution and unit economics for fintech providers?",
+      "answer": "## Ключевые пункты\n\n1. **Недостаточно данных для содержательного ответа.**  \n   В предоставленных источниках указаны только названия организаций и ссылки на их сайты или разделы публикаций: World Bank, WEF, IMF, BIS, HSBC, Barclays, S&P Global, Accenture, UBS, Goldman Sachs, SVB, a16z, Morgan Stanley и др. [S1]–[S15].  \n   Однако в источниках нет конкретных выдержек, тезисов, данных или аналитики об **embedded finance**, дистрибуции или unit economics fintech-провайдеров.\n\n2. **Нельзя объективно утверждать, как именно embedded finance меняет дистрибуцию и экономику продукта, без дополнительных материалов.**  \n   Чтобы ответить корректно, нужны конкретные публикации или фрагменты из источников, например из разделов BIS по fintech [S8], Accenture insights [S9], Goldman Sachs AI/fintech insights [S11], a16z fintech [S13] или банковских аналитических разделов HSBC, Barclays, UBS, Morgan Stanley [S5], [S6], [S10], [S14], [S15].\n\n3. **Предоставленные ссылки подтверждают только наличие релевантных площадок для поиска аналитики.**  \n   Например, BIS имеет раздел по fintech [S8], a16z — раздел по fintech [S13], Accenture — раздел с аналитикой [S9], но сами выводы о встроенных финансах из этих источников в запросе не приведены.\n\n## Примеры\n\nНа основе предоставленных данных **невозможно привести проверенные примеры** того, как embedded finance влияет на:\n\n- стоимость привлечения клиента;\n- конверсию;\n- маржинальность;\n- распределение доходов между платформой и fintech-провайдером;\n- операционные расходы;\n- риски комплаенса;\n- lifetime value клиента.\n\nТакие примеры могли бы быть взяты из аналитики финансовых институтов, консалтинговых компаний или международных организаций, указанных в списке источников [S1]–[S15], но конкретные материалы не предоставлены.\n\n## Выводы\n\n- По предоставленным источникам нельзя надежно ответить на вопрос: **“How does embedded finance change distribution and unit economics for fintech providers?”**\n- Доступны только ссылки на организации и их разделы, но не сами данные или аргументы.\n- Для объективного анализа нужны конкретные выдержки из публикаций, где обсуждаются embedded finance, дистрибуционные модели, CAC, take rate, маржа, revenue sharing, compliance costs и другие показатели unit economics.\n- Если вы предоставите фрагменты отчетов или статей из указанных источников, я смогу структурировать ответ по влиянию embedded finance на дистрибуцию и экономику fintech-провайдеров с точными ссылками на [S1]–[S15].",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 870,
+      "output_tokens": 843,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.8297872340425532,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "What risks and growth drivers define the BNPL market?",
+      "answer": "## Ключевые пункты\n\n- Предоставленные источники содержат только названия организаций и ссылки на их сайты: World Bank [S1], WEF [S2], Payments Association [S3], IMF [S4], HSBC [S5], Barclays [S6], S&P Global [S7], BIS [S8], Accenture [S9], UBS [S10], Goldman Sachs [S11], SVB [S12], a16z [S13], Morgan Stanley [S14], [S15].\n- В самих предоставленных фрагментах нет фактической информации о рынке BNPL — Buy Now, Pay Later: нет данных о рисках, драйверах роста, регулировании, просрочках, поведении потребителей, доходности или конкуренции.\n- Поэтому на основе только этих источников невозможно объективно определить, какие именно риски и факторы роста характеризуют BNPL-рынок.\n\n## Примеры того, чего не хватает\n\nДля полноценного ответа потребовались бы конкретные материалы или выдержки, например:\n\n- отчёты BIS о fintech и потребительском кредитовании [S8];\n- публикации IMF или World Bank о финансовой стабильности и защите потребителей [S1], [S4];\n- отраслевые обзоры Payments Association по платёжным моделям [S3];\n- аналитика банков или консалтинговых компаний о цифровых платежах, кредитных рисках и потребительском спросе [S5], [S6], [S9], [S11].\n\nОднако в предоставленных данных есть только общие ссылки, без содержания.\n\n## Выводы\n\n- Информации недостаточно, чтобы надёжно ответить на вопрос: «Какие риски и драйверы роста определяют рынок BNPL?»\n- Можно сказать лишь, что среди предоставленных источников есть потенциально релевантные организации — например BIS, IMF, World Bank, Payments Association, Accenture и крупные банки [S1], [S3], [S4], [S8], [S9].\n- Но без конкретных текстов, цифр или выводов из этих источников нельзя делать утверждения о BNPL-рынке, не выходя за рамки предоставленной информации.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 866,
+      "output_tokens": 629,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.6538461538461539,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "What cybersecurity threats are most material for fintech companies and digital banks?",
+      "answer": "## Ключевые моменты\n\n- В предоставленных источниках есть только перечень организаций и ссылок на их сайты/разделы — World Bank, WEF, IMF, BIS, HSBC, Barclays, S&P Global, Accenture, Goldman Sachs и др. [S1]–[S15].\n- В самих предоставленных фрагментах **нет конкретной информации** о видах киберугроз для финтех-компаний и цифровых банков.\n- Поэтому на основе только этих источников нельзя достоверно определить, какие угрозы являются «наиболее существенными» или ранжировать их по материальности.\n\n## Примеры того, чего не хватает\n\nДля полноценного ответа нужны данные из отчетов или публикаций, например:\n\n- перечень киберугроз для финтеха и банков;\n- оценки финансового ущерба;\n- статистика инцидентов;\n- регуляторные приоритеты;\n- сравнение угроз для традиционных банков, необанков, платежных компаний и крипто/DeFi-платформ.\n\nВ предоставленных материалах таких сведений нет: указаны только общие источники и ссылки, например BIS по теме fintech [S8], IMF [S4], World Bank [S1], WEF [S2], Payments Association [S3], но без содержания конкретных публикаций.\n\n## Выводы\n\n- **Информации недостаточно**, чтобы объективно назвать наиболее материальные киберугрозы для финтех-компаний и цифровых банков.\n- Можно сказать только, что перечисленные источники потенциально релевантны для анализа киберрисков в финансовом секторе, особенно BIS, IMF, World Bank, WEF и Payments Association [S1]–[S4], [S8].\n- Для точного ответа нужны конкретные выдержки из отчетов или статей этих организаций.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "World Bank",
+          "url": "https://www.worldbank.org/en/",
+          "content": "World Bank https://www.worldbank.org/en/"
+        },
+        {
+          "marker": "",
+          "title": "WEF",
+          "url": "https://www.weforum.org/publications/",
+          "content": "WEF https://www.weforum.org/publications/"
+        },
+        {
+          "marker": "",
+          "title": "Payments Association",
+          "url": "https://thepaymentsassociation.org",
+          "content": "Payments Association https://thepaymentsassociation.org"
+        },
+        {
+          "marker": "",
+          "title": "IMF",
+          "url": "https://www.imf.org/en/home",
+          "content": "IMF https://www.imf.org/en/home"
+        },
+        {
+          "marker": "",
+          "title": "HSBC",
+          "url": "https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation",
+          "content": "HSBC https://www.hsbc.com/news-and-views/views/hsbc-views?topic=digital-innovation"
+        },
+        {
+          "marker": "",
+          "title": "Barclays",
+          "url": "https://home.barclays/insights/barclays-insights/",
+          "content": "Barclays https://home.barclays/insights/barclays-insights/"
+        },
+        {
+          "marker": "",
+          "title": "S&P Global",
+          "url": "https://www.spglobal.com/en/research-insights/special-reports",
+          "content": "S&P Global https://www.spglobal.com/en/research-insights/special-reports"
+        },
+        {
+          "marker": "",
+          "title": "BIS",
+          "url": "https://www.bis.org/topic/fintech.htm",
+          "content": "BIS https://www.bis.org/topic/fintech.htm"
+        },
+        {
+          "marker": "",
+          "title": "Accenture",
+          "url": "https://www.accenture.com/us-en/insights-index",
+          "content": "Accenture https://www.accenture.com/us-en/insights-index"
+        },
+        {
+          "marker": "",
+          "title": "UBS",
+          "url": "https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html",
+          "content": "UBS https://www.ubs.com/global/en/investment-bank/insights-and-data/global-research.html"
+        },
+        {
+          "marker": "",
+          "title": "Goldman Sachs",
+          "url": "https://www.goldmansachs.com/insights/artificial-intelligence",
+          "content": "Goldman Sachs https://www.goldmansachs.com/insights/artificial-intelligence"
+        },
+        {
+          "marker": "",
+          "title": "SVB",
+          "url": "https://www.svb.com/trends-insights/perspectives/",
+          "content": "SVB https://www.svb.com/trends-insights/perspectives/"
+        },
+        {
+          "marker": "",
+          "title": "a16z",
+          "url": "https://a16z.com/fintech/",
+          "content": "a16z https://a16z.com/fintech/"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley Tech",
+          "url": "https://www.morganstanley.com/insights/topics/technology-disruption",
+          "content": "Morgan Stanley Tech https://www.morganstanley.com/insights/topics/technology-disruption"
+        },
+        {
+          "marker": "",
+          "title": "Morgan Stanley PF",
+          "url": "https://www.morganstanley.com/insights/topics/personal-finance",
+          "content": "Morgan Stanley PF https://www.morganstanley.com/insights/topics/personal-finance"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 870,
+      "output_tokens": 591,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "openrouter",
+        "openrouter_model": "gpt-5.5",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.875,
+      "answer_relevance": 0.0
+    }
+  ]
+}

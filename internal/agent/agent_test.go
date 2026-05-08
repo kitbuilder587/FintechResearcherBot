@@ -1,9 +1,13 @@
 package agent
 
 import (
+	"context"
 	"testing"
 
+	"github.com/kitbuilder587/fintech-bot/internal/domain"
+	"github.com/kitbuilder587/fintech-bot/internal/llm/mock"
 	"github.com/kitbuilder587/fintech-bot/internal/search"
+	"go.uber.org/zap"
 )
 
 func TestAgentType_IsValid(t *testing.T) {
@@ -147,5 +151,38 @@ func TestBaseAgent_Expertise(t *testing.T) {
 		if got[i] != exp {
 			t.Errorf("Expertise()[%d] = %v, expected %v", i, got[i], exp)
 		}
+	}
+}
+
+func TestBaseAgent_ProcessStructuredOutput(t *testing.T) {
+	t.Setenv("AGENT_STRUCTURED_OUTPUT_ENABLED", "true")
+
+	llmClient := mock.New().WithResponse(`{
+		"answer": "Funding is selective [S1].",
+		"claims": ["Funding is selective [S1]"],
+		"source_refs": ["[S1]", "[S1]"],
+		"confidence": 0.82
+	}`)
+	agent := NewBaseAgent("market", []string{"funding"}, []string{"funding"}, "system", llmClient, zap.NewNop())
+
+	resp, err := agent.Process(context.Background(), AgentRequest{
+		Question: "funding trends",
+		Strategy: domain.StandardStrategy(),
+	})
+	if err != nil {
+		t.Fatalf("Process() error = %v", err)
+	}
+
+	if resp.Content != "Funding is selective [S1]." {
+		t.Fatalf("content = %q", resp.Content)
+	}
+	if resp.Confidence != 0.82 {
+		t.Fatalf("confidence = %v", resp.Confidence)
+	}
+	if len(resp.SourceRefs) != 1 || resp.SourceRefs[0] != "[S1]" {
+		t.Fatalf("source refs = %v", resp.SourceRefs)
+	}
+	if len(resp.Insights) != 1 || resp.Insights[0] != "Funding is selective [S1]" {
+		t.Fatalf("insights = %v", resp.Insights)
 	}
 }

@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-z-giga-stable-no-coord-20260506-1307",
+  "strategy": "standard",
+  "change": "gigachat fixed searxng direct analyze no critic no expansion no world model judged by gpt-5.5",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "question_count": 10,
+  "avg_faithfulness": 0.17546007259575613,
+  "avg_answer_relevance": 0.07875174282304996,
+  "avg_input_tokens": 927,
+  "avg_output_tokens": 397,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

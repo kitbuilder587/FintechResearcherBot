@@ -13,9 +13,12 @@ import (
 	"github.com/kitbuilder587/fintech-bot/internal/cache/memory"
 	"github.com/kitbuilder587/fintech-bot/internal/domain"
 	llmMock "github.com/kitbuilder587/fintech-bot/internal/llm/mock"
+	"github.com/kitbuilder587/fintech-bot/internal/metrics"
 	"github.com/kitbuilder587/fintech-bot/internal/repository"
 	"github.com/kitbuilder587/fintech-bot/internal/search"
 	searchMock "github.com/kitbuilder587/fintech-bot/internal/search/mock"
+	"github.com/prometheus/client_golang/prometheus"
+	dto "github.com/prometheus/client_model/go"
 )
 
 type MockCritic struct {
@@ -232,6 +235,79 @@ func TestQueryService_CacheHit(t *testing.T) {
 	})
 	if err != nil {
 		t.Errorf("Second Process() should use cache, got error = %v", err)
+	}
+}
+
+func TestQueryService_RecordsAnswerQualityMetrics(t *testing.T) {
+	logger := zap.NewNop()
+
+	sourceRepo := repository.NewMockSourceRepository()
+	searchClient := searchMock.New()
+	llmClient := llmMock.New()
+	cacheClient := memory.New()
+	metricsRegistry := prometheus.NewRegistry()
+	metricsCollector := metrics.NewWithRegisterer(metricsRegistry)
+
+	sourceRepo.Create(context.Background(), &domain.Source{
+		UserID: 1,
+		URL:    "https://example.com",
+		Name:   "Example",
+	})
+	searchClient.Results = []search.SearchResult{
+		{Title: "Test", URL: "https://example.com/1", Content: "Revenue data"},
+	}
+	llmClient.Response = "Revenue grew by 12% [S1], while margin reached 5%."
+
+	svc := NewQueryService(QueryServiceDeps{
+		Sources: sourceRepo,
+		LLM:     llmClient,
+		Search:  searchClient,
+		Cache:   cacheClient,
+		Logger:  logger,
+		Metrics: metricsCollector,
+	})
+
+	resp, err := svc.Process(context.Background(), &domain.QueryRequest{
+		UserID:   1,
+		Text:     "test query",
+		Strategy: domain.QuickStrategy(),
+	})
+	if err != nil {
+		t.Fatalf("Process() error = %v", err)
+	}
+	if resp.Text != llmClient.Response {
+		t.Fatalf("response text = %q, want mock answer", resp.Text)
+	}
+
+	assertHistogramSampleSum(t, observerMetric(t, metricsCollector.AnswerCitationValid.WithLabelValues("quick")), 1)
+	assertHistogramSampleSum(t, observerMetric(t, metricsCollector.AnswerCitationCover.WithLabelValues("quick")), 0.5)
+	assertHistogramSampleSum(t, observerMetric(t, metricsCollector.AnswerUncitedNumbers.WithLabelValues("quick")), 1)
+}
+
+func observerMetric(t *testing.T, observer prometheus.Observer) prometheus.Metric {
+	t.Helper()
+
+	metric, ok := observer.(prometheus.Metric)
+	if !ok {
+		t.Fatal("observer does not implement prometheus.Metric")
+	}
+	return metric
+}
+
+func assertHistogramSampleSum(t *testing.T, metric prometheus.Metric, want float64) {
+	t.Helper()
+
+	dtoMetric := &dto.Metric{}
+	if err := metric.Write(dtoMetric); err != nil {
+		t.Fatalf("write metric: %v", err)
+	}
+
+	histogram := dtoMetric.GetHistogram()
+	if histogram.GetSampleCount() != 1 {
+		t.Fatalf("histogram count = %v, want 1", histogram.GetSampleCount())
+	}
+	if histogram.GetSampleSum() != want {
+		t.Fatalf("histogram sum = %v, want %v", histogram.GetSampleSum(), want)
 	}
 }
 

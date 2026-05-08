@@ -44,7 +44,6 @@ func New(cfg Config, logger *zap.Logger) *Client {
 }
 
 type tavilyRequest struct {
-	APIKey            string   `json:"api_key"`
 	Query             string   `json:"query"`
 	IncludeDomains    []string `json:"include_domains,omitempty"`
 	ExcludeDomains    []string `json:"exclude_domains,omitempty"`
@@ -79,7 +78,6 @@ func (c *Client) Search(ctx context.Context, req search.SearchRequest) (*search.
 	}
 
 	tavilyReq := tavilyRequest{
-		APIKey:            c.apiKey,
 		Query:             req.Query,
 		IncludeDomains:    req.IncludeDomains,
 		ExcludeDomains:    req.ExcludeDomains,
@@ -113,6 +111,9 @@ func (c *Client) Search(ctx context.Context, req search.SearchRequest) (*search.
 			return nil, fmt.Errorf("create request: %w", err)
 		}
 		httpReq.Header.Set("Content-Type", "application/json")
+		if c.apiKey != "" {
+			httpReq.Header.Set("Authorization", "Bearer "+c.apiKey)
+		}
 
 		resp, err := c.client.Do(httpReq)
 		if err != nil {

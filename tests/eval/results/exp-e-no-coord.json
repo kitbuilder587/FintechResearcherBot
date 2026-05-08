@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-e-no-coord-20260505-1955",
+  "strategy": "standard",
+  "change": "disable coordinator use direct analyze",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.40285716765463153,
+  "avg_answer_relevance": 0.0,
+  "avg_input_tokens": 872,
+  "avg_output_tokens": 895,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

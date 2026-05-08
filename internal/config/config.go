@@ -13,13 +13,14 @@ var (
 	ErrMissingToken    = errors.New("TELEGRAM_BOT_TOKEN is required")
 	ErrMissingDB       = errors.New("DATABASE_URL is required")
 	ErrInvalidStrategy = errors.New("invalid default strategy")
+	ErrInvalidSearch   = errors.New("invalid search provider")
 )
 
 type Config struct {
 	Telegram        TelegramConfig
 	Database        DatabaseConfig
 	LLM             LLMConfig
-	Tavily          TavilyConfig
+	Search          SearchConfig
 	Log             LogConfig
 	Timeouts        TimeoutConfig
 	Cache           CacheConfig
@@ -62,6 +63,17 @@ type TavilyConfig struct {
 	Timeout time.Duration
 }
 
+type SearXNGConfig struct {
+	BaseURL string
+	Timeout time.Duration
+}
+
+type SearchConfig struct {
+	Provider string
+	Tavily   TavilyConfig
+	SearXNG  SearXNGConfig
+}
+
 type LogConfig struct {
 	Level string
 }
@@ -93,7 +105,7 @@ func Load() (*Config, error) {
 			OpenRouter: OpenRouterConfig{
 				APIKey:  os.Getenv("OPENROUTER_API_KEY"),
 				Model:   getEnvOrDefault("OPENROUTER_MODEL", "deepseek/deepseek-chat"),
-				BaseURL: getEnvOrDefault("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
+				BaseURL: getEnvOrDefaultAny([]string{"OPENROUTER_BASE_URL", "OPENROUTER_API_URL"}, "https://openrouter.ai/api/v1"),
 			},
 			GigaChat: GigaChatConfig{
 				AuthKey:      os.Getenv("GIGACHAT_AUTH_KEY"),
@@ -104,10 +116,17 @@ func Load() (*Config, error) {
 				BaseURL:      getEnvOrDefault("GIGACHAT_BASE_URL", "https://gigachat.devices.sberbank.ru/api/v1"),
 			},
 		},
-		Tavily: TavilyConfig{
-			APIKey:  os.Getenv("TAVILY_API_KEY"),
-			BaseURL: getEnvOrDefault("TAVILY_BASE_URL", "https://api.tavily.com"),
-			Timeout: time.Duration(getEnvIntOrDefault("TAVILY_TIMEOUT_SEC", 30)) * time.Second,
+		Search: SearchConfig{
+			Provider: getEnvOrDefault("SEARCH_PROVIDER", "searxng"),
+			Tavily: TavilyConfig{
+				APIKey:  os.Getenv("TAVILY_API_KEY"),
+				BaseURL: getEnvOrDefault("TAVILY_BASE_URL", "https://api.tavily.com"),
+				Timeout: time.Duration(getEnvIntOrDefault("TAVILY_TIMEOUT_SEC", 30)) * time.Second,
+			},
+			SearXNG: SearXNGConfig{
+				BaseURL: getEnvOrDefault("SEARXNG_BASE_URL", "http://searxng:8080"),
+				Timeout: time.Duration(getEnvIntOrDefault("SEARXNG_TIMEOUT_SEC", 30)) * time.Second,
+			},
 		},
 		Log: LogConfig{
 			Level: getEnvOrDefault("LOG_LEVEL", "info"),
@@ -143,12 +162,24 @@ func (c *Config) Validate() error {
 	if !domain.StrategyType(c.DefaultStrategy).IsValid() {
 		return ErrInvalidStrategy
 	}
+	if c.Search.Provider != "" && c.Search.Provider != "searxng" && c.Search.Provider != "tavily" {
+		return ErrInvalidSearch
+	}
 	return nil
 }
 
 func getEnvOrDefault(key, defaultValue string) string {
 	if value := os.Getenv(key); value != "" {
 		return value
+	}
+	return defaultValue
+}
+
+func getEnvOrDefaultAny(keys []string, defaultValue string) string {
+	for _, key := range keys {
+		if value := os.Getenv(key); value != "" {
+			return value
+		}
 	}
 	return defaultValue
 }

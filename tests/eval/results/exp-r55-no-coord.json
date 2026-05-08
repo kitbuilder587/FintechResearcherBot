@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-r55-no-coord-20260506-1124",
+  "strategy": "standard",
+  "change": "gpt-5.5 disable coordinator use direct analyze",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.5",
+  "question_count": 10,
+  "avg_faithfulness": 0.6456751542865189,
+  "avg_answer_relevance": 0.0,
+  "avg_input_tokens": 872,
+  "avg_output_tokens": 819,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

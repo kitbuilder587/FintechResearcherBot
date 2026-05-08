@@ -1,0 +1,17 @@
+{
+  "run_id": "exp-tavily-gigachat-ragas55-20260507-1528",
+  "strategy": "standard",
+  "change": "Tavily search, GigaChat service, gpt-5.5 judge",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "answer_relevance_mode": "llm",
+  "question_count": 10,
+  "avg_faithfulness": 0.2823068463937137,
+  "avg_answer_relevance": 0.8400000000000001,
+  "avg_input_tokens": 25806,
+  "avg_output_tokens": 2807,
+  "avg_llm_requests": 7.0,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

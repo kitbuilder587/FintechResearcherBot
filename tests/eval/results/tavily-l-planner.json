@@ -1,0 +1,17 @@
+{
+  "run_id": "tavily-l-planner-20260507-1923",
+  "strategy": "standard",
+  "change": "Tavily planner before agents no critic",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "answer_relevance_mode": "llm",
+  "question_count": 10,
+  "avg_faithfulness": 0.2812012500415862,
+  "avg_answer_relevance": 0.8200000000000001,
+  "avg_input_tokens": 11564,
+  "avg_output_tokens": 1866,
+  "avg_llm_requests": 5.0,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

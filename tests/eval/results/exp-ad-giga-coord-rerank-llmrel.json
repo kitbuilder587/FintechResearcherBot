@@ -1,0 +1,25 @@
+{
+  "run_id": "exp-ad-giga-coord-rerank-llmrel-20260506-1402",
+  "strategy": "standard",
+  "change": "gigachat fixed searxng rerank coordinator serial judged by gpt-5.4-mini relevance full faithfulness partial",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.4-mini",
+  "answer_relevance_mode": "llm",
+  "metrics": [
+    "relevance",
+    "faithfulness"
+  ],
+  "metric_counts": {
+    "relevance": 10,
+    "faithfulness": 1
+  },
+  "question_count": 10,
+  "scored_question_count": 1,
+  "avg_faithfulness": 0.19047619047619047,
+  "avg_answer_relevance": 0.9199999999999999,
+  "avg_input_tokens": 1480,
+  "avg_output_tokens": 1292,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 0.9,
+  "status": "partial"
+}

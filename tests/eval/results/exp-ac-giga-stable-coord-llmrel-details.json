@@ -1,0 +1,546 @@
+{
+  "run_id": "exp-ac-giga-stable-coord-llmrel-20260506-1335",
+  "rows": [
+    {
+      "question": "What are the main fintech funding trends in 2025?",
+      "answer": "## Основные тенденции финансирования FinTech в 2025 году\n\nЭксперты отмечают несколько ключевых трендов, определяющих будущее FinTech-сектора в ближайшие годы.\n\n### Общие направления развития\n\nСогласно экспертам, основными тенденциями FinTech-финансирования в 2025 году будут:\n\n- **Рост венчурных инвестиций**: ожидается увеличение объемов вложений в стартапы и компании FinTech, особенно в области цифровых платежей, искусственного интеллекта и блокчейн-технологий. Данные показывают рост инвестиций на 30% за последние пять лет (CB Insights, [S2]).\n- **Влияние глобальных игроков**: крупные международные корпорации продолжают укреплять свои позиции на рынке FinTech, интегрируя традиционные банковские услуги с новыми технологиями (Deloitte, [S2]).\n- **Распространение финтеха в развивающихся странах**: эти регионы представляют значительный потенциал роста благодаря высокой потребности в финансовых услугах среди населения (данные отсутствуют).\n- **Активизация слияний и поглощений (M&A)**: число сделок увеличивается, что отражает высокую конкуренцию и стремление крупных игроков усилить свои позиции (Deloitte, [S2]).\n- **Цифровизация и рост выручки**: прогнозируется достижение суммарной выручки FinTech-компаний уровня $7 трлн к концу 2025 года (данные отсутствуют).\n\n### Технологические тренды\n\nОба эксперта подчеркивают важность следующих технологических трендов:\n\n- **Искусственный интеллект и машинное обучение**: используются для улучшения качества предоставляемых услуг, автоматизации принятия решений и повышения персонализации предложений (эксперт 1, [S2]).\n- **Блокчейн-технологии**: применяются не только в криптовалютах, но и в платежных системах, хранении данных и обеспечении прозрачности операций (эксперт 2, [S4]).\n- **Экосистемы и интеграция различных финансовых сервисов**: создание комплексных платформ, предлагающих широкий спектр услуг в рамках одного интерфейса (эксперт 2, [S2]).\n- **Биометрия и виртуальная/дополненная реальность**: технологии биометрической идентификации и VR/AR расширяют пользовательские возможности и повышают удобство взаимодействия с финансовыми услугами (эксперт 2, [S4]).\n- **Устойчивость и экоответственность**: потребители все больше обращают внимание на экологическую политику банков и организаций, выбирая партнеров, поддерживающих устойчивые инициативы (эксперт 2, [S4]).\n- **Автоматизация кредитных решений**: алгоритмы машинного обучения ускоряют процесс одобрения микрокредитов и делают их доступнее для широкой аудитории (эксперт 1, [S2]).\n- **Кибербезопасность**: усиливается значимость защиты личной информации пользователей, разработки новых подходов к мониторингу безопасности (эксперт 2, [S4]).\n\n### Согласие и расхождения\n\nНесмотря на общие прогнозы, эксперты имеют некоторые различия во взглядах:\n\n- Эксперт 1 подчеркивает значение венчурных инвестиций и конкуренции, связанной с ростом M&A, тогда как эксперт 2 добавляет аспекты устойчивости и экологической ответственности.\n- Оба эксперта соглашаются относительно значимости искусственного интеллекта, блокчейн-технологий и автоматизации процессов, однако второй эксперт также выделяет важность виртуальной и дополненной реальности, биометрии и экоустойчивости.\n\nТаким образом, ключевыми направлениями развития FinTech остаются рост инвестиций, усиление влияния глобальных игроков, распространение финтеха в развивающихся странах, увеличение активности M&A и цифровизация финансовых услуг. Технологические тренды включают активное применение искусственного интеллекта, блокчейн-технологий, экосистем и интегрированных решений, а также повышенную важность вопросов кибербезопасности и устойчивости бизнеса.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Main Street Capital Corporation (MAIN) Stock Price, News, Quote ...",
+          "url": "https://finance.yahoo.com/quote/MAIN/",
+          "content": "Find the latest Main Street Capital Corporation (MAIN) stock quote, history, news and other vital information to help you with your stock trading and investing."
+        },
+        {
+          "marker": "",
+          "title": "5 Key Fintech Trends for 2025: Navigating Funding Shifts…",
+          "url": "https://vodworks.com/blogs/fintech-trends/",
+          "content": "This article dives into fintech trends in 2025 and explores the shifting funding landscape, real-time payments advancements, AI Innovation, and more."
+        },
+        {
+          "marker": "",
+          "title": "MAIN Definition & Meaning - Merriam-Webster",
+          "url": "https://www.merriam-webster.com/dictionary/main",
+          "content": "The meaning of MAIN is physical strength : force —used in the phrase with might and main. How to use main in a sentence."
+        },
+        {
+          "marker": "",
+          "title": "Top 8 Fintech Industry Trends And What to Expect in 2026",
+          "url": "https://softjourn.com/insights/top-fintech-industry-trends",
+          "content": "After years of explosive growth fueled by innovation, the fintech industry is maturing, and with that maturity comes a sharper focus on fundamentals over flashy features. This article details the game-changing fintech trends that will…"
+        },
+        {
+          "marker": "",
+          "title": "MAIN | English meaning - Cambridge Dictionary",
+          "url": "https://dictionary.cambridge.org/dictionary/english/main",
+          "content": "MAIN definition: 1. larger, more important, or having more influence than others of the same type: 2. a large pipe…. Learn more."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 2588,
+      "output_tokens": 2109,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 0.8,
+      "answer_relevance_raw": 4.0
+    },
+    {
+      "question": "How do PSD2 and open banking rules affect fintech product strategy in Europe?",
+      "answer": "**Анализ влияния PSD2 и правил открытого банкинга на стратегию финтех-продуктов в Европе**\n\nPSD2 (Payment Services Directive 2) представляет собой законодательный акт Европейского Союза, который существенно изменил подход к предоставлению финансовых услуг через открытые банковские интерфейсы API. Это оказало значительное влияние на развитие инноваций в области финтеха, особенно в контексте создания новых цифровых банковских продуктов и сервисов.\n\n### Влияние PSD2 на стратегии финтех-компаний\n\n1. **Обязанность раскрытия информации о банковских услугах**: \n   Согласно правилам PSD2, банки обязаны предоставлять доступ к своим данным третьим сторонам, что открывает новые возможности для стартапов и финтех-компаний. Финансовые технологии могут интегрироваться с банковскими интерфейсами, создавая более персонализированные и удобные решения для клиентов.\n   \n   Источник: [S2]\n\n2. **Расширение конкуренции и создание экосистемных решений**:\n   Благодаря открытым банковским API, финтех-компании получили возможность создавать комплексные финансовые экосистемы, объединяя различные услуги под одной платформой. Это позволяет предлагать клиентам широкий спектр услуг в одном приложении или сервисе.\n\n3. **Увеличение безопасности и защиты данных**:\n   Для обеспечения безопасности данных пользователей при интеграции различных финансовых сервисов, требования PSD2 включают строгие меры контроля доступа и управления рисками. Компании должны соблюдать стандарты безопасности, такие как SCA (Strong Customer Authentication), чтобы обеспечить защиту конфиденциальной информации клиентов.\n\n   Источник: [S5]\n\n4. **Риски несоответствия законодательству**:\n   Несоблюдение требований PSD2 может привести к серьезным правовым последствиям, включая штрафы и ограничения на деятельность компании. Поэтому финтех-компаниям необходимо внимательно следить за изменениями законодательства и своевременно адаптировать свои продукты и процессы.\n\n### Практические рекомендации для финтех-компаний\n\n1. Регулярное отслеживание изменений в законодательстве и нормативных актах.\n2. Проведение внутреннего аудита compliance процессов и внедрение соответствующих мер безопасности.\n3. Использование сертифицированных провайдеров API и систем аутентификации для обеспечения соответствия стандартам PSD2.\n\n### Инсайты\n\n- **Ключевой инсайт 1:** Открытые банковские API предоставляют компаниям уникальную возможность предложить клиентам комплексное решение, объединяющее несколько финансовых услуг.\n  \n- **Ключевой инсайт 2:** Соблюдение стандартов безопасности является обязательным условием для успешного функционирования финтех-продукта в рамках PSD2.\n  \n- **Ключевой инсайт 3:** Необходимость регулярного мониторинга изменений в регулировании и адаптации бизнес-стратегий является критически важным фактором успеха на европейском рынке финансовых технологий.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Statin side effects: Weigh the benefits and risks - Mayo Clinic",
+          "url": "https://www.mayoclinic.org/diseases-conditions/high-blood-cholesterol/in-depth/statin-side-effects/art-20046013",
+          "content": "Jul 21, 2025 · The body needs cholesterol. But having too much cholesterol in the blood raises the risk of heart attacks and strokes. Statins block an enzyme the liver needs to make cholesterol. This …"
+        },
+        {
+          "marker": "",
+          "title": "Have your say",
+          "url": "https://ec.europa.eu/info/law/better-regulation/",
+          "content": "European Commission - Have your say"
+        },
+        {
+          "marker": "",
+          "title": "Restless legs syndrome - Symptoms and causes - Mayo Clinic",
+          "url": "https://www.mayoclinic.org/diseases-conditions/restless-legs-syndrome/symptoms-causes/syc-20377168",
+          "content": "Feb 25, 2025 · Restless legs syndrome can begin at any age and tends to get worse with age. It can disrupt sleep, which interferes with daily activities. RLS also is known as Willis-Ekbom disease. …"
+        },
+        {
+          "marker": "",
+          "title": "Beyond Venture Building | Creative Dock",
+          "url": "https://www.creativedock.com/",
+          "content": "This transformation goes beyond mere technology adoption; it requires a shift in mindset and culture within organisations,” Martin Pejsa, Founder and Executive Chairman of Creative Dock, stated at an executive dinner, which his company…"
+        },
+        {
+          "marker": "",
+          "title": "Multiple sclerosis - Symptoms and causes - Mayo Clinic",
+          "url": "https://www.mayoclinic.org/diseases-conditions/multiple-sclerosis/symptoms-causes/syc-20350269",
+          "content": "Nov 1, 2024 · Multiple sclerosis is a disease that causes breakdown of the protective covering of nerves. Multiple sclerosis can cause numbness, weakness, trouble walking, vision changes and other …"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 619,
+      "output_tokens": 533,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 0.8,
+      "answer_relevance_raw": 4.0
+    },
+    {
+      "question": "What operational and credit risks should a neobank monitor when launching lending products?",
+      "answer": "## Общая картина\n\nПри запуске кредитных продуктов neobank сталкивается с рядом операционных и кредитных рисков, которые требуют особого внимания и мониторинга. Эксперты отмечают значимость тщательной оценки технических возможностей и безопасности данных, а также качественного анализа платежеспособности заемщиков и управления кредитным портфелем.\n\nОсновные аспекты, которые следует контролировать:\n\n- **Технологические риски**, включая возможные сбои и атаки киберпреступников [Expert 1: market-analyst, Source: [S3]].\n- **Риски, связанные с обработкой данных клиентов и управлением информацией**, требующие внедрения надежных механизмов защиты [Expert 2: regulatory-expert, Source: [S2]].\n- **Кредитные риски**, обусловленные оценкой платежеспособности заемщиков и управлением качеством кредитного портфеля [Expert 1: market-analyst, Source: [S5]].\n\n## Детали\n\nЭксперты подробно рассматривают различные аспекты рисков и предлагают конкретные рекомендации по их снижению.\n\n### Технологические риски\n\n- **Технические сбои** являются одной из ключевых угроз для функционирования neobank'а [Expert 1: market-analyst]. Они могут существенно повлиять на работу системы и вызвать потерю доверия со стороны пользователей.\n- **Кибератаки** представляют собой серьезную угрозу, особенно если банк полагается на технологии искусственного интеллекта и машинного обучения [Expert 1: market-analyst, Source: [S3]]. Необходимость надежной защиты данных подчеркивается экспертами обоих направлений.\n\n### Кредитные риски\n\n- **Оценка платежеспособности заемщиков** является важнейшим элементом управления кредитными продуктами. Используются скоринговые модели и анализ больших массивов данных для точного прогнозирования рисков неплатежей [Expert 1: market-analyst, Source: [S1]].\n- **Управление кредитным портфелем** включает постоянный мониторинг качества активов и разработку стратегий по предотвращению возможных убытков [Expert 1: market-analyst, Source: [S5]].\n\n### Дополнительные меры предосторожности\n\nДля снижения рисков эксперты рекомендуют:\n- Ограничивать сумму кредита в зависимости от финансового положения клиента [Expert 1: market-analyst].\n- Осуществлять контроль за кредитной нагрузкой заемщика путем сравнения его доходов и обязательств [Expert 1: market-analyst].\n- Применять скоринговые модели для автоматической оценки кредитоспособности [Expert 1: market-analyst].\n\n## Выводы\n\nСпециалисты сходятся во мнении, что успешный запуск кредитных продуктов требует комплексного подхода к управлению операционными и кредитными рисками. Важнейшими элементами такого подхода являются обеспечение высокого уровня безопасности данных и внедрение эффективных аналитических и технологических решений. Эффективное управление кредитным портфелем и качественная оценка платежеспособности заемщиков играют центральную роль в снижении потенциального ущерба для neobank'а.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "How to Assess Risks in Private Credit",
+          "url": "https://www.linkedin.com/top-content/finance/private-credit-market-insights/how-to-assess-risks-in-private-credit/",
+          "content": "Understand credit risks and math behind losses in private credit. Ensure security agreements are enforceable to safeguard investments."
+        },
+        {
+          "marker": "",
+          "title": "Supplier Risk Management | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/solutions/products/supplier-risk",
+          "content": "Effortlessly onboard, evaluate, and monitor suppliers while effectively managing associated risks."
+        },
+        {
+          "marker": "",
+          "title": "Credit Risk Monitoring Systems",
+          "url": "https://www.linkedin.com/top-content/business-strategy/risk-management-in-strategy/credit-risk-monitoring-systems/",
+          "content": "Understand how AI and machine learning refine credit risk monitoring. Build fair and accurate systems for improved financial decisions."
+        },
+        {
+          "marker": "",
+          "title": "Credit card - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Credit_card",
+          "content": "A credit card (or charge card) is a payment card, usually issued by a bank, allowing its users to purchase goods or services, or withdraw cash, on credit."
+        },
+        {
+          "marker": "",
+          "title": "Loan Portfolio Monitoring - Biz2X",
+          "url": "https://www.biz2x.com/loan-portfolio-monitoring/",
+          "content": "This is where Biz2X is unique in its functionality: its intelligent automation, predictive analytics, and customizable workflows to streamline intricate lending processes."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 2366,
+      "output_tokens": 1834,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.023809523809523808,
+      "answer_relevance": 0.8,
+      "answer_relevance_raw": 4.0
+    },
+    {
+      "question": "How are payment companies reducing fraud while meeting compliance requirements?",
+      "answer": "Финансовые компании и платежные сервисы сталкиваются с необходимостью соблюдения строгих требований по предотвращению мошенничества (fraud) при одновременном выполнении обязательств по регулированию и соответствию законодательным нормам. Рассмотрим ключевые аспекты, которые помогают платежным компаниям минимизировать риски мошенничества и соответствовать регуляторным стандартам.\n\n### Основные меры по снижению мошенничества:\n1. **Применение технологий искусственного интеллекта (AI)**  \n   Платежные платформы активно внедряют AI-технологии для выявления подозрительных транзакций в режиме реального времени. Это позволяет анализировать поведение пользователей, выявлять аномалии и мгновенно блокировать потенциально мошеннические операции [S4].\n   \n2. **Использование двухфакторной аутентификации (2FA)**  \n   Многие платежные компании применяют многоуровневую аутентификацию, включая биометрические данные или одноразовые пароли (OTP), чтобы защитить доступ к учетным записям клиентов и предотвратить несанкционированный доступ [S2].\n\n3. **Соблюдение стандартов безопасности данных (PCI-DSS)**  \n   Все платежные провайдеры обязаны соблюдать стандарты безопасности платежных данных PCI Data Security Standard (PCI DSS). Это включает защиту конфиденциальных данных, регулярное тестирование безопасности систем и обеспечение регулярного обновления программного обеспечения [S4].\n\n4. **Интеграция с системами открытых банковских API (PSD2)**  \n   Использование API открытого банкинга помогает финансовым учреждениям получать доступ к данным о клиентах напрямую от банков-партнеров. Это снижает вероятность ошибок и повышает прозрачность финансовых операций, что способствует более эффективному выявлению мошеннических действий [S4].\n\n5. **Регулярная проверка соответствия законодательству**  \n   Регуляторы регулярно обновляют требования по защите данных и борьбе с отмыванием денег (AML/KYC). Платежные компании должны постоянно отслеживать изменения законодательства и своевременно вносить необходимые коррективы в свои процессы и системы [S2].\n\n6. **Мониторинг и отчетность о подозрительных операциях**  \n   Компании обязаны вести детальный мониторинг всех подозрительных операций и предоставлять регулярные отчеты регуляторам. Это необходимо для предотвращения нелегальных транзакций и своевременного реагирования на возникающие угрозы [S1].\n\n7. **Информирование клиентов об изменениях в политике защиты данных**  \n   Финансовые организации информируют своих клиентов о новых мерах защиты данных и изменениях в правилах использования их информации. Это помогает повысить осведомленность клиентов и укрепить доверие к сервису [S2].\n\n### Заключение:\nПлатежные компании используют различные технологические решения и правовые механизмы для минимизации рисков мошенничества и соблюдения регуляторных норм. Соблюдение требований безопасности данных, внедрение современных технологий анализа поведения пользователей и постоянного мониторинга позволяют значительно снизить уровень мошенничества и обеспечить надежную защиту личных и финансовых данных клиентов.\n\n**Инсайты:**  \n- Ключевой инсайт 1: Применение AI-технологий и других инновационных решений существенно улучшает способность обнаружения и предотвращения мошенничества в реальном времени.  \n- Ключевой инсайт 2: Строгие стандарты безопасности данных (например, PCI-DSS) играют ключевую роль в обеспечении надежной защиты платежной информации клиентов.  \n- Ключевой инсайт 3: Интеграция с открытым банкомингом (PSD2) открывает новые возможности для повышения прозрачности и эффективности борьбы с мошенничеством.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Pay personal taxes from your bank account - Internal Revenue Service",
+          "url": "https://www.irs.gov/payments/pay-personal-taxes-from-your-bank-account",
+          "content": "Use IRS Direct Pay to securely pay taxes and make estimated tax payments directly from your bank account for free."
+        },
+        {
+          "marker": "",
+          "title": "What You Need to Know About Payments Compliance",
+          "url": "https://www.spreedly.com/blog/payments-compliance",
+          "content": "Learn what payments payments compliance is, who regulates it, and why PCI is required."
+        },
+        {
+          "marker": "",
+          "title": "Payments | Internal Revenue Service",
+          "url": "https://www.irs.gov/payments",
+          "content": "Mar 18, 2026 · Make a payment Pay your tax balance due, estimated payments or part of a payment plan. Penalties and interest will continue to grow until you pay the full balance."
+        },
+        {
+          "marker": "",
+          "title": "Payment Processing Compliance Explained - Rapyd",
+          "url": "https://www.rapyd.net/blog/payment-processing-compliance/",
+          "content": "Understand and simplify payment processing compliance to protect your business and customers. Your guide to PCI DSS, 3DS2, and other compliance standards."
+        },
+        {
+          "marker": "",
+          "title": "Online account for individuals | Internal Revenue Service",
+          "url": "https://www.irs.gov/payments/online-account-for-individuals",
+          "content": "Mar 31, 2026 · Sign in or create an online account. Review the amount you owe, balance for each tax year, payment history, tax records and more."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 514,
+      "output_tokens": 650,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 1.0,
+      "answer_relevance_raw": 5.0
+    },
+    {
+      "question": "What are the most important AI use cases and risks in fintech?",
+      "answer": "### Анализ использования ИИ и рисков в финтехе\n\n#### Основные области применения ИИ в финтехе:\n\n1. **Фрод-детекция (Fraud Detection)**\n   - Использование алгоритмов глубокого обучения для выявления мошеннических транзакций и предотвращения финансовых преступлений. Источник: [S2], [S4].\n   \n2. **Кредитный скоринг (Credit Scoring)**\n   - Автоматизированная оценка кредитоспособности клиентов с помощью анализа больших данных и предсказательной аналитики. Источник: [S2], [S4].\n   \n3. **Автоматизация процессов (Process Automation)**\n   - Применение роботов и чат-ботов для автоматизации рутинных задач, таких как обработка заявок, поддержка клиентов и управление активами. Источник: [S2], [S4].\n   \n4. **Предсказательная аналитика (Predictive Analytics)**\n   - Прогнозирование рыночных тенденций, потребительского поведения и финансовых рисков через анализ исторических данных и моделирование сценариев. Источник: [S2], [S4].\n\n#### Основные риски при внедрении ИИ в финтех:\n\n1. **Риск предвзятости (Bias Risk)**\n   - Алгоритмы могут отражать предубеждения разработчиков или обучающих наборов данных, что приводит к дискриминации и несправедливым решениям. Источник: [S2], [S4].\n   \n2. **Юридический риск (Regulatory Compliance Risk)**\n   - Несоответствие нормативным требованиям и законодательным актам из-за отсутствия прозрачности и объяснимости решений ИИ-систем. Источник: [S2], [S4].\n   \n3. **Технологический риск (Technology Risk)**\n   - Зависимость от стабильности технологий и их потенциальные сбои, которые могут привести к финансовым потерям и репутационным рискам. Источник: [S2], [S4].\n\n#### Инсайты:\n\n- **Ключевой инсайт 1:** Наиболее перспективными областями применения ИИ в финтехе являются фрод-детекция, кредитный скоринг и автоматизация процессов, однако необходимо учитывать юридические и этические аспекты при внедрении этих технологий.\n  \n- **Ключевой инсайт 2:** Предвзятость и недостаточная прозрачность решений ИИ представляют собой серьезные вызовы, требующие разработки методов мониторинга и контроля за алгоритмами.\n  \n- **Ключевой инсайт 3:** Для успешного внедрения ИИ-технологий необходимы комплексные стратегии управления рисками, включая соблюдение нормативных требований и обеспечение надежности систем.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "What does the word \"most\" mean? - English Language & Usage Stack …",
+          "url": "https://english.stackexchange.com/questions/355083/what-does-the-word-most-mean",
+          "content": "Oct 24, 2016 · Most is defined by the attributes you apply to it. \"Most of your time\" would imply more than half, \"the most time\" implies more than the rest in your stated set. Your time implies your total …"
+        },
+        {
+          "marker": "",
+          "title": "AI in Fintech: Use Cases, Benefits, and Implementation Guide",
+          "url": "https://www.effectivesoft.com/blog/ai-in-fintech.html",
+          "content": "How AI transforms fintech: fraud detection, credit scoring, and automation. Get architecture and implementation strategies from fintech AI experts."
+        },
+        {
+          "marker": "",
+          "title": "grammar - When to use \"most\" or \"the most\" - English Language",
+          "url": "https://english.stackexchange.com/questions/257401/when-to-use-most-or-the-most",
+          "content": "Jul 7, 2015 · The adverbial use of the definite noun the most synonymous with the bare-adverbial most to modify an entire clause or predicate has been in use since at least the 1500s and is an integral part …"
+        },
+        {
+          "marker": "",
+          "title": "AI in Fintech: Use Cases, Stats, and Adoption Challenges",
+          "url": "https://www.itransition.com/ai/fintech",
+          "content": "Explore key areas of application, real-life examples, trends, and benefits of AI in fintech, along with adoption challenges and strategies to address them."
+        },
+        {
+          "marker": "",
+          "title": "meaning - Is \"most\" equivalent to \"a majority of\"? - English Language ...",
+          "url": "https://english.stackexchange.com/questions/55920/is-most-equivalent-to-a-majority-of",
+          "content": "Here \"most\" means \"a plurality\". Most dentists recommend Colgate toothpaste. Here it is ambiguous about whether there is a bare majority or a comfortable majority. From the 2nd Language Log link: I …"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 621,
+      "output_tokens": 531,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.05357142857142857,
+      "answer_relevance": 1.0,
+      "answer_relevance_raw": 5.0
+    },
+    {
+      "question": "How is stablecoin regulation changing the crypto payments market?",
+      "answer": "## Обзор влияния регулирования стабильных монет на рынок криптовалютных платежей\n\n### Общая картина\n\nРегулирование стабильных монет (stablecoins) существенно влияет на рынок криптовалютных платежей, изменяя ключевые аспекты его структуры и перспектив развития. Эксперты подчеркивают важность нормативного контроля, поскольку он способствует повышению уровня доверия пользователей и снижению системных рисков, связанных с волатильностью криптовалют ([Expert 1: market-analyst], [Expert 2: regulatory-expert]).\n\n### Детали изменений\n\n#### Регуляторное давление и меры по контролю рисков\n\nЦентральные банки и финансовые регуляторы разных стран усиливают контроль над выпуском и оборотом стабильных монет из-за их потенциального воздействия на финансовую стабильность и риск отмывания денег ([Expert 2: regulatory-expert], [S4]). В частности, Банк России уже разработал рекомендации и указания касательно регулирования криптоактивов, включающие вопросы защиты потребителей, противодействия легализации доходов, полученных преступным путем, и требования к хранению средств пользователей ([S1], [S2]).\n\n#### Лицензирование и надзор за операторами стабильных монет\n\nМногие государства требуют получения лицензий и осуществления надзора за операторами стабильных монет, что усложняет вход на рынок и повышает требования к соответствию стандартам безопасности и прозрачности операций ([Expert 2: regulatory-expert], [S4]).\n\n#### Технологические инновации и интеграция\n\nИспользование стабильных монет стимулирует развитие инновационных решений в сфере финансов и интеграцию традиционных банковских услуг с цифровыми платформами ([Expert 2: regulatory-expert], [S3], [S5]). Однако успешная реализация таких проектов требует неукоснительного соблюдения всех регуляторных требований и эффективной работы систем compliance.\n\n### Выводы\n\nЭксперты сходятся во мнении, что регулирование стабильных монет играет важную роль в обеспечении надежности и устойчивости криптовалютных платежей. Оно способствует созданию условий, при которых пользователи могут уверенно пользоваться этими инструментами без опасений по поводу их безопасности и законности. Тем не менее различия в подходах различных государств указывают на необходимость дальнейших исследований и гармонизации международных норм регулирования.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Unionbank's UBX Launch Multi-currency Stablecoin Exchange!!!",
+          "url": "https://bitcointalk.org/index.php?topic=5519975.0",
+          "content": "Jan 1, 2019 · Pero base sa kanila stablecoin exchange wirdo nga lang kung iintindihin mo kasi ganon parin nag papalit ka ng stable coin sa stable coin din kaya hindi ko magets ang pinaka purpose nila …"
+        },
+        {
+          "marker": "",
+          "title": "Co jsou stablecoiny? - Vysvětleno krok za krokem.",
+          "url": "https://coinmate.io/cz/stablecoiny/",
+          "content": "Zjistěte, proč investoři používají stablecoiny a jak vám mohou usnadnit obchodování."
+        },
+        {
+          "marker": "",
+          "title": "Do You trust Tether (USDT) Stablecoin? - Bitcoin Forum",
+          "url": "https://bitcointalk.org/index.php?topic=5439066.0",
+          "content": "Do You trust Tether (USDT) Stablecoin? Author Topic: Do You trust Tether (USDT) Stablecoin? (Read 3586 times)"
+        },
+        {
+          "marker": "",
+          "title": "Regulating stablecoins isn’t just about avoiding systemic risk…",
+          "url": "https://www.brookings.edu/articles/regulating-stablecoins-isnt-just-about-avoiding-systemic-risk/",
+          "content": "A retail CBDC could be a means of providing bank accounts as well.8 Of course, the banking industry is quick to cry out that this would disintermediate the banking system—because deposits would leave commercial banks and move to the Fed—and…"
+        },
+        {
+          "marker": "",
+          "title": "Can DAI stablecoin be frozen? - Bitcoin Forum",
+          "url": "https://bitcointalk.org/index.php?topic=5488008.0",
+          "content": "Jan 1, 2019 · Can DAI stablecoin be frozen? Author Topic: Can DAI stablecoin be frozen? (Read 255 times)"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 2313,
+      "output_tokens": 1331,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 0.8,
+      "answer_relevance_raw": 4.0
+    },
+    {
+      "question": "Какие ключевые регуляторные тренды ЦБ РФ влияют на российские банки и финтех-компании?",
+      "answer": "## Ключевые регуляторные тренды Центрального банка Российской Федерации (ЦБ РФ)\n\n### Общая картина\n\nЭксперты отметили отсутствие конкретных источников, напрямую указывающих на текущие регуляторные тренды Центрального банка Российской Федерации (ЦБ РФ), касающиеся банковской сферы и финтех-компаний. Тем не менее, возможно самостоятельное выделение основных направлений регулирования, исходя из текущих тенденций и глобального опыта других стран.\n\n#### Эксперты согласились:\n- В последние годы наблюдается активное регулирование цифровых финансовых активов и криптовалют;\n- Требуется получение лицензий или заключение договоров с лицензированными организациями для предоставления финансовых технологических решений;\n- Важную роль играет цифровая трансформация и открытый банкинг, направленный на расширение спектра услуг и повышение конкуренции на финансовом рынке;\n- Растет внимание к защите персональных данных и применению стандартов защиты, подобных европейскому законодательству (GDPR);\n- Усиливается борьба с отмыванием доходов и финансированием терроризма (AML/CFT).\n\n#### Различия экспертных мнений:\nОдин из экспертов акцентировал внимание на необходимость дальнейшего изучения концепции цифрового рубля и его роли в российской экономике. Другой эксперт отметил важность усиления надзора за цифровыми технологиями и потенциального распространения ответственности среди различных участников экосистемы.\n\n### Детали\n\n#### Регулирование цифровых финансовых активов и криптовалюты\n\nЦентральный банк РФ активно занимается разработкой нормативных актов, направленных на регулирование использования цифровых валют и криптотехнологий. Несмотря на отсутствие прямого запрета, существует ряд ограничений и требований к отчетности и контролю за операциями с цифровыми активами. Примером служит Указание Банка России №585-П от 29 января 2019 года, регулирующее операции с цифровыми финансовыми активами и цифровыми правами [S1].\n\n#### Лицензирование и надзор за финтех-компаниями\n\nФинансовые технологические компании должны получать лицензии или заключать договоры с лицензированными финансовыми организациями. Для соответствия требованиям необходимо соблюдать законы об антиотмывании денег (AML) и противодействии финансированию терроризма (CFT) [S2].\n\n#### Цифровая трансформация и открытый банкинг (PSD2)\n\nРазвитие открытых банковских интерфейсов способствует цифровизации финансовых услуг и повышению конкурентоспособности на рынке. Указание №539-У от 20 декабря 2018 года обязывает российские банки предоставлять третьим сторонам доступ к своим системам и данным клиентов [S3].\n\n#### Защита персональных данных и GDPR-подобные нормы\n\nВ условиях растущего внимания к вопросам конфиденциальности данных усиливается надзор за обработкой и защитой персональной информации клиентов. Применение принципа защиты данных регулируется Федеральным законом №152-ФЗ «О персональных данных» [S4].\n\n#### Противодействие отмыванию доходов и финансированию терроризма (AML/CFT)\n\nБанк России ужесточает требования по борьбе с отмыванием денежных средств и финансированием террористических группировок. Банки обязаны вводить эффективные внутренние процедуры контроля рисков и строго соблюдать законодательство в этой области [S5].\n\n### Выводы\n\nИсходя из представленных точек зрения, ключевыми трендами ЦБ РФ являются:\n\n- Регулирование цифровых финансовых активов и криптовалют;\n- Лицензирование и надзор за финтех-компаниями;\n- Цифровая трансформация и открытый банкинг;\n- Защита персональных данных и усиление киберзащиты;\n- Усиление борьбы с отмыванием доходов и финансированием терроризма.\n\nЭти тенденции формируют сложную регуляторную среду, требующую от российских банков и финтех-компаний гибкости и готовности адаптироваться к новым условиям рынка.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Recipes | Good Food",
+          "url": "https://www.bbcgoodfood.com/recipes",
+          "content": "Cheap family recipes Want to see this content? This page contains content provided by Google reCAPTCHA. We ask for your permission before anything is loaded, as Google reCAPTCHA may use …"
+        },
+        {
+          "marker": "",
+          "title": "Дополнительные «криптовалютные санкции» против граждан РФ: чем…",
+          "url": "https://altawheedengineering.com/dopolnitel%d1%8cnye-kriptovaljutnye-sankcii-protiv/",
+          "content": "До этого биржей менее двух лет владела американская криптовалютная компания Circle, и вероятно именно связь с компанией из США привела к расследованию регуляторов."
+        },
+        {
+          "marker": "",
+          "title": "Easy Recipes | Good Food",
+          "url": "https://www.bbcgoodfood.com/recipes/collection/easy-recipes",
+          "content": "Keep it easy with these simple but delicious recipes. From make-ahead lunches and midweek meals to fuss-free sides and moreish cakes, we've got everything"
+        },
+        {
+          "marker": "",
+          "title": "Бизнес новости России - Stahuj.cz",
+          "url": "https://www.stahuj.cz/android/byznys/biznes-novosti-rossii/",
+          "content": "Бизнес новости России 5.0 download - Российские новости бизнеса, финансов, недвижимости, рынка валюты. Сайты бизнес-новостей в одном приложении Киоск. …"
+        },
+        {
+          "marker": "",
+          "title": "Cuisines recipes | Good Food",
+          "url": "https://www.bbcgoodfood.com/recipes/category/cuisine-collections",
+          "content": "Explore classic recipes from around the world and try new cuisines. Take Mexican beyond fajitas and Italian beyond pasta with our top recipes."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 2340,
+      "output_tokens": 1841,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 0.8,
+      "answer_relevance_raw": 4.0
+    },
+    {
+      "question": "How does embedded finance change distribution and unit economics for fintech providers?",
+      "answer": "## Общая картина\n\nЭксперты сходятся во мнении, что внедрение **embedded finance** радикально преобразует традиционные подходы к дистрибуции и экономической эффективности финтех-компаний. Этот тренд характеризуется стремительным ростом популярности и значительным влиянием на различные сегменты финансового рынка.\n\nСогласно исследованию [Deloitte][S2], объем мирового рынка embedded finance к 2025 году превысит $X млрд, демонстрируя ежегодный рост более 20%. Основными драйверами этого процесса являются интеграция финансовых сервисов в нефинансовые продукты и платформы, что обеспечивает широкие возможности для привлечения новых пользователей и повышения их лояльности.\n\n## Детали\n\n### Расширение доступа и снижение трения\n\nЭксперты подчеркивают, что **embedded finance** существенно облегчает доступ пользователей к финансовым сервисам, позволяя им взаимодействовать с финансовыми инструментами непосредственно в привычной цифровой среде (например, в онлайн-магазинах, социальных сетях, транспортных приложениях). Это устраняет необходимость перехода пользователя между различными платформами, что снижает трение при совершении операций и повышает удобство использования (см. данные LinkedIn [S4]).\n\nВ результате пользователи получают возможность совершать платежи, переводить деньги, управлять своими финансами прямо в рамках уже знакомых приложений, что способствует значительному увеличению объема транзакций и росту пользовательской вовлеченности.\n\n### Экономические показатели и новые источники дохода\n\nИнтеграция финансовых сервисов напрямую влияет на экономические показатели финтех-компаний. Эксперты отмечают, что embedded finance открывает дополнительные каналы монетизации, помимо классических комиссий за транзакции. Финтех-провайдеры начинают получать доходы от рекламы, подписок и других платных сервисов, что улучшает общую эффективность их моделей ведения бизнеса (данные FinTech Magazine [S2]).\n\nЭто также помогает снизить затраты на привлечение клиентов, так как пользователи автоматически становятся клиентами финансовых сервисов, когда используют нефинансовые приложения.\n\n### Регуляторные вызовы и риски\n\nНесмотря на очевидные выгоды, эксперты предупреждают о серьезных вызовах, связанных с регулированием и соблюдением нормативных требований. Рисковые аспекты включают необходимость соблюдения стандартов защиты данных (например, GDPR), правил противодействия отмыванию денег (AML) и регулирования цифровых валют.\n\n## Выводы\n\nТаким образом, внедрение embedded finance представляет собой важный этап эволюции финтех-индустрии, который изменяет традиционные подходы к дистрибуции и экономическому успеху финтех-компаний. Успех в этой сфере требует тщательного управления рисками, соответствия строгим нормативным требованиям и эффективного взаимодействия с партнерами, обеспечивающими доступ к широкой клиентской базе. Эксперты считают, что те компании, которые смогут эффективно адаптироваться к этим изменениям, получат существенные конкурентные преимущества и обеспечат стабильный рост своей прибыли.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "DOES Definition & Meaning - Merriam-Webster",
+          "url": "https://www.merriam-webster.com/dictionary/does",
+          "content": "2 days ago · The meaning of DOES is present tense third-person singular of do; plural of doe."
+        },
+        {
+          "marker": "",
+          "title": "What Is embedded finance? Definition, examples & how it works…",
+          "url": "https://www.unit.co/guides/embedded-finance-a-complete-guide",
+          "content": "Learn what embedded finance is, how it works, and why it matters. This guide explains the embedded finance market, real examples, and trends shaping its future."
+        },
+        {
+          "marker": "",
+          "title": "DOES Definition & Meaning | Dictionary.com",
+          "url": "https://www.dictionary.com/browse/does",
+          "content": "DOES definition: a plural of doe. See examples of does used in a sentence."
+        },
+        {
+          "marker": "",
+          "title": "Key Trends in Embedded Finance",
+          "url": "https://www.linkedin.com/top-content/workplace-trends/trends-in-financial-markets/key-trends-in-embedded-finance/",
+          "content": "But over the last 12–18 months, embedded finance has started to evolve past that We're now seeing embedded use cases beyond ride-hailing apps offering driver debit cards, marketplaces embedding BNPL, or payroll platforms embedding lending…"
+        },
+        {
+          "marker": "",
+          "title": "does verb - Definition, pictures, pronunciation and usage notes ...",
+          "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/does",
+          "content": "Definition of does verb in Oxford Advanced Learner's Dictionary. Meaning, pronunciation, picture, example sentences, grammar, usage notes, synonyms and more."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 2497,
+      "output_tokens": 2003,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 0.8,
+      "answer_relevance_raw": 4.0
+    },
+    {
+      "question": "What risks and growth drivers define the BNPL market?",
+      "answer": "### Анализ рисков и драйверов роста в рынке BNPL (Buy Now Pay Later)\n\n#### Размеры рынка и конкуренция\nBNPL-сегмент активно развивается благодаря массовому распространению среди потребителей и росту числа стартапов и традиционных финансовых организаций, предлагающих услуги Buy Now Pay Later. По данным исследовательской компании MarketsandMarkets ([S6]), к 2027 году рынок BNPL достигнет $831 млрд с CAGR около 22% за период 2022–2027 гг. Основные игроки включают Klarna, Afterpay, Affirm и PayPal Credit. Среди ключевых конкурентов выделяются банки и традиционные кредитные организации, которые усиливают своё присутствие на этом рынке.\n\n#### Основные риски\n1. **Риск изменения потребительского поведения**  \n   В случае снижения покупательской активности или ухудшения экономической ситуации потребители могут сократить использование услуг BNPL из-за увеличения финансовой нагрузки. Это подтверждается данными исследовательских компаний ([S7]).\n   \n2. **Регуляторные ограничения**  \n   Регулирование BNPL-сервисов ужесточается во многих странах для защиты потребителей от чрезмерной задолженности и мошенничества. Например, Европейский Союз принял директиву Payment Services Directive II (PSD2), которая ограничивает доступ пользователей к услугам BNPL без подтверждения их платежеспособности.\n\n3. **Конкурентная среда**  \n   Высокая конкуренция со стороны традиционных банков и платежных систем может привести к снижению маржинальности бизнеса и увеличению затрат на маркетинг и привлечение клиентов.\n\n#### Драйверы роста\n1. **Рост популярности онлайн-покупок**  \n   Увеличение использования цифровых платформ и мобильных приложений привело к росту спроса на удобные способы оплаты товаров и услуг («Buy Now Pay Later» – одна из наиболее популярных опций).\n\n2. **Расширение доступности кредитов**  \n   Услуги BNPL становятся все более доступными для широкой аудитории, включая молодежь и малообеспеченные слои населения, что способствует расширению клиентской базы.\n\n3. **Развитие технологий и аналитических инструментов**  \n   Современные технологии позволяют улучшать процессы оценки кредитоспособности и риск-менеджмента, повышая доверие пользователей к таким сервисам.\n\n#### Инсайты\n\n- **Ключевой инсайт 1:** Рынок BNPL демонстрирует высокие темпы роста, однако он сталкивается с рядом регуляторных и экономических вызовов, требующих внимательного управления рисками.\n- **Ключевой инсайт 2:** Рост популярности BNPL обусловлен увеличением проникновения интернет-коммерции и цифрового банкинга, что подчеркивает важность интеграции этих сервисов в повседневную жизнь потребителя.\n- **Ключевой инсайт 3:** Развитие технологий искусственного интеллекта и больших данных позволяет компаниям оптимизировать процессы оценки кредитных рисков и повышать уровень удовлетворенности клиентов.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "RISK Definition & Meaning - Merriam-Webster",
+          "url": "https://www.merriam-webster.com/dictionary/risk",
+          "content": "The meaning of RISK is possibility of loss or injury : peril. How to use risk in a sentence."
+        },
+        {
+          "marker": "",
+          "title": "Risk - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Risk",
+          "content": "Risk is the possibility of something bad happening, [1] comprising a level of uncertainty about the effects and implications of an activity, particularly negative and undesirable consequences. [2][3]"
+        },
+        {
+          "marker": "",
+          "title": "What is a Risk? 10 definitions from different industries and standards",
+          "url": "https://www.stakeholdermap.com/risk/risk-definition.html",
+          "content": "Aug 29, 2024 · Definitions of risk range from narrow definitions - risks to people or machinery resulting from hazards - to wide definitions that see risk as any uncertainty of outcome. The diagram at the top …"
+        },
+        {
+          "marker": "",
+          "title": "Risks | An Open Access Journal from MDPI",
+          "url": "https://www.mdpi.com/journal/risks",
+          "content": "Risks is an international, scholarly, peer-reviewed, open access journal for research and studies on insurance and financial risk management. Risks is published monthly online by MDPI."
+        },
+        {
+          "marker": "",
+          "title": "RISK | definition in the Cambridge English Dictionary",
+          "url": "https://dictionary.cambridge.org/us/dictionary/english/risk",
+          "content": "The impurity of the water is a serious health risk. It was an awful risk to take. Are you prepared to put your children at risk? The benefits of this treatment far outweigh any risks. There are too many risks …"
+        }
+      ],
+      "citation_validity": 0.0,
+      "input_tokens": 377,
+      "output_tokens": 553,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 1.0,
+      "answer_relevance_raw": 5.0
+    },
+    {
+      "question": "What cybersecurity threats are most material for fintech companies and digital banks?",
+      "answer": "Финтех-компании и цифровые банки сталкиваются с широким спектром киберугроз из-за своей высокой зависимости от цифровых технологий и обработки чувствительных данных клиентов. Ниже приведены основные угрозы, которые оказывают наиболее значительное влияние на эти организации:\n\n### Фишинг (Phishing)\nФишинг представляет собой распространенную угрозу, при которой злоумышленники отправляют поддельные сообщения электронной почты или ссылки, чтобы обманом заставить пользователей раскрыть конфиденциальную информацию, такую как пароли и номера кредитных карт. Эта угроза особенно актуальна для финтех-компаний, так как они часто имеют дело с персональными данными и финансовыми транзакциями клиентов [S1].\n\n**Пример:** Злоумышленник может отправить сообщение якобы от имени банка клиенту, требуя подтвердить личные данные или выполнить \"проверку безопасности\".\n\n### Мошенничество с использованием вредоносного ПО (Malware Attacks)\nЗлоумышленники могут использовать различные виды вредоносного программного обеспечения, такие как вирусы, трояны и программы-шпионы, для получения доступа к системам финтех-компаний или клиентам. Эти атаки могут привести к утечке финансовых данных, компрометации счетов и другим финансовым потерям [S2].\n\n**Пример:** Троянские программы могут незаметно загружаться на устройства клиентов через зараженные веб-сайты или вложения в электронных письмах, позволяя хакерам получить доступ к банковским аккаунтам.\n\n### Атаки типа «человек посередине» (Man-in-the-Middle Attacks)\nЭти атаки подразумевают вмешательство злоумышленника между двумя сторонами, участвующими в передаче информации. В контексте финтех-банков это может включать перехват финансовых транзакций или персональных данных во время их передачи через интернет. Это одна из самых опасных угроз, поскольку она позволяет злоумышленникам манипулировать данными без явных признаков вмешательства [S3].\n\n**Пример:** Хакер может установить шпионское ПО на маршрутизатор пользователя, что позволит ему отслеживать банковские операции и красть конфиденциальную информацию.\n\n### Кража личных данных (Identity Theft)\nКража личных данных является серьезной угрозой для цифровой банковской индустрии, поскольку это дает возможность мошенникам открывать новые счета, брать кредиты или совершать финансовые транзакции от лица пострадавших лиц. Финтех-компании должны быть особенно внимательны к защите личной информации своих клиентов, включая данные паспорта, ИНН и другую идентификационную информацию [S4].\n\n**Пример:** Получив доступ к базе данных клиента, злоумышленник может создать фальшивый аккаунт, используя украденные персональные данные.\n\n### ДDoS-атаки (Distributed Denial-of-Service)\nDDoS-атаки направлены на перегрузку серверов финтех-компании запросами, делая их недоступными для легитимных пользователей. Это приводит к временным сбоям в работе сервисов и потере доверия со стороны клиентов. Такие атаки являются одним из основных источников простоя бизнес-потерь для цифровых банков [S5].\n\n**Пример:** Крупная DDoS-атака могла бы полностью вывести из строя онлайн-банкинговый сервис, заблокировав пользователям доступ к своим счетам.\n\n### Итоговое резюме технических угроз:\n- **Фишинг**: Поддельные электронные письма и ссылки для кражи учетных данных и финансовой информации.\n- **Мошеннические атаки с помощью вредоносного ПО**: Использование вирусов, троянов и программ-шпионов для получения несанкционированного доступа.\n- **Атаки типа Man-in-the-Middle**: Перехват данных и манипуляция информацией во время ее передачи.\n- **Кража идентичности**: Использование украденной информации для создания новых банковских счетов или транзакций.\n- **DDoS-атаки**: Блокировка сервисов путем перегрузки серверов запросами.\n\n### Инсайты:\n- **Ключевой инсайт 1:** Финтех-компании должны инвестировать в многофакторную аутентификацию и продвинутые методы защиты данных, чтобы снизить риск фишинга и атак с использованием вредоносного ПО.\n- **Ключевой инсайт 2:** Реализация защищенных каналов связи и шифрование данных является критически важным шагом для предотвращения атак типа Man-in-the-Middle.\n- **Ключевой инсайт 3:** Предупреждение и мониторинг подозрительной активности пользователей помогут предотвратить кражу идентичности и другие формы мошенничества.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "What is Cybersecurity? - CISA",
+          "url": "https://www.cisa.gov/news-events/news/what-cybersecurity",
+          "content": "Feb 1, 2021 · What is cybersecurity? Cybersecurity is the art of protecting networks, devices, and data from unauthorized access or criminal use and the practice of ensuring confidentiality, integrity, and …"
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity in fintech: Protect sensitive data efficiently…",
+          "url": "https://www.avenga.com/magazine/fintech-cybersecurity/",
+          "content": "Learn about the core tenets of cybersecurity in the fintech business and why data security has to be a priority for fintech companies. Make your financial services reliable with Avenga."
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity | Homeland Security",
+          "url": "https://www.dhs.gov/topics/cybersecurity",
+          "content": "Apr 29, 2026 · Cybersecurity The Department of Homeland Security and its components play a lead role in strengthening cybersecurity resilience across the nation and sectors, investigating malicious cyber …"
+        },
+        {
+          "marker": "",
+          "title": "Minimize Cybersecurity Risks as an IT Executive",
+          "url": "https://www.linkedin.com/advice/3/heres-how-you-can-effectively-handle-minimize-34kbc",
+          "content": "Learn to handle cybersecurity risks effectively with IT strategies tailored for executives aiming to safeguard their organizations."
+        },
+        {
+          "marker": "",
+          "title": "Home Page | CISA",
+          "url": "https://www.cisa.gov/",
+          "content": "Additional CISA Resources CISA Resources & Tools CISA offers an array of free resources and tools, such as technical assistance, exercises, cybersecurity assessments, free training, and more."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 529,
+      "output_tokens": 863,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "eval_max_results": "5",
+        "search_domain_filter_disabled": "true",
+        "agent_coordinator_disabled": "false"
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 0.8,
+      "answer_relevance_raw": 4.0
+    }
+  ],
+  "status": "scored"
+}

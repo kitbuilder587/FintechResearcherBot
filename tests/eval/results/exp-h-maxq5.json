@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-h-maxq5-20260505-2011",
+  "strategy": "standard",
+  "change": "five search queries no critic",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.306360415836433,
+  "avg_answer_relevance": 0.7062904108181127,
+  "avg_input_tokens": 3190,
+  "avg_output_tokens": 2728,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

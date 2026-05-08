@@ -60,16 +60,21 @@ type apiError struct {
 }
 
 func (c *Client) CompleteWithSystem(ctx context.Context, system, prompt string) (string, error) {
+	content, _, err := c.CompleteWithSystemUsage(ctx, system, prompt)
+	return content, err
+}
+
+func (c *Client) CompleteWithSystemUsage(ctx context.Context, system, prompt string) (string, llm.Usage, error) {
 	req := llm.NewChatRequest(c.model, system, prompt)
 
 	body, err := json.Marshal(req)
 	if err != nil {
-		return "", fmt.Errorf("marshal request: %w", err)
+		return "", llm.Usage{}, fmt.Errorf("marshal request: %w", err)
 	}
 
 	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost, c.baseURL+"/chat/completions", bytes.NewReader(body))
 	if err != nil {
-		return "", fmt.Errorf("create request: %w", err)
+		return "", llm.Usage{}, fmt.Errorf("create request: %w", err)
 	}
 
 	httpReq.Header.Set("Content-Type", "application/json")
@@ -79,21 +84,26 @@ func (c *Client) CompleteWithSystem(ctx context.Context, system, prompt string) 
 
 	respBody, statusCode, err := llm.DoRequest(c.client, httpReq)
 	if err != nil {
-		return "", err
+		return "", llm.Usage{}, err
 	}
 
 	if statusCode != http.StatusOK {
-		return "", llm.HandleHTTPError(statusCode, respBody, c.logger, "openrouter")
+		return "", llm.Usage{}, llm.HandleHTTPError(statusCode, respBody, c.logger, "openrouter")
 	}
 
 	var chatResp openRouterResponse
 	if err := json.Unmarshal(respBody, &chatResp); err != nil {
-		return "", fmt.Errorf("unmarshal response: %w", err)
+		return "", llm.Usage{}, fmt.Errorf("unmarshal response: %w", err)
 	}
 
 	if chatResp.Error != nil {
-		return "", fmt.Errorf("%w: %s", llm.ErrRequestFailed, chatResp.Error.Message)
+		return "", llm.Usage{}, fmt.Errorf("%w: %s", llm.ErrRequestFailed, chatResp.Error.Message)
 	}
 
-	return llm.ExtractContent(&chatResp.ChatResponse)
+	content, err := llm.ExtractContent(&chatResp.ChatResponse)
+	if err != nil {
+		return "", chatResp.Usage, err
+	}
+
+	return content, chatResp.Usage, nil
 }

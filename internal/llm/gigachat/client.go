@@ -84,25 +84,30 @@ type authResponse struct {
 }
 
 func (c *Client) CompleteWithSystem(ctx context.Context, system, prompt string) (string, error) {
+	content, _, err := c.CompleteWithSystemUsage(ctx, system, prompt)
+	return content, err
+}
+
+func (c *Client) CompleteWithSystemUsage(ctx context.Context, system, prompt string) (string, llm.Usage, error) {
 	return c.completeWithRetry(ctx, system, prompt, false)
 }
 
-func (c *Client) completeWithRetry(ctx context.Context, system, prompt string, isRetry bool) (string, error) {
+func (c *Client) completeWithRetry(ctx context.Context, system, prompt string, isRetry bool) (string, llm.Usage, error) {
 	token, err := c.getToken(ctx)
 	if err != nil {
-		return "", err
+		return "", llm.Usage{}, err
 	}
 
 	req := llm.NewChatRequest("GigaChat", system, prompt)
 
 	body, err := json.Marshal(req)
 	if err != nil {
-		return "", fmt.Errorf("marshal request: %w", err)
+		return "", llm.Usage{}, fmt.Errorf("marshal request: %w", err)
 	}
 
 	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost, c.baseURL+"/chat/completions", bytes.NewReader(body))
 	if err != nil {
-		return "", fmt.Errorf("create request: %w", err)
+		return "", llm.Usage{}, fmt.Errorf("create request: %w", err)
 	}
 
 	httpReq.Header.Set("Content-Type", "application/json")
@@ -110,32 +115,37 @@ func (c *Client) completeWithRetry(ctx context.Context, system, prompt string, i
 
 	respBody, statusCode, err := llm.DoRequest(c.client, httpReq)
 	if err != nil {
-		return "", err
+		return "", llm.Usage{}, err
 	}
 
 	// при 401 пробуем обновить токен один раз
 	if statusCode == http.StatusUnauthorized {
 		if isRetry {
-			return "", llm.ErrAuthFailed
+			return "", llm.Usage{}, llm.ErrAuthFailed
 		}
 		c.invalidateToken()
 		_, err = c.getToken(ctx)
 		if err != nil {
-			return "", llm.ErrAuthFailed
+			return "", llm.Usage{}, llm.ErrAuthFailed
 		}
 		return c.completeWithRetry(ctx, system, prompt, true)
 	}
 
 	if statusCode != http.StatusOK {
-		return "", llm.HandleHTTPError(statusCode, respBody, c.logger, "gigachat")
+		return "", llm.Usage{}, llm.HandleHTTPError(statusCode, respBody, c.logger, "gigachat")
 	}
 
 	chatResp, err := llm.ParseChatResponse(respBody)
 	if err != nil {
-		return "", err
+		return "", llm.Usage{}, err
 	}
 
-	return llm.ExtractContent(chatResp)
+	content, err := llm.ExtractContent(chatResp)
+	if err != nil {
+		return "", chatResp.Usage, err
+	}
+
+	return content, chatResp.Usage, nil
 }
 
 func (c *Client) getToken(ctx context.Context) (string, error) {

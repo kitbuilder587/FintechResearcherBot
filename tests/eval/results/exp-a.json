@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-a-20260505-1912",
+  "strategy": "standard",
+  "change": "per-agent mandate",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.2886590752242926,
+  "avg_answer_relevance": 0.22945413916219914,
+  "avg_input_tokens": 14532,
+  "avg_output_tokens": 6230,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

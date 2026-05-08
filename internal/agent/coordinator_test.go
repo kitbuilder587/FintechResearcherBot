@@ -20,6 +20,7 @@ type mockAgent struct {
 	err        error
 	delay      time.Duration
 	processCnt int
+	lastReq    AgentRequest
 }
 
 func newMockAgent(name string, canHandle float64) *mockAgent {
@@ -51,6 +52,7 @@ func (m *mockAgent) CanHandle(question string) float64 {
 
 func (m *mockAgent) Process(ctx context.Context, req AgentRequest) (*AgentResponse, error) {
 	m.processCnt++
+	m.lastReq = req
 
 	if m.delay > 0 {
 		select {
@@ -247,6 +249,34 @@ func TestCoordinator_RunParallel(t *testing.T) {
 
 		if !names["market"] || !names["tech"] {
 			t.Error("Expected responses from both market and tech agents")
+		}
+	})
+
+	t.Run("passes per-agent mandates", func(t *testing.T) {
+		market := newMockAgent("market", 0.8)
+		market.expertise = []string{"funding", "market structure"}
+		regulatory := newMockAgent("regulatory", 0.7)
+		regulatory.expertise = []string{"regulation"}
+		agents := []Agent{market, regulatory}
+
+		coord := NewCoordinator(nil, mockLLM, logger)
+		req := AgentRequest{
+			Question: "How do stablecoin rules affect fintech funding?",
+			Strategy: domain.StandardStrategy(),
+		}
+
+		responses := coord.runParallel(context.Background(), agents, req)
+		if len(responses) != 2 {
+			t.Fatalf("responses = %d, want 2", len(responses))
+		}
+		if !strings.Contains(market.lastReq.Mandate, "funding, market structure") {
+			t.Fatalf("market mandate = %q", market.lastReq.Mandate)
+		}
+		if !strings.Contains(market.lastReq.Mandate, "regulatory") {
+			t.Fatalf("market mandate should mention other agent: %q", market.lastReq.Mandate)
+		}
+		if !strings.Contains(regulatory.lastReq.Mandate, "regulation") {
+			t.Fatalf("regulatory mandate = %q", regulatory.lastReq.Mandate)
 		}
 	})
 }
@@ -604,6 +634,36 @@ func TestCoordinator_Process_StandardStrategy(t *testing.T) {
 
 		if mockLLM.CallCount != 1 {
 			t.Errorf("StandardStrategy should call synthesis LLM, got %d calls", mockLLM.CallCount)
+		}
+	})
+
+	t.Run("uses planner when enabled", func(t *testing.T) {
+		t.Setenv("AGENT_PLANNER_ENABLED", "true")
+		mockLLM := mock.New().WithResponse(`{"subtasks":[{"agent":"second","objective":"check regulation","search_hints":["rules"]},{"agent":"first","objective":"check market","search_hints":["funding"]}]}`)
+
+		first := newMockAgent("first", 0.9)
+		second := newMockAgent("second", 0.1)
+		third := newMockAgent("third", 0.8)
+		agents := []Agent{first, second, third}
+
+		coord := NewCoordinator(agents, mockLLM, logger)
+
+		req := AgentRequest{
+			Question: "standard question",
+			Strategy: domain.StandardStrategy(),
+		}
+
+		resp, err := coord.Process(context.Background(), req)
+
+		if err != nil {
+			t.Fatalf("Process() error = %v", err)
+		}
+
+		if len(resp.AgentsUsed) != 2 {
+			t.Fatalf("AgentsUsed = %d, want 2", len(resp.AgentsUsed))
+		}
+		if first.processCnt != 1 || second.processCnt != 1 || third.processCnt != 0 {
+			t.Fatalf("process counts = first:%d second:%d third:%d", first.processCnt, second.processCnt, third.processCnt)
 		}
 	})
 }

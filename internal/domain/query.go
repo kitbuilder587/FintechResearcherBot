@@ -39,11 +39,21 @@ func (q *QueryRequest) Sanitize() {
 type QueryResponse struct {
 	Text    string
 	Sources []SourceRef
+	Usage   UsageMetrics
 }
 
 type SourceRef struct {
 	Marker     string
 	Title      string
 	URL        string
+	Content    string
 	TrustLevel TrustLevel
+}
+
+type UsageMetrics struct {
+	InputTokens  int
+	OutputTokens int
+	TotalTokens  int
+	LLMRequests  int
+	CostUSD      float64
 }

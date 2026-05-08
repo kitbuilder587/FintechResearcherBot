@@ -1,0 +1,17 @@
+{
+  "run_id": "tavily-i-maxres5-20260507-1811",
+  "strategy": "standard",
+  "change": "Tavily five search results no critic",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "answer_relevance_mode": "llm",
+  "question_count": 10,
+  "avg_faithfulness": 0.10955168319373576,
+  "avg_answer_relevance": 0.74,
+  "avg_input_tokens": 3168,
+  "avg_output_tokens": 1122,
+  "avg_llm_requests": 3.0,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

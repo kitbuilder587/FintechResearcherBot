@@ -1,0 +1,15 @@
+{
+  "run_id": "baseline-20260505-1857",
+  "strategy": "standard",
+  "change": "current flow",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.2874167355632873,
+  "avg_answer_relevance": 0.23486276831108238,
+  "avg_input_tokens": 15131,
+  "avg_output_tokens": 6216,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

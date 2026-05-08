@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-f-open-no-coord-20260505-1959",
+  "strategy": "standard",
+  "change": "open search direct analyze no critic",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.669454207050556,
+  "avg_answer_relevance": 0.0,
+  "avg_input_tokens": 872,
+  "avg_output_tokens": 628,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}
