@@ -1,0 +1,84 @@
+use_default_settings: true
+
+server:
+  bind_address: "0.0.0.0"
+  port: 8080
+  secret_key: "fintech-researcher-bot-change-me"
+  limiter: false
+  image_proxy: false
+
+search:
+  default_lang: "en"
+  formats:
+    - html
+    - json
+
+outgoing:
+  request_timeout: 8.0
+  max_request_timeout: 15.0
+  pool_connections: 30
+  pool_maxsize: 10
+  enable_http2: false
+
+engines:
+  - name: bing
+    engine: bing
+    shortcut: bi
+    categories: [general, web]
+    timeout: 8.0
+    disabled: false
+
+  - name: presearch
+    engine: presearch
+    search_type: search
+    categories: [general, web]
+    shortcut: ps
+    timeout: 8.0
+    disabled: true
+
+  - name: seznam
+    engine: seznam
+    shortcut: szn
+    categories: [general, web]
+    timeout: 8.0
+    disabled: false
+
+  - name: google
+    engine: google
+    disabled: true
+
+  - name: duckduckgo
+    engine: duckduckgo
+    disabled: true
+
+  - name: brave
+    engine: brave
+    disabled: true
+
+  - name: startpage
+    engine: startpage
+    disabled: true
+
+  - name: wikipedia
+    engine: wikipedia
+    disabled: true
+
+  - name: wikidata
+    engine: wikidata
+    disabled: true
+
+  - name: karmasearch
+    engine: karmasearch
+    disabled: true
+
+  - name: karmasearch images
+    engine: karmasearch
+    disabled: true
+
+  - name: karmasearch videos
+    engine: karmasearch
+    disabled: true
+
+  - name: karmasearch news
+    engine: karmasearch
+    disabled: true

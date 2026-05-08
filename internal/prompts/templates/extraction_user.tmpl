@@ -1,12 +1,12 @@
-Extract key facts and entities from this research answer.
+Извлеките ключевые факты и сущности из этого исследовательского ответа.
 
-Answer:
+Ответ:
 {{.Answer}}
 
-{{if .Sources}}Sources used:
+{{if .Sources}}Использованные источники:
 {{range .Sources}}- {{.Title}}: {{.URL}}
 {{end}}
-{{end}}Response format (JSON):
+{{end}}Формат ответа (JSON):
 {
   "facts": [
     {"content": "...", "source_url": "...", "confidence": 0.9}
@@ -16,4 +16,4 @@ Answer:
   ]
 }
 
-Entity types: company, person, concept, product, market
+Типы сущностей для поля "type" (не переводить): company, person, concept, product, market

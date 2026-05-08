@@ -15,3 +15,7 @@ var (
 type Client interface {
 	CompleteWithSystem(ctx context.Context, system, prompt string) (string, error)
 }
+
+type UsageClient interface {
+	CompleteWithSystemUsage(ctx context.Context, system, prompt string) (string, Usage, error)
+}

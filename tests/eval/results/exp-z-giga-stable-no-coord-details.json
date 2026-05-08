@@ -1,0 +1,856 @@
+{
+  "run_id": "exp-z-giga-stable-no-coord-20260506-1307",
+  "rows": [
+    {
+      "question": "What are the main fintech funding trends in 2025?",
+      "answer": "## Ключевые точки\n\n1. **Снижение общего объема финансирования**\n   - Общий объем мирового финансирования финтеха в 2024 году снизился с $35 млрд до $28 млрд, что отражает осторожность инвесторов [S4].\n   \n2. **Возвращение активности выхода компаний из сделок**\n   - Несмотря на снижение объемов инвестиций, наблюдается рост активности выходов компаний через IPO и продажи, что свидетельствует о восстановлении доверия инвесторов [S5].\n\n3. **Падение количества сделок**\n   - Количество сделок в области финтеха также сократилось, что указывает на общую осторожность рынка [S4].\n\n4. **Фокус на цифровых активах и ИИ**\n   - Инвесторы проявляют интерес к цифровым активам и технологиям искусственного интеллекта, что подтверждается увеличением капитала, вложенного в эти сегменты [S5].\n\n## Примеры\n\n- В Европе, Африке и Ближнем Востоке общий объем финансирования финтех-компаний за второй полугодие 2025 года составил $13.8 млрд при 617 сделках [S8].\n  \n## Заключение\n\nНесмотря на общее снижение объемов финансирования, наблюдается постепенное восстановление активности на рынке финтеха благодаря росту интереса к цифровым активам и искусственному интеллекту. Это подчеркивает важность адаптации бизнеса к новым регуляторным требованиям и технологическим изменениям для успешного развития в будущем.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Fintech trends 2024: Five trends to watch (January 2024)",
+          "url": "https://financialmarketstoolkit.cliffordchance.com/en/financial-markets-resources/resources-by-type/thought-leadership-pieces/fintech-trends-2024--five-trends-to-watch--january-2024.html",
+          "content": "While 2023 saw ongoing uncertainty and high-profile financial sector failures, it also brought regulatory progress around the world, including for landmark regulations on digital assets and AI."
+        },
+        {
+          "marker": "",
+          "title": "Fintech in 2024: Five trends to watch",
+          "url": "https://www.cliffordchance.com/insights/thought_leadership/trends/2024-trends/2024-fintech-trends.html",
+          "content": "While 2023 saw ongoing uncertainty and high-profile financial sector failures, it also brought regulatory progress around the world, including for landmark regulations on digital assets and AI."
+        },
+        {
+          "marker": "",
+          "title": "Fintech | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/industries/financial-technology",
+          "content": "As traditional business models are disrupted by new technology, staying on top of financial technology trends has never been more important. Get essential insights on Fintech."
+        },
+        {
+          "marker": "",
+          "title": "Fintech funding falls in 2024, but mega rounds show tentative…",
+          "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/fintech-funding-falls-in-2024-but-mega-rounds-show-tentative-signs-of-optimism",
+          "content": "The global fintech funding landscape in 2024 continued its downward trajectory, reflecting the persistent caution among venture capital investors. Total funding dropped sharply, from $35 billion in 2023 to $28 billion — a decline of 20…"
+        },
+        {
+          "marker": "",
+          "title": "Global fintech investment rebounds in 2025, supported by…",
+          "url": "https://kpmg.com/xx/en/media/press-releases/2026/02/global-fintech-investment-rebounds-in-2025-supported-by-stronger-exit-activity.html",
+          "content": "While deal volumes remain muted, the increase in capital deployed — and the resurgence of exits — signal growing investor confidence, particularly around scalable platforms in digital assets and AI."
+        },
+        {
+          "marker": "",
+          "title": "Global fintech funding falls to US$52.4bn, but it’s not all bad…",
+          "url": "https://kpmg.com/xx/en/media/press-releases/2023/07/global-fintech-funding-falls-to-52-bn.html",
+          "content": "It wasn’t a surprise to see fintech funding decline in the first six months of 2023, given the enormous headwinds pressuring the market at the moment."
+        },
+        {
+          "marker": "",
+          "title": "Top fintech trends for H1’26",
+          "url": "https://kpmg.com/xx/en/what-we-do/industries/financial-services/pulse-of-fintech/top-fintech-trends.html",
+          "content": "Regulations are strengthening and helping to define what the future will look like, particularly in the digital assets space."
+        },
+        {
+          "marker": "",
+          "title": "Pulse of Fintech H2 2025: EMEA",
+          "url": "https://kpmg.com/xx/en/what-we-do/industries/financial-services/pulse-of-fintech/emea.html",
+          "content": "In H2 2025, funding in fintech companies in Europe, Middle East and Africa (EMEA) recorded $13.8B with 617 deals"
+        },
+        {
+          "marker": "",
+          "title": "The future of fintech growth | McKinsey",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/fintechs-a-new-paradigm-of-growth",
+          "content": "The fintech industry continues to face new challenges and opportunities. We look at the future of fintech growth and how to win in disruptive times."
+        },
+        {
+          "marker": "",
+          "title": "Fintech - Regulation, Risk & Growth - Solutions & Advice",
+          "url": "https://kpmg.com/ie/en/industries/fintech.html",
+          "content": "We’ve been drivers of the FinTech agenda in Ireland from the start. We know technology and financial services and have a long track record of working with fast growth companies and ambitious entrepreneurs."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 1044,
+      "output_tokens": 279,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.3181818181818182,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "How do PSD2 and open banking rules affect fintech product strategy in Europe?",
+      "answer": "## Анализ влияния PSD2 и правил открытого банкинга на стратегию продуктов FinTech в Европе\n\n### Ключевые моменты\n\n1. **Расширение доступа к банковским услугам**\n   - Правила PSD2 обязывают банки предоставлять доступ к данным клиентов другим платежным сервис-провайдерам (PSP). Это создает возможности для новых бизнес-моделей и расширения клиентской базы для финтех-компаний [S6].\n   \n2. **Увеличение конкуренции среди финансовых институтов**\n   - Требование предоставления доступа к счетам клиентов стимулирует конкуренцию между традиционными банками и новыми игроками рынка. Финтех компании могут воспользоваться этим положением для разработки инновационных решений и сервисов [S6].\n   \n3. **Развитие экосистемных решений**\n   - С помощью PSD2 создаются условия для формирования экосистем открытых банковских услуг, что позволяет финтех компаниям интегрироваться с различными участниками финансового сектора, создавая комплексные решения для потребителей [S5].\n   \n4. **Риски для традиционных банков**\n   - Введение нового законодательства может привести к снижению барьеров входа на рынок и повышению прозрачности финансовой деятельности, что ставит традиционные банковские учреждения перед необходимостью адаптации своих моделей работы и повышения эффективности цифровых операций [S6].\n\n### Примеры\n\n- Платежная платформа Revolut использует модель открытого банкинга для интеграции с европейскими банками и предоставляет клиентам удобные цифровые финансовые услуги.\n- Финтек-компания Monzo также активно внедряет технологии открытого банкинга, предлагая пользователям гибкие мобильные приложения и персонализированные банковские продукты.\n\n### Заключение\n\nПравила PSD2 существенно влияют на стратегии финтех-продуктов в Европе, предоставляя новые возможности для инноваций и роста бизнеса. Однако они также ставят перед традиционными финансовыми институтами задачу быстрой адаптации и улучшения своей цифровой инфраструктуры. Для успешного развития финтех-компаниям необходимо учитывать эти изменения и разрабатывать соответствующие стратегические подходы.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "How Pillar Two rules affect financial reporting | EY - Global",
+          "url": "https://www.ey.com/en_gl/insights/ifrs/how-oecd-pillar-two-rules-affect-companies-and-their-ifrs-reporting",
+          "content": "In the largest international tax reform in nearly a century, the new rules address growing global and digital economies. Learn more."
+        },
+        {
+          "marker": "",
+          "title": "How a new technology platform can help banks unlock financing…",
+          "url": "https://www.ey.com/en_gl/insights/banking-capital-markets/how-a-new-technology-platform-can-help-banks-unlock-financing-for-smes",
+          "content": "For banks that are interested in servicing SMEs and have an appetite to enhance their digital services, Cashbot’s easily integrated software ensures that banking integrations are minimal and quick to set up."
+        },
+        {
+          "marker": "",
+          "title": "Due Diligence for Informed Decisions and Sustainable Growth…",
+          "url": "https://www.ey.com/en_gl/services/strategy-transactions/mergers-acquisitions-due-diligence",
+          "content": "Explore our full range of services—financial, commercial, operational, human resources, artificial intelligence (AI), IT, product and technology, sustainability, cyber, and transaction tax—to see how each area contributes to stronger…"
+        },
+        {
+          "marker": "",
+          "title": "2026 banking and capital markets outlook | Deloitte Insights",
+          "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/banking-industry-outlook.html",
+          "content": "2026 is pivotal for US banks as they navigate macro headwinds, stablecoin disruption, scaling AI, fragmented data, and financial crime"
+        },
+        {
+          "marker": "",
+          "title": "EU future-proofs payments and Open Banking with PSD3…",
+          "url": "https://bankingblog.accenture.com/eu-future-proofs-payments-open-banking-ecosystem-psd",
+          "content": "Amit Mallick looks at the EU’s proposed enhancements to Open Banking with its PSD3 legislation."
+        },
+        {
+          "marker": "",
+          "title": "PSD2: Taking advantage of open-banking disruption | McKinsey",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/psd2-taking-advantage-of-open-banking-disruption",
+          "content": "By requiring banks to provide other qualified payment-service providers (PSPs) connectivity to access customer account data and to initiate payments, PSD2 represents a significant step toward commoditization in the EU banking sector."
+        },
+        {
+          "marker": "",
+          "title": "How to prepare for the EU Pay Transparency Directive…",
+          "url": "https://www.ey.com/en_ch/insights/workforce/how-to-best-prepare-for-the-recently-adopted-eu-directive-on-pay-transparency",
+          "content": "The EU Pay Transparency Directive must be transposed into national law by 7 June 2026, leaving employers only a few months to prepare for new transparency, reporting, and compliance requirements."
+        },
+        {
+          "marker": "",
+          "title": "Report on the Observance of Standards and Codes: Ireland…",
+          "url": "https://www.imf.org/external/np/rosc/irl/bank.htm",
+          "content": "2. The attached in-depth assessment of Ireland’s compliance with the Basel Core Principles for Effective Banking Supervision is based on an initial self assessment by the Irish authorities, and has been clarified through subsequent…"
+        },
+        {
+          "marker": "",
+          "title": "Geopolitical Risk Intelligence Solutions | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/solutions/geopolitical-risk-analysis",
+          "content": "Get geopolitical risk assessment, analysis, and solutions with risk forecasting and data analytics insights from our economic and risk experts."
+        },
+        {
+          "marker": "",
+          "title": "Banking deals during dynamic times: 10 shifts in banking and…",
+          "url": "https://www.deloitte.com/us/en/Industries/financial-services/about/banking-merger-and-acquisition-10-trends-during-dynamic-markets.html",
+          "content": "Large institutions are rethinking strategies, resource allocation, benefits of scale, and competitive positioning to stay ahead in today’s environment, especially when navigating complex banking M&A transactions of all shapes and sizes…"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 1050,
+      "output_tokens": 382,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.038461538461538464,
+      "answer_relevance": 0.16012815380508716
+    },
+    {
+      "question": "What operational and credit risks should a neobank monitor when launching lending products?",
+      "answer": "## Ключевые точки\n\n1. **Операционные риски**\n   - Риски технологического характера, связанные с внедрением и эксплуатацией IT-систем и программного обеспечения.\n     - Пример: сбой в платежной системе или ошибки при обработке транзакций могут привести к финансовым потерям клиентов и репутационным рискам для банка [S1].\n   \n2. **Кредитные риски**\n   - Кредитный риск связан с неспособностью заемщика выполнить свои обязательства по кредитам.\n     - Пример: недостаточно тщательная проверка кредитоспособности заемщиков может привести к высоким уровням невозвратов и убыткам для финансовой организации [S2].\n\n3. **Регуляторные и нормативные риски**\n   - Несоответствие деятельности требованиям регуляторов и нормативных актов.\n     - Пример: нарушение требований законодательства о защите персональных данных и финансовых отчетностей может повлечь за собой штрафы и санкции со стороны регулирующих органов [S5].\n\n## Примеры практических мер управления рисками\n\n- Регулярное проведение стресс-тестов для оценки устойчивости банковской системы к различным рыночным шокам.\n- Использование аналитических инструментов и решений от ведущих поставщиков технологий (например, S&P Global) для мониторинга рисков и оценки кредитных портфелей [S6].\n- Интеграция систем искусственного интеллекта и машинного обучения для повышения точности прогнозирования кредитного риска и оптимизации процессов принятия решений [S7].\n\n## Заключение\n\nПри запуске новых продуктов кредитования важно учитывать как операционные, так и кредитные риски. Для эффективного управления этими рисками рекомендуется использовать современные технологии анализа и мониторинга, а также регулярно проводить оценку и тестирование банковских процессов и систем. Это позволит минимизировать возможные убытки и обеспечить устойчивое развитие бизнеса.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Financial Risk Analytics for Market Risk & Credit Risk | S&P…",
+          "url": "https://www.spglobal.com/market-intelligence/en/solutions/financial-risk-analytics",
+          "content": "Financial risk analytic solutions to measure and manage counterparty credit risk, market risk, regulatory risk capital and derivative valuation adjustments. Learn more."
+        },
+        {
+          "marker": "",
+          "title": "Global Risk & Economics | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/solutions/global-risk-and-economics",
+          "content": "Risk Identification and Monitoring: Our solutions offer detailed risk assessments for over 200 countries and 105 industries, enabling businesses to identify and monitor potential risks."
+        },
+        {
+          "marker": "",
+          "title": "Investment Management & Financial Services | BlackRock",
+          "url": "https://www.blackrock.com/us/individual",
+          "content": "Neither FTSE nor Nareit makes any warranty regarding the FTSE EPRA/Nareit Developed Real Estate ex-U.S. Index, FTSE EPRA/Nareit Developed Europe Index or FTSE EPRA/Nareit Global REIT Index; all rights vest in FTSE, Nareit and EPRA.“FTSE” is…"
+        },
+        {
+          "marker": "",
+          "title": "Our Latest Thinking on Risk Management and Compliance | BCG",
+          "url": "https://www.bcg.com/capabilities/risk-management-and-compliance/insights",
+          "content": "Our core belief is that the ethical way is the only way for companies to sustain long-term value and competitive advantage. Explore the latest thought leadership from our risk management and compliance experts for best practices and…"
+        },
+        {
+          "marker": "",
+          "title": "Report on the Observance of Standards and Codes: Ireland…",
+          "url": "https://www.imf.org/external/np/rosc/irl/bank.htm",
+          "content": "This approach is based on using results from the CBI’s off-site bank analysis to determine the frequency and depth of on-site inspections and the contents of meetings with credit institutions."
+        },
+        {
+          "marker": "",
+          "title": "Credit & Risk | S&P Global",
+          "url": "https://www.spglobal.com/en/products/topics/credit-risk",
+          "content": "S&P Global’s credit and risk solutions provide a single source of truth about your customers, suppliers, counterparties, and investments."
+        },
+        {
+          "marker": "",
+          "title": "J.P. Morgan Markets: Institutional Trading, Research…",
+          "url": "https://www.jpmorgan.com/markets",
+          "content": "J.P. Morgan Markets is a comprehensive digital platform for institutional clients, providing trading and execution capabilities, market data, research, analytics and portfolio management tools across asset classes."
+        },
+        {
+          "marker": "",
+          "title": "Credit and Risk Solutions | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/solutions/credit-risk-solutions",
+          "content": "Manage the full spectrum of your credit and risk and compliance exposure with best-in-class solutions from S&P Global and IHS Markit."
+        },
+        {
+          "marker": "",
+          "title": "Glossary of investment terms | UBS Global",
+          "url": "https://www.ubs.com/global/en/assetmanagement/funds/glossary.html",
+          "content": "The products, services, information and/or materials contained within these web pages may not be available for residents of certain jurisdictions."
+        },
+        {
+          "marker": "",
+          "title": "Supplier Risk Management | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/solutions/products/supplier-risk",
+          "content": "Effortlessly onboard, evaluate, and monitor suppliers while effectively managing associated risks."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 766,
+      "output_tokens": 329,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.029411764705882353,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "How are payment companies reducing fraud while meeting compliance requirements?",
+      "answer": "## Анализ источников\n\n### Ключевые точки\n\n1. **PCI DSS и защита данных**\n   - Источник [S1]: PCI Compliance Guide подчеркивает важность защиты платежных данных и поддержания доверия клиентов через соблюдение стандартов безопасности данных (PCI DSS).\n   \n2. **AI в борьбе с финансовыми преступлениями**\n   - Источник [S2]: Capgemini предлагает использование AI для повышения эффективности борьбы с финансовыми преступлениями и управления рисками.\n   \n3. **Технологии в противодействии финансовым преступлениям**\n   - Источник [S3]: EY демонстрирует применение технологий для эффективного противодействия финансовым преступлениям и улучшения соблюдения нормативных требований.\n   \n4. **Глобальные нормативные требования и управление рисками**\n   - Источник [S4]: KPMG акцентирует внимание на сложности управления налоговым и юридическим регулированием в глобальном масштабе.\n   \n5. **Соблюдение директив ЕС по прозрачности оплаты**\n   - Источник [S5]: Директива ЕС о прозрачности оплаты требует внесения изменений в национальные законодательства до июня 2026 года.\n   \n6. **Финтех решения для роста бизнеса**\n   - Источник [S6]: SVB предоставляет банковские и платежные решения для финтеха компаний, способствующие быстрому росту.\n   \n7. **Защита от мошенничества с дебетовыми картами**\n   - Источник [S7]: J.P. Morgan выделяет проблему мошенничества с дебетовыми картами и рекомендации по защите пользователей.\n   \n8. **Типы финансового мошенничества**\n   - Источник [S8]: UBS рассматривает наиболее распространенные виды финансовых преступлений и способы их предотвращения.\n   \n9. **Ускорение трансформации банков с помощью управляемых услуг налогообложения**\n   - Источник [S9]: EY обсуждает роль управляемых налоговых услуг в поддержке банковского сектора при трансформационных изменениях.\n   \n10. **Банковские и финансовые решения для корпораций**\n    - Источник [S10]: UBS предлагает корпоративным клиентам банковские и финансовые услуги.\n\n### Примеры\n\n- PCI DSS: обеспечение безопасности платежных данных и поддержание доверия клиентов [S1].\n- AI-технологии: улучшение обнаружения и предотвращения финансовых преступлений [S2].\n- Технологические инновации: помощь банкам и финтех-компаниям соблюдать нормативные требования [S3].\n\n### Заключение\n\nДля снижения уровня мошенничества и соответствия нормативным требованиям компании используют различные подходы:\n\n1. Соблюдение стандартов PCI DSS для защиты платежных данных.\n2. Применение искусственного интеллекта и анализа больших данных для выявления подозрительных транзакций.\n3. Использование современных банковских и финтех-решений для ускорения роста и оптимизации процессов.\n\nЭти меры помогают компаниям эффективно бороться с мошенничеством и поддерживать высокий уровень доверия среди клиентов.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "PCI Compliance Guide: Protect Payment Data & Prevent Fraud",
+          "url": "https://www.jpmorgan.com/insights/payments/security-trust/pci-compliance-guide-protect-payment-data-and-prevent-fraud",
+          "content": "Discover how PCI compliance protects your business and customers. Get step-by-step guidance on securing payment data and maintaining customer trust."
+        },
+        {
+          "marker": "",
+          "title": "Financial crime compliance and risk management - Capgemini",
+          "url": "https://www.capgemini.com/industries/banking-and-capital-markets/risk-and-financial-crime-compliance/",
+          "content": "Capgemini strengthens financial crime compliance with scalable, AI-driven solutions. Improve efficiency, reduce risk, and streamline financial crime risk management."
+        },
+        {
+          "marker": "",
+          "title": "How technology fights FinCrime while enhancing regulatory…",
+          "url": "https://www.ey.com/en_gl/insights/financial-services/emeia/how-technology-fights-fincrime-while-enhancing-regulatory-compliance",
+          "content": "EY enabled a large global bank to lead the fight against FinCrime in a way that also helped it improve efficiency and increase compliance. Find out more."
+        },
+        {
+          "marker": "",
+          "title": "Global Compliance Management Services",
+          "url": "https://kpmg.com/xx/en/what-we-do/services/tax/compliance-transformation/global-compliance-management-services.html",
+          "content": "Před 5 měsíciIn an increasingly complex global regulatory environment, tax leaders face significant challenges ensuring compliance across multiple jurisdictions, managing risks, and maintaining operational efficiency."
+        },
+        {
+          "marker": "",
+          "title": "How to prepare for the EU Pay Transparency Directive…",
+          "url": "https://www.ey.com/en_ch/insights/workforce/how-to-best-prepare-for-the-recently-adopted-eu-directive-on-pay-transparency",
+          "content": "The EU Pay Transparency Directive must be transposed into national law by 7 June 2026, leaving employers only a few months to prepare for new transparency, reporting, and compliance requirements."
+        },
+        {
+          "marker": "",
+          "title": "Fintech Banking and Payment Solutions for Rapid Growth",
+          "url": "https://www.svb.com/industry-solutions/fintech/",
+          "content": "Unlock fintech potential with SVB. We offer commercial banking and payment solutions designed for rapid growth. Contact SVB today."
+        },
+        {
+          "marker": "",
+          "title": "How to Protect Yourself From Debit Card Fraud | J.P. Morgan",
+          "url": "https://www.jpmorgan.com/insights/fraud/card-fraud/how-to-protect-yourself-from-debit-card-fraud",
+          "content": "But last year alone, consumers filed over 76,000 reports of debit card fraud, according to the Federal Trade Commission’s Consumer Sentinel Network.1 Card fraud losses are projected to skyrocket to over $400 billion in the next decade as…"
+        },
+        {
+          "marker": "",
+          "title": "Common types of fraud | UBS Switzerland",
+          "url": "https://www.ubs.com/ch/en/services/digital-banking/security/types-of-fraud.html",
+          "content": "Learn more about the most common types of fraud, recognize the warning signs and protect yourself effectively."
+        },
+        {
+          "marker": "",
+          "title": "How tax managed services can accelerate banks’ transformation…",
+          "url": "https://www.ey.com/en_gl/insights/banking-capital-markets/how-tax-managed-services-can-accelerate-banks-transformation",
+          "content": "Helping reduce tax and compliance requirements of banks, managed services provide the freedom to focus on priorities."
+        },
+        {
+          "marker": "",
+          "title": "Banking & financial solutions companies | UBS Switzerland",
+          "url": "https://www.ubs.com/ch/en/services/corporates.html",
+          "content": "UBS is your partner when it comes to banking and financial solutions for companies – arrange a consultation now."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 841,
+      "output_tokens": 565,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.22448979591836735,
+      "answer_relevance": 0.074535599249993
+    },
+    {
+      "question": "What are the most important AI use cases and risks in fintech?",
+      "answer": "## Ключевые точки\n\n1. **Использование искусственного интеллекта в финтехе**\n   - Искусственный интеллект играет важную роль в трансформации финансовых технологий и банковских услуг [S1].\n   - Использование ИИ позволяет банкам и финтех-компаниям улучшать обслуживание клиентов, снижать операционные издержки и повышать безопасность транзакций [S2].\n\n2. **Примеры использования ИИ в финтехе**\n   - **Кредитование и кредитный скоринг**: использование алгоритмов машинного обучения для оценки кредитных рисков и принятия решений о выдаче кредитов [S3].\n   - **Кибербезопасность**: применение искусственного интеллекта для выявления и предотвращения кибератак [S8].\n   - **Обработка естественного языка (NLP)**: автоматизация обработки запросов клиентов через чат-ботов и виртуальных ассистентов [S6].\n\n3. **Риски и вызовы при внедрении ИИ в финтех**\n   - **Безопасность данных и конфиденциальность**: риск утечки персональных данных и нарушения конфиденциальности пользователей [S4].\n   - **Этические вопросы и предвзятость моделей**: необходимость обеспечения прозрачности и этичности работы систем на основе ИИ [S9].\n   - **Глубокие технологические изменения**: необходимость масштабирования инфраструктуры данных центров и энергоснабжения для поддержки растущих потребностей ИИ [S8].\n\n## Заключение\n\nИскусственный интеллект является важным инструментом для развития финансовых технологий, однако его внедрение требует внимательного подхода к вопросам безопасности, этики и эффективности. Компании должны учитывать риски и обеспечивать соответствие стандартам качества и защиты данных при использовании ИИ-технологий. [S1], [S2], [S3], [S4], [S8], [S9].",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Fintech | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/industries/financial-technology",
+          "content": "As traditional business models are disrupted by new technology, staying on top of financial technology trends has never been more important. Get essential insights on Fintech."
+        },
+        {
+          "marker": "",
+          "title": "Emerging threats require a more proactive approach to cyber…",
+          "url": "https://www.pwc.com/gx/en/issues/c-suite-insights/the-leadership-agenda/global-digital-trust-insights-2026.html",
+          "content": "A new PwC survey underscores how companies face a wider range of cyber risks—and how they can best respond."
+        },
+        {
+          "marker": "",
+          "title": "These will be the most important AI and automation economies…",
+          "url": "https://www.weforum.org/stories/2020/02/ai-looks-set-to-disrupt-the-established-world-order-here-s-how/",
+          "content": "Artificial Intelligence (AI) is shaking up the global pecking order, allowing many smaller countries to stand tall in a new competitive landscape."
+        },
+        {
+          "marker": "",
+          "title": "AI risks and governance",
+          "url": "https://kpmg.com/xx/en/our-insights/ecb-office/ai-risks-and-governance.html",
+          "content": "Key risks, governance challenges and what banks should do to prepare for responsible AI adoption"
+        },
+        {
+          "marker": "",
+          "title": "Fintech | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/news-insights/topics/fintech",
+          "content": "From mobile and digital lending to payments and blockchain technology, our fintech coverage provides the critical insights you need to identify your next opportunity."
+        },
+        {
+          "marker": "",
+          "title": "AI Use cases | EY - Global",
+          "url": "https://www.ey.com/en_gl/services/ai/use-cases",
+          "content": "Explore our suite of AI use cases to discover how this technology can ignite innovation, unlock efficiencies and transform businesses. Learn more."
+        },
+        {
+          "marker": "",
+          "title": "Fintech Banking and Payment Solutions for Rapid Growth",
+          "url": "https://www.svb.com/industry-solutions/fintech/",
+          "content": "*All non-SVB named companies listed are independent third parties and are not affiliated with Silicon Valley Bank, a division of First-Citizens Bank & Trust Company."
+        },
+        {
+          "marker": "",
+          "title": "Using AI in cybersecurity | Deloitte Insights",
+          "url": "https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/using-ai-in-cybersecurity.html",
+          "content": "Organizations that deploy artificial intelligence at scale are discovering its paradox: The same AI capabilities that help them be more competitive can also introduce new security risks."
+        },
+        {
+          "marker": "",
+          "title": "AI infrastructure gaps | Deloitte Insights",
+          "url": "https://www.deloitte.com/us/en/insights/industry/power-and-utilities/data-center-infrastructure-artificial-intelligence.html",
+          "content": "The AI age is expected to require scaling data centers, grid capacity, and supply chains. Deloitte’s 2025 AI Infrastructure Survey examines gaps and solutions."
+        },
+        {
+          "marker": "",
+          "title": "Fintech Consulting Services | Bain & Company",
+          "url": "https://www.bain.com/industry-expertise/financial-services/fintech/",
+          "content": "Our fintech consulting experts have designed, built, and launched digital capabilities around the world, for some of the largest banks and fintech firms."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 787,
+      "output_tokens": 353,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.2,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "How is stablecoin regulation changing the crypto payments market?",
+      "answer": "## Ключевые аспекты регулирования стабильных монет и их влияние на рынок платежей\n\n### Основные направления изменений в регулировании\n\nСогласно представленным источникам, регулирование стабильных монет (stablecoins) претерпевает значительные изменения, направленные на защиту потребителей и снижение рисков для финансовой системы. \n\n#### 1. Ограничения выпуска стабильных монет\nРегулирующие органы ограничивают возможность выпуска стабильных монет только юридически признанными организациями или специально уполномоченными субъектами. Например, согласно статье [S6]:\n> \"The Act restricts stablecoin issuance to regulated entities, such as subsidiaries of insured banks or newly chartered non-bank stablecoin companies.\"\n\nЭто означает, что выпуск стабильных монет возможен лишь при соблюдении строгих стандартов безопасности и прозрачности.\n\n#### 2. Повышение требований к резервированию активов\nДля обеспечения стабильности стоимости актива регуляторные требования предполагают наличие достаточных резервов высоколиквидных активов, таких как государственные облигации или депозиты центрального банка. Источник [S5] подчеркивает важность наличия резервов для поддержания доверия пользователей к стабильным монетам.\n\n#### 3. Необходимость получения лицензий и соблюдения нормативных требований\nМногие источники указывают на необходимость получения лицензии или разрешения от соответствующих органов до начала операций с использованием стабильных монет. Это требование четко прописано в статье [S6].\n\n#### 4. Международное сотрудничество и координация регуляторов\nИсточники подчеркивают важность международного сотрудничества между финансовыми органами различных стран. Регуляторы стремятся согласовать единые стандарты и подходы к регулированию стабильных монет, чтобы избежать фрагментации рынка и обеспечить единообразие правил поведения участников рынка.\n\n### Примеры из источников\n\nИсточник [S5] отмечает, что технологические инновации стремительно меняют финансовые системы, включая развитие распределенных реестров (DLT). В связи с этим возникает необходимость разработки новых подходов к регулированию цифровых валют и стабильных монет.\n\nИсточник [S9] указывает на риски использования стабильных монет, связанные с возможностью резкого падения стоимости актива, особенно если активы не поддерживаются адекватными резервами.\n\n### Заключение\n\nРегулирование стабильных монет оказывает значительное влияние на платежный рынок, повышая уровень защиты потребителей и снижая системные риски. Однако остаются нерешенные вопросы, касающиеся международной координации и гармонизации нормативной базы. Требуется дальнейшее развитие нормативно-правовой базы и улучшение взаимодействия между различными юрисдикциями.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Stablecoins: Payments and Adoption | Deloitte US",
+          "url": "https://www.deloitte.com/us/en/services/consulting/articles/stablecoin-payments.html",
+          "content": "Are you building capabilities to support the issuance of payment stablecoins? Explore the recent regulatory developments and market opportunities."
+        },
+        {
+          "marker": "",
+          "title": "How Stablecoins Can Improve Payments and Global Finance",
+          "url": "https://www.imf.org/en/blogs/articles/2025/12/04/how-stablecoins-can-improve-payments-and-global-finance",
+          "content": "New technology can foster innovation and financial inclusion, or cause fragmentation and turbulence in many countries"
+        },
+        {
+          "marker": "",
+          "title": "Stablecoins payments infrastructure for modern finance…",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-stable-door-opens-how-tokenized-cash-enables-next-gen-payments",
+          "content": "Discover how stablecoins payments infrastructure and tokenized cash blockchain technology drive cross-border payments modernization and digital asset adoption for financial institutions."
+        },
+        {
+          "marker": "",
+          "title": "Stablecoins in payments: What the raw transaction numbers miss…",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/stablecoins-in-payments-what-the-raw-transaction-numbers-miss",
+          "content": "Stablecoin transaction volumes reach trillions, but blockchain data reveal most activity isn't tied to real-world payments—here's what that means."
+        },
+        {
+          "marker": "",
+          "title": "Stablecoins: risks, potential and regulation",
+          "url": "https://www.bis.org/publ/work905.htm",
+          "content": "The technologies underlying money and payment systems are evolving rapidly. Both the emergence of distributed ledger technology (DLT) and rapid advances in traditional centralised systems are moving the technological horizon of money and…"
+        },
+        {
+          "marker": "",
+          "title": "Stablecoins",
+          "url": "https://kpmg.com/us/en/articles/2025/stablecoins.html",
+          "content": "Regulatory Clarity and Consumer Protection: The Act restricts stablecoin issuance to regulated entities, such as subsidiaries of insured banks or newly chartered non-bank stablecoin companies."
+        },
+        {
+          "marker": "",
+          "title": "What to Know About Stablecoins | J.P. Morgan Global Research",
+          "url": "https://www.jpmorgan.com/insights/global-research/currencies/stablecoins",
+          "content": "Why are stablecoins growing in popularity, and what are their benefits and drawbacks? Get an overview of the stablecoin market."
+        },
+        {
+          "marker": "",
+          "title": "What is a stablecoin? | McKinsey",
+          "url": "https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-a-stablecoin",
+          "content": "In this McKinsey Explainer, we look at what a stablecoin is and how this new type of cryptocurrency has the potential to reshape global economics."
+        },
+        {
+          "marker": "",
+          "title": "Digital Currencies: The Rise of Stablecoins",
+          "url": "https://www.imf.org/en/blogs/articles/2019/09/19/blog-digital-currencies-the-rise-of-stablecoins",
+          "content": "While many stablecoins continue to be claims on the issuing institution or its underlying assets, and many also offer redemption guarantees at face value (a coin bought for 10 euros can be exchanged back for a 10-euro note, like a bank…"
+        },
+        {
+          "marker": "",
+          "title": "Recommendations for the Regulation, Supervision and Oversight…",
+          "url": "https://www.bis.org/fsi/fsisummaries/global_stablecoins.htm",
+          "content": "The activities associated with GSC arrangements and the risks they may pose can span across regulatory regimes for banking, payments and securities/investment both within jurisdictions and across borders."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 857,
+      "output_tokens": 484,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.2682926829268293,
+      "answer_relevance": 0.0
+    },
+    {
+      "question": "Какие ключевые регуляторные тренды ЦБ РФ влияют на российские банки и финтех-компании?",
+      "answer": "## Ключевые Регуляторные Тренды Центрального Банка Российской Федерации\n\n### 1. Развитие Цифровой Экономики и Финтеха\n\nЦентральный банк России активно поддерживает развитие цифровой экономики и финтех-индустрии, внедряя инновационные технологии в банковскую сферу. Это включает использование блокчейн-технологий, искусственного интеллекта и больших данных для повышения эффективности финансовых услуг.\n\n**Источник:**  \n- [S2]: Санкции против российских криптобирж связаны с их связью с американской компанией Circle.\n\n### 2. Регулирование Криптовыборов и Блокчейна\n\nЦБ РФ постепенно ужесточает регулирование цифровых активов и криптовалют. Введение санкций и ограничений направлено на предотвращение использования этих инструментов для отмывания денег и финансирования терроризма.\n\n**Источник:**  \n- [S2]: Биржа принадлежала американской компании Circle, что привело к регулирующему расследованию.\n\n### 3. Инновационные Платежные Решения и Электронные Денежные Средства\n\nБанк России продолжает внедрять новые платежные решения и электронные денежные средства, направленные на повышение доступности финансовых услуг для населения и малого бизнеса.\n\n**Источник:**  \n- Отсутствие прямого упоминания в предоставленных источниках.\n\n### 4. Повышение Безопасности и Адаптивности Банковских Услуг\n\nРегуляторы стремятся повысить безопасность банковских операций и адаптировать финансовые услуги под потребности клиентов. Это особенно важно в условиях цифровизации и роста киберугроз.\n\n**Источник:**  \n- Не найдено прямое подтверждение данного тренда в предоставленных материалах.\n\n### Заключение\n\nЦентральный банк Российской Федерации активно развивает цифровую экономику и финтех-сектор, при этом ужесточая контроль над цифровыми активами и криптовалютами. При этом акцент делается на безопасности и адаптации банковских услуг под современные вызовы и требования потребителей.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Diretrizes da comunidade do YouTube",
+          "url": "https://support.google.com/youtube/answer/9288567?hl=pt-BR",
+          "content": "Diretrizes da comunidade do YouTube Usar o YouTube significa participar de uma comunidade de pessoas do mundo todo. As diretrizes abaixo ajudam a manter a plataforma divertida e agradável …"
+        },
+        {
+          "marker": "",
+          "title": "Дополнительные «криптовалютные санкции» против граждан РФ: чем…",
+          "url": "https://altawheedengineering.com/dopolnitel%d1%8cnye-kriptovaljutnye-sankcii-protiv/",
+          "content": "До этого биржей менее двух лет владела американская криптовалютная компания Circle, и вероятно именно связь с компанией из США привела к расследованию регуляторов."
+        },
+        {
+          "marker": "",
+          "title": "YouTube 고객센터 - Google Help",
+          "url": "https://support.google.com/youtube/?hl=ko",
+          "content": "YouTube의 감독 환경 YouTube Premium 채널을 만들고 성장시키기 YouTube 파트너 프로그램을 통한 수익 창출 정책, 안전, 저작권 도움이 더 필요하신가요? 다음 단계를 시도해 보세요."
+        },
+        {
+          "marker": "",
+          "title": "Бизнес новости России - Stahuj.cz",
+          "url": "https://www.stahuj.cz/android/byznys/biznes-novosti-rossii/",
+          "content": "Бизнес новости России 5.0 download - Российские новости бизнеса, финансов, недвижимости, рынка валюты. Сайты бизнес-новостей в одном приложении Киоск. …"
+        },
+        {
+          "marker": "",
+          "title": "如何在中国大陆用「合法」的方式观看到youtube上面的「有价值」的 …",
+          "url": "https://www.zhihu.com/question/1903231775980913051",
+          "content": "YouTube 将自动为 添加翻译后的中文字幕，这一功能有效解决了语言障碍问题。 当你向下浏览时，部分 会标注相关信息。 例如，博主 Jeff Su 的这条 支持 4K 分辨率并配有字幕，我们可以点击查看详情。 …"
+        },
+        {
+          "marker": "",
+          "title": "Структура",
+          "url": "https://earaza.ru/structure-documents/structure/",
+          "content": "Еараза. Евроазиатская региональная ассоциация зоопарков и аквариумов – международная некоммерческая, неправительственная организация, которая была создана с целью развития связей и укрепления сотрудничества между зоопарками, океанариумами…"
+        },
+        {
+          "marker": "",
+          "title": "Comunidad de YouTube - Google Help",
+          "url": "https://support.google.com/youtube/community?hl=es",
+          "content": "YouTube Shorts ¿Como recupero el botón de volumen en los shorts? Desde hoy en la mañana los anuncios que vea en YouTube Estan en aleman no hay ninguno en Español. Se puede desactivar la …"
+        },
+        {
+          "marker": "",
+          "title": "Журнал \"Маркетинг в России и за рубежом\"",
+          "url": "http://mavriz.ru/annotations/2025/3/",
+          "content": "Описаны основные параметры, такие как: сбалансированность, масштабируемость, модульность, кастомизация, многосторонние отношения, координация, адаптивность, гетерогенность, конфидентность, полезность и соотношение стоимость…"
+        },
+        {
+          "marker": "",
+          "title": "Comunidade YouTube - Google Help",
+          "url": "https://support.google.com/youtube/community?hl=pt-br",
+          "content": "75 respostas Sobre o programa Colaboradores do YouTube Atualizações de @TeamYouTube Experimentos Sobre a comunidade Visão geral da comunidade Política de conteúdo"
+        },
+        {
+          "marker": "",
+          "title": "Новости",
+          "url": "http://www.aci-russia.ru/",
+          "content": "23 декабря 2011 Московская международная валютная ассоциация (ММВА) подвела итоги традиционного ежегодного Конкурсного опроса валютно-финансовых дилеров и специалистов в области межбанковских отношений с целью определения самых лучших из…"
+        },
+        {
+          "marker": "",
+          "title": "YouTube Community - Google Help",
+          "url": "https://support.google.com/youtube/community?hl=en",
+          "content": "YouTube Community Guidelines A: Are you told that your email is NOT \"associated with an active Google Account\" when appealing?"
+        },
+        {
+          "marker": "",
+          "title": "Зарплаты в IT: сколько зарабатывают разработчики и специалисты",
+          "url": "https://sky.pro/wiki/media/zarplaty-v-it/",
+          "content": "Заработки в IT: Узнайте, как позиция, опыт и навыки влияют на доходы специалистов. Максимизируйте свой карьерный потенциал!"
+        },
+        {
+          "marker": "",
+          "title": "Communauté YouTube",
+          "url": "https://support.google.com/youtube/community?hl=fr",
+          "content": "13 réponses À propos du programme Contributeurs YouTube Actualités de l'équipe YouTube (@TeamYouTube) Fonctionnalités tests YouTube À propos de la communauté Présentation de la …"
+        },
+        {
+          "marker": "",
+          "title": "AM Live - YouTube",
+          "url": "https://www.youtube.com/@AntiMalwarerus",
+          "content": "В прямом эфире AM Live эксперты обсудили итоги года и ключевые изменения на рынке ИБ: — Как изменились кибератаки в 2025 году: количество, сложность, последствия для бизнеса — Насколько реальны ИИ-управляемые атаки и как они влияют на…"
+        },
+        {
+          "marker": "",
+          "title": "Upload YouTube videos - Computer - YouTube Help - Google Help",
+          "url": "https://support.google.com/youtube/answer/57407?hl=en&co=GENIE.Platform%3DDesktop",
+          "content": "You can upload videos to YouTube in a few easy steps. Use the instructions below to upload your videos from a computer or mobile device. Note: Uploading may not be available with supervised …"
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 1457,
+      "output_tokens": 375,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.038461538461538464,
+      "answer_relevance": 0.29747615083379886
+    },
+    {
+      "question": "How does embedded finance change distribution and unit economics for fintech providers?",
+      "answer": "## Анализ Источников\n\n### Ключевые Точки\n\n1. **Персонализация и Удобство Пользования**\n   - Превращение финансовых услуг в встроенные решения позволяет банкам и технологическим компаниям предоставлять клиентам более персонализированные и удобные услуги [S1].\n   \n2. **Стратегии Партнерства и Разработки**\n   - Для успеха в экосистеме встроенных финансов требуется стратегия взаимодействия с партнерами и создание удобного опыта для разработчиков [S2].\n\n3. **Фокус на Малый и Средний Бизнес**\n   - Финансовые технологии могут стать важным инструментом для малого и среднего бизнеса, предлагая им финансовые инструменты через SaaS-платформы [S3].\n\n4. **Риски и Управление Соответствием»\n   - Встроенная финансовая модель требует наличия новых технологий и возможностей управления рисками и соответствием нормативным требованиям [S6].\n\n### Примеры\n\n- **Персонализированные Платежные Решения**  \n  Например, Amazon Pay или Google Pay предоставляют встроенные платежные сервисы непосредственно внутри своих платформ, улучшая пользовательский опыт покупок [S1].\n\n- **Партнерские Программы**\n  Банки и технологические компании объединяются для создания экосистем, предлагающих широкий спектр финансовых продуктов и услуг через API-интерфейсы [S2].\n\n### Заключение\n\nВнедрение встроенной финансовой модели изменяет традиционные подходы к дистрибуции и экономическим показателям участников рынка. Персонализация и удобство использования становятся ключевыми факторами конкурентоспособности, а интеграция партнерских программ и технологических решений обеспечивает успешное развитие этого направления. Тем не менее, управление рисками и соответствие регуляторным нормам остаются значимыми вызовами для всех участников рынка. [S1], [S2], [S3], [S6]",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Embedded finance: Priorities for ecosystem transformation | PwC…",
+          "url": "https://www.pwc.com/gx/en/industries/financial-services/publications/embedded-finance-ecosystem-transformation.html",
+          "content": "Financial institutions must position themselves within a wider network of partners as they adapt to growing demand for frictionless financial services."
+        },
+        {
+          "marker": "",
+          "title": "Embedded finance trends | McKinsey",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/embedded-finance-who-will-lead-the-next-payments-revolution",
+          "content": "Financial services firms and fintechs looking to stake their claims in the embedded-finance business would be well advised to commit themselves to implementing four initiatives: choosing a strategy, establishing a developer experience…"
+        },
+        {
+          "marker": "",
+          "title": "Moving Embedded Finance from Promise to Practice | BCG",
+          "url": "https://www.bcg.com/publications/2025/moving-embedded-finance-from-promise-practice",
+          "content": "The right product, marketing, and capability mix can help SaaS players become the finance tool of choice for small and medium enterprises (SMEs)."
+        },
+        {
+          "marker": "",
+          "title": "Embedded finance and future financial services | EY - US",
+          "url": "https://www.ey.com/en_us/insights/financial-services/embedded-finance-and-future-financial-services",
+          "content": "A market survey by Ernst & Young LLP (EY US) reveals opportunities for embedded finance providers, with benefits for customers and financial intermediaries. Read more."
+        },
+        {
+          "marker": "",
+          "title": "Embedded finance is set to have a major impact worldwide…",
+          "url": "https://www.weforum.org/stories/2025/04/embedded-finance-disruptive-force-financial-institutions/",
+          "content": "Through simplified investment tools, personalized financial advice and real-time financial management features, fintech is demystifying finance and empowering users to make informed decisions."
+        },
+        {
+          "marker": "",
+          "title": "What the embedded-finance and banking-as-a-service trends mean…",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/banking-matters/what-the-embedded-finance-and-banking-as-a-service-trends-mean-for-financial-services",
+          "content": "Making it work will require new technologies and capabilities, because BaaS is usually distributed to clients via APIs and requires strong risk and compliance management of the embedded finance partner."
+        },
+        {
+          "marker": "",
+          "title": "Finance as a driver of business growth | EY - Global",
+          "url": "https://www.ey.com/en_gl/insights/private-business/how-finance-can-empower-your-business-to-achieve-its-growth-ambitions",
+          "content": "Find out how finance can be a driver of growth for entrepreneurial businesses."
+        },
+        {
+          "marker": "",
+          "title": "Embedded finance in Europe: Converging platforms | McKinsey",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/embedded-finance-how-banks-and-customer-platforms-are-converging",
+          "content": "Europe’s embedded-finance market is growing at double-digit rates. It is becoming important for banks, merchants, and other customer platforms to participate."
+        },
+        {
+          "marker": "",
+          "title": "How integrating tax and trade can improve supply chain…",
+          "url": "https://www.ey.com/en_gl/insights/tax/how-integrating-tax-and-trade-can-improve-supply-chain-performance",
+          "content": "Amid myriad disruptions, a data-driven model helps integrate supply chain, tax, and trade to improve global supply chain performance. Read more."
+        },
+        {
+          "marker": "",
+          "title": "Embedded Finance Report: Thriving in the New Value Chain | Bain…",
+          "url": "https://www.bain.com/insights/embedded-finance/",
+          "content": "Explore embedded finance and learn how to succeed in this expanding market by rethinking risk, integration models, and strategic plays. Learn more."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 898,
+      "output_tokens": 362,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.39285714285714285,
+      "answer_relevance": 0.06051457107509933
+    },
+    {
+      "question": "What risks and growth drivers define the BNPL market?",
+      "answer": "## Анализ рисков и драйверов роста рынка BNPL\n\n### Ключевые риски BNPL-рынка\n\n1. **Риск перегрева рынка**  \n   Рост популярности BNPL-сервисов привел к быстрому увеличению объемов кредитования и задолженности потребителей. Это создает риск чрезмерного накопления долгов среди пользователей, что может привести к финансовым проблемам у клиентов и потенциальным потерям для банков и финтех-компаний [S1].\n   \n2. **Регуляторные изменения**  \n   Регулирование BNPL-сегмента в Великобритании уже ужесточается, что вызывает опасения относительно будущих изменений законодательства в других странах. Возможное регулирование может ограничить возможности компаний по предоставлению услуг и увеличить операционные расходы [S1].\n\n3. **Кредитный риск**  \n   Увеличение количества кредитов через BNPL-сервисы повышает вероятность дефолтов заемщиков, особенно если клиенты не смогут своевременно погашать долги. Это может негативно сказаться на финансовой устойчивости финтех-компаний и банков [S4].\n\n4. **Конкурентная среда**  \n   Быстро растущая конкуренция между традиционными банками и финтех-компаниями увеличивает давление на цены и снижает маржу прибыли участников рынка. Компании должны постоянно адаптироваться к изменениям предпочтений потребителей и технологий [S4].\n\n### Драйверы роста BNPL-рынка\n\n1. **Рост потребительского спроса**  \n   Растущий интерес со стороны потребителей к удобству и гибкости платежей стимулирует развитие BNPL-решений. Потребители ценят возможность покупки товаров или услуг без необходимости сразу оплачивать полную стоимость [S1].\n\n2. **Цифровизация экономики**  \n   Развитие цифровых технологий и мобильных приложений позволяет компаниям предоставлять быстрые и удобные способы оплаты, которые привлекают все больше пользователей. Этот тренд способствует дальнейшему росту популярности BNPL-сервисов [S1].\n\n3. **Доступность финансовых инструментов**  \n   Доступность BNPL-продуктов делает их привлекательными для широкого круга потребителей, включая тех, кто ранее мог испытывать трудности с получением традиционных банковских кредитов. Это расширяет клиентскую базу и способствует увеличению объема транзакций [S4].\n\n### Заключение\n\nРынок BNPL характеризуется как потенциалом значительного роста, так и рядом серьезных рисков. Для успешного развития участникам необходимо учитывать как регуляторные изменения, так и кредитные и конкурентные риски. Успех будет зависеть от способности компаний эффективно управлять этими факторами и предлагать инновационные решения, удовлетворяющие потребности современного потребителя. [S1], [S4]",
+      "sources": [
+        {
+          "marker": "",
+          "title": "BNPL regulation and its potential impact on UK banks…",
+          "url": "https://bankingblog.accenture.com/bnpl-regulation-potential-impact-uk-banks",
+          "content": "Amit Mallick analyzes how new UK regulation of BNPL will affect the payments industry and consumers. Learn more."
+        },
+        {
+          "marker": "",
+          "title": "Glossary of investment terms | UBS Global",
+          "url": "https://www.ubs.com/global/en/assetmanagement/funds/glossary.html",
+          "content": "Explore what some commonly used investment terms mean in practice."
+        },
+        {
+          "marker": "",
+          "title": "Global Risk & Economics | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/solutions/global-risk-and-economics",
+          "content": "Market Research and Analysis: Our solutions provide comprehensive data and insights into global economic trends, sector dynamics, and country-specific risks."
+        },
+        {
+          "marker": "",
+          "title": "Buy Now, Pay Later (BNPL) Growth Raises Concerns | Morgan…",
+          "url": "https://www.morganstanley.com/insights/articles/buy-now-pay-later-trends-2025",
+          "content": "U.S. consumers are quickly adopting “Buy Now, Pay Later” loans, but the expansion carries risks for the financial systems and raises concerns among investors."
+        },
+        {
+          "marker": "",
+          "title": "Carve-out sale road map success - signing the deal | EY…",
+          "url": "https://www.ey.com/en_gl/insights/divestitures/carve-out-sale-road-map-getting-deal-signed",
+          "content": "EY-Parthenon divestitures road map to getting a carve-out sale signed in six months. Part one of two in series. Get our report."
+        },
+        {
+          "marker": "",
+          "title": "Global Risks Report 2024 | World Economic Forum | World…",
+          "url": "https://www.weforum.org/publications/global-risks-report-2024/",
+          "content": "The Global Risks Report, developed in collaboration with Marsh McLennan and Zurich Insurance Group, explores some of the most severe risks we may face over the next decade, against a backdrop of rapid technological change, economic…"
+        },
+        {
+          "marker": "",
+          "title": "Food and Fuel Crisis",
+          "url": "https://www.imf.org/external/np/exr/foodfuel/index.htm",
+          "content": "The IMF's Regional Economic Outlook for the region, released November 12, projects growth to decline to 2¼ percent this year and to pick up in 2014 as global conditions improve and oil production recovers (see table)."
+        },
+        {
+          "marker": "",
+          "title": "The high-growth industries reshaping the global economy…",
+          "url": "https://www.mckinsey.com/mgi/our-research/the-race-takes-off-in-the-next-big-arenas-of-competition",
+          "content": "We track progress in the high-growth industries poised to transform the business landscape and generate $29 trillion to $48 trillion in revenues by 2040."
+        },
+        {
+          "marker": "",
+          "title": "Private Market Valuations | S&P Global",
+          "url": "https://www.spglobal.com/market-intelligence/en/solutions/products/private-market-valuations",
+          "content": "Independent valuation fair value service; venture capital, private equity, private debt for general partners, asset management funds and institutional investors."
+        },
+        {
+          "marker": "",
+          "title": "Global risks are here to stay. How are companies redesigning…",
+          "url": "https://www.weforum.org/videos/global-risks-future-company-growth-strategies/",
+          "content": "Před měsícemJan-Willem Scheijgrond of Philips says that AI holds enormous promise - especially in healthcare - but it’s the combination of technology and skilled, adaptable teams that will define long-term competitiveness."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 836,
+      "output_tokens": 493,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.044444444444444446,
+      "answer_relevance": 0.11370383857815396
+    },
+    {
+      "question": "What cybersecurity threats are most material for fintech companies and digital banks?",
+      "answer": "## Ключевые точки\n\n1. **Ответственность за защиту**\n   - Согласно источнику [S1], ответственность за определение методов защиты и выбор подходящих практик кибербезопасности лежит на компании или организации.\n   \n2. **Разнообразие киберугроз по регионам**\n   - Источник [S4] указывает на различия в киберугрозах между странами и регионами, что подчеркивает необходимость учитывать локальные особенности при разработке стратегии безопасности.\n\n3. **Необходимость постоянного информирования и обучения**\n   - В источниках [S2] и [S9] подчеркивается важность поддержания осведомленности о новых угрозах и подходов к защите цифровых систем.\n\n4. **Фокус на данных и конфиденциальность**\n   - Как отмечается в источниках [S3] и [S7], защита данных и обеспечение конфиденциальности являются важными аспектами кибербезопасности для финансовых технологий и банков.\n\n## Примеры\n\n- Кибератаки на финансовые учреждения могут включать фишинговые атаки, взломы баз данных, мошенничество с платежными картами и другие виды атак [S1].\n- Исследование PwC показало, что компании сталкиваются с широким спектром рисков, включая угрозы со стороны государств, организованных преступных группировок и хакеров-одиночек [S5].\n\n## Заключение\n\nДля финансовых технологий и цифровых банков наиболее актуальными киберугрозами являются:\n- Финансовые потери от мошенничества;\n- Нарушение конфиденциальности данных клиентов;\n- Угрозы репутации вследствие утечек информации;\n- Риски блокировки операций из-за сбоев в системах безопасности.\n\nЭффективная стратегия кибербезопасности должна учитывать региональные особенности, постоянно обновлять информацию об угрозах и внедрять передовые практики защиты данных и сетей.",
+      "sources": [
+        {
+          "marker": "",
+          "title": "Cybersecurity | J.P. Morgan Private Bank U.S.",
+          "url": "https://privatebank.jpmorgan.com/nam/en/about-us/security-hub/cybersecurity",
+          "content": "You, your company or organization is responsible for determining how to best protect itself against cyber fraud activities and for selecting the cybersecurity best practices that are most appropriate to your needs."
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity | World Economic Forum",
+          "url": "https://www.weforum.org/stories/cybersecurity/",
+          "content": "Stay informed with stories on cybersecurity from the World Economic Forum, showcasing approaches to protect digital systems, prevent cybercrime, and enhance data security."
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity & Data Protection | CERT Services | Capgemini",
+          "url": "https://www.capgemini.com/about-us/management-and-governance/a-responsible-business/cybersecurity/",
+          "content": "Cybersecurity and data protection FacebookLinkedin Protecting our company, our employees, and our clients As a leader in the digital industry, we take"
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity threats and incidents differ by region | Deloitte…",
+          "url": "https://www.deloitte.com/global/en/services/consulting-risk/perspectives/cybersecurity-threats-and-incidents-differ-by-region.html",
+          "content": "Security and business leaders are facing an exponential growth in cyber threats. Learn more about how 20 countries and three global regions compare across key cyber threat considerations."
+        },
+        {
+          "marker": "",
+          "title": "Emerging threats require a more proactive approach to cyber…",
+          "url": "https://www.pwc.com/gx/en/issues/c-suite-insights/the-leadership-agenda/global-digital-trust-insights-2026.html",
+          "content": "A new PwC survey underscores how companies face a wider range of cyber risks—and how they can best respond."
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity Services | Cybersecurity Strategy…",
+          "url": "https://www.capgemini.com/dk-en/services/cybersecurity/",
+          "content": "Our cybersecurity services work as a catalyst for transformation, bringing together a business-focused approach, services, skills & technologies."
+        },
+        {
+          "marker": "",
+          "title": "Global cybersecurity and privacy | PwC",
+          "url": "https://www.pwc.com/gx/en/issues/cybersecurity.html",
+          "content": "As the cyber landscape grows more complex, businesses need a strategic ally that deeply understands their challenges and the opportunities ahead."
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity services",
+          "url": "https://kpmg.com/ca/en/services/advisory/risk-services/cyber-security.html",
+          "content": "We provide cybersecurity consulting services to help organizations manage and protect against cyberattacks."
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity and Digital Trust - PwC Middle East",
+          "url": "https://www.pwc.com/m1/en/services/consulting/technology/cyber-security.html",
+          "content": "Our Digital Trust approach connects cybersecurity, privacy, and resilience to drive secure innovation and sustained value."
+        },
+        {
+          "marker": "",
+          "title": "Cybersecurity & Technology Risk",
+          "url": "https://kpmg.com/ch/en/insights/cybersecurity-risk.html",
+          "content": "Explore cutting-edge cyber security insights & solutions. Navigate the digital frontier with expert guidance & stay ahead of evolving threats."
+        }
+      ],
+      "citation_validity": 1.0,
+      "input_tokens": 737,
+      "output_tokens": 351,
+      "cost_usd": 0,
+      "runtime": {
+        "llm_provider": "gigachat",
+        "openrouter_model": "deepseek/deepseek-chat",
+        "agent_mandates_enabled": "false",
+        "agent_planner_enabled": "false",
+        "agent_structured_output_enabled": "false",
+        "eval_disable_critic": "true",
+        "search_domain_filter_disabled": "false",
+        "agent_coordinator_disabled": "true"
+      },
+      "faithfulness": 0.2,
+      "answer_relevance": 0.08115911468836733
+    }
+  ],
+  "status": "scored"
+}

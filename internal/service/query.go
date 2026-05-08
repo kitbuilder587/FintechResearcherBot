@@ -5,8 +5,10 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
+	"os"
 	"sort"
 	"strings"
+	"sync"
 	"time"
 
 	"go.uber.org/zap"
@@ -14,6 +16,7 @@ import (
 
 	"github.com/kitbuilder587/fintech-bot/internal/cache"
 	"github.com/kitbuilder587/fintech-bot/internal/domain"
+	quality "github.com/kitbuilder587/fintech-bot/internal/eval"
 	"github.com/kitbuilder587/fintech-bot/internal/llm"
 	"github.com/kitbuilder587/fintech-bot/internal/metrics"
 	"github.com/kitbuilder587/fintech-bot/internal/prompts"
@@ -137,7 +140,7 @@ func NewQueryService(deps QueryServiceDeps) QueryService {
 }
 
 func (s *queryService) generateAnswer(ctx context.Context, question string, results []search.SearchResult, worldContext string, strategy domain.Strategy) (string, error) {
-	if s.coordinator != nil {
+	if s.coordinator != nil && !serviceEnvBool("AGENT_COORDINATOR_DISABLED") {
 		coordResp, coordErr := s.coordinator.Process(ctx, AgentCoordinatorRequest{
 			Question:      question,
 			SearchResults: results,
@@ -161,6 +164,8 @@ func (s *queryService) generateAnswer(ctx context.Context, question string, resu
 
 func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*domain.QueryResponse, error) {
 	startTime := time.Now()
+	usage := &queryUsageCollector{}
+	ctx = llm.WithUsageRecorder(ctx, usage)
 
 	if s.metrics != nil {
 		s.metrics.IncRequestsInFlight()
@@ -190,8 +195,9 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 		zap.Bool("strategy_use_critic", req.Strategy.UseCritic),
 	)
 
+	worldModelDisabled := serviceEnvBool("WORLD_MODEL_DISABLED") || serviceEnvBool("EVAL_DISABLE_WORLD_MODEL")
 	var worldContext string
-	if s.worldModel != nil {
+	if s.worldModel != nil && !worldModelDisabled {
 		worldContext, _ = s.worldModel.GetRelevantContext(ctx, req.UserID, req.Text)
 		if worldContext != "" {
 			s.logger.Debug("using world model context",
@@ -218,16 +224,22 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 			trustMap[d] = src.TrustLevel
 		}
 	}
+	if serviceEnvBool("SEARCH_DOMAIN_FILTER_DISABLED") {
+		domains = nil
+	}
 
 	// расширяем запрос через LLM
 	maxQueries := req.Strategy.MaxQueries
 	if maxQueries <= 0 {
 		maxQueries = 3
 	}
-	searchQueries, err := s.expandQuery(ctx, req.Text, maxQueries)
-	if err != nil {
-		s.logger.Warn("query expansion failed, using original", zap.Error(err))
-		searchQueries = []string{req.Text}
+	searchQueries := []string{req.Text}
+	if !serviceEnvBool("QUERY_EXPANSION_DISABLED") && !serviceEnvBool("EVAL_DISABLE_QUERY_EXPANSION") {
+		searchQueries, err = s.expandQuery(ctx, req.Text, maxQueries)
+		if err != nil {
+			s.logger.Warn("query expansion failed, using original", zap.Error(err))
+			searchQueries = []string{req.Text}
+		}
 	}
 
 	// ищем параллельно с кешированием
@@ -238,6 +250,23 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 	results, err := s.searchWithCache(ctx, searchQueries, domains, maxResults)
 	if err != nil {
 		return nil, fmt.Errorf("search: %w", err)
+	}
+	if len(results) == 0 && len(domains) > 0 {
+		s.logger.Warn("domain-restricted search returned no results, retrying without domain filter")
+		results, err = s.searchWithCache(ctx, searchQueries, nil, maxResults)
+		if err != nil {
+			return nil, fmt.Errorf("search fallback: %w", err)
+		}
+	}
+	if len(results) == 0 {
+		s.logger.Warn("expanded search returned no results, retrying original question")
+		results, err = s.searchWithCache(ctx, []string{req.Text}, nil, maxResults)
+		if err != nil {
+			return nil, fmt.Errorf("search original fallback: %w", err)
+		}
+	}
+	if len(results) == 0 {
+		results = fallbackSourceResults(userSources, maxResults)
 	}
 
 	if ctx.Err() != nil {
@@ -261,6 +290,7 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 	response := &domain.QueryResponse{
 		Text:    answer,
 		Sources: s.toSourceRefs(results, trustMap),
+		Usage:   usage.metrics(),
 	}
 
 	s.logger.Info("query processed",
@@ -270,10 +300,11 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 
 	if s.metrics != nil {
 		s.metrics.RecordRequest("query", "success", time.Since(startTime))
+		s.metrics.RecordAnswerQuality(string(req.Strategy.Type), quality.AssessAnswer(response.Text, len(response.Sources)))
 	}
 
 	// в фоне сохраняем в world model
-	if s.worldModel != nil {
+	if s.worldModel != nil && !worldModelDisabled {
 		go func() {
 			if err := s.worldModel.ExtractAndStore(context.Background(), req.UserID, answer, results, req.Text, req.Strategy); err != nil {
 				s.logger.Warn("failed to save to world model",
@@ -285,6 +316,66 @@ func (s *queryService) Process(ctx context.Context, req *domain.QueryRequest) (*
 	}
 
 	return response, nil
+}
+
+func fallbackSourceResults(sources []domain.Source, maxResults int) []search.SearchResult {
+	if maxResults <= 0 || maxResults > len(sources) {
+		maxResults = len(sources)
+	}
+	results := make([]search.SearchResult, 0, maxResults)
+	for i := 0; i < maxResults; i++ {
+		src := sources[i]
+		content := strings.TrimSpace(src.Name + " " + src.URL)
+		results = append(results, search.SearchResult{
+			Title:   src.Name,
+			URL:     src.URL,
+			Content: content,
+			Score:   0.01,
+		})
+	}
+	return results
+}
+
+func serviceEnvBool(key string) bool {
+	value := strings.ToLower(strings.TrimSpace(os.Getenv(key)))
+	return value == "1" || value == "true" || value == "yes"
+}
+
+type queryUsageCollector struct {
+	mu     sync.Mutex
+	input  int
+	output int
+	total  int
+	calls  int
+	cost   float64
+}
+
+func (c *queryUsageCollector) AddUsage(usage llm.Usage) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+
+	c.calls++
+	c.input += usage.InputTokens
+	c.output += usage.OutputTokens
+	if usage.TotalTokens > 0 {
+		c.total += usage.TotalTokens
+	} else {
+		c.total += usage.InputTokens + usage.OutputTokens
+	}
+	c.cost += usage.CostUSD
+}
+
+func (c *queryUsageCollector) metrics() domain.UsageMetrics {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+
+	return domain.UsageMetrics{
+		InputTokens:  c.input,
+		OutputTokens: c.output,
+		TotalTokens:  c.total,
+		LLMRequests:  c.calls,
+		CostUSD:      c.cost,
+	}
 }
 
 func (s *queryService) expandQuery(ctx context.Context, userQuery string, maxQueries int) ([]string, error) {
@@ -465,6 +556,7 @@ func (s *queryService) toSourceRefs(results []search.SearchResult, trustMap map[
 			Marker:     fmt.Sprintf("[S%d]", i+1),
 			Title:      r.Title,
 			URL:        r.URL,
+			Content:    r.Content,
 			TrustLevel: trustLevel,
 		}
 	}
@@ -631,6 +723,10 @@ func (s *queryService) reviewWithCritic(ctx context.Context, answer string, sour
 			zap.Int("search_queries_count", len(result.SearchQueries)),
 			zap.Int("attempt", attempt),
 		)
+
+		if s.metrics != nil {
+			s.metrics.RecordCriticConfidence(string(strategy.Type), result.Approved, result.Confidence)
+		}
 
 		needsRevision := result.NeedsRevisionStrict(s.criticConfig.StrictMode)
 

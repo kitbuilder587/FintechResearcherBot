@@ -1,5 +1,5 @@
 -- Факты
-CREATE TABLE facts (
+CREATE TABLE IF NOT EXISTS facts (
     id UUID PRIMARY KEY,
     user_id BIGINT NOT NULL REFERENCES users(id),
     content TEXT NOT NULL,
@@ -7,11 +7,11 @@ CREATE TABLE facts (
     confidence DECIMAL(3,2) DEFAULT 1.0,
     extracted_at TIMESTAMP DEFAULT NOW()
 );
-CREATE INDEX idx_facts_user ON facts(user_id);
-CREATE INDEX idx_facts_content_search ON facts USING gin(to_tsvector('russian', content));
+CREATE INDEX IF NOT EXISTS idx_facts_user ON facts(user_id);
+CREATE INDEX IF NOT EXISTS idx_facts_content_search ON facts USING gin(to_tsvector('russian', content));
 
 -- Сущности
-CREATE TABLE entities (
+CREATE TABLE IF NOT EXISTS entities (
     id UUID PRIMARY KEY,
     user_id BIGINT NOT NULL REFERENCES users(id),
     name TEXT NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE entities (
 );
 
 -- Атрибуты сущностей (key-value)
-CREATE TABLE entity_attributes (
+CREATE TABLE IF NOT EXISTS entity_attributes (
     entity_id UUID REFERENCES entities(id) ON DELETE CASCADE,
     key TEXT NOT NULL,
     value TEXT NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE entity_attributes (
 );
 
 -- Сессии исследований
-CREATE TABLE research_sessions (
+CREATE TABLE IF NOT EXISTS research_sessions (
     id UUID PRIMARY KEY,
     user_id BIGINT NOT NULL REFERENCES users(id),
     question TEXT NOT NULL,
@@ -39,13 +39,13 @@ CREATE TABLE research_sessions (
 );
 
 -- Связи many-to-many
-CREATE TABLE session_facts (
+CREATE TABLE IF NOT EXISTS session_facts (
     session_id UUID REFERENCES research_sessions(id),
     fact_id UUID REFERENCES facts(id),
     PRIMARY KEY (session_id, fact_id)
 );
 
-CREATE TABLE session_entities (
+CREATE TABLE IF NOT EXISTS session_entities (
     session_id UUID REFERENCES research_sessions(id),
     entity_id UUID REFERENCES entities(id),
     PRIMARY KEY (session_id, entity_id)

@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-q-maxq10-planner-20260506-1023",
+  "strategy": "standard",
+  "change": "ten search queries with planner, five results, no critic",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.5410789202524124,
+  "avg_answer_relevance": 0.5078317111227554,
+  "avg_input_tokens": 4109,
+  "avg_output_tokens": 4426,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

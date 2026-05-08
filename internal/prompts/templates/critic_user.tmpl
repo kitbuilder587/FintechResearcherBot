@@ -1,16 +1,16 @@
-=== ORIGINAL QUESTION ===
+=== ИСХОДНЫЙ ВОПРОС ===
 {{.Question}}
 
-=== SOURCES PROVIDED ===
+=== ПРЕДОСТАВЛЕННЫЕ ИСТОЧНИКИ ===
 {{if .Sources}}{{range .Sources}}[S{{.Index}}] {{.Title}} ({{.URL}})
-Content: {{.Content}}
+Содержание: {{.Content}}
 
-{{end}}{{else}}No sources provided.
+{{end}}{{else}}Источники не предоставлены.
 {{end}}
-=== ANSWER TO REVIEW ===
+=== ОТВЕТ ДЛЯ ПРОВЕРКИ ===
 {{.Answer}}
 
-=== INSTRUCTIONS ===
-Please evaluate the answer above. Check if all claims are supported by the sources, if the answer is complete, and if there are any hallucinations or unsupported facts.
-If important information is missing from the provided sources, set "needs_search" to true and provide concrete English search queries.
-Respond with JSON only.
+=== ИНСТРУКЦИИ ===
+Оцените ответ выше. Проверьте, все ли утверждения подтверждены источниками, является ли ответ полным, есть ли галлюцинации или неподтвержденные факты.
+Если в предоставленных источниках не хватает важной информации, установите "needs_search" в true и укажите конкретные поисковые запросы на английском языке.
+Отвечайте только JSON.

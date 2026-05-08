@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-p-maxq10-maxres10-20260506-1016",
+  "strategy": "standard",
+  "change": "ten search queries, ten results, no critic",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.5229888537620923,
+  "avg_answer_relevance": 0.6786378410148043,
+  "avg_input_tokens": 2928,
+  "avg_output_tokens": 2962,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

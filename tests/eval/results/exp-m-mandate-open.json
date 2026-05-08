@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-m-mandate-open-20260505-2043",
+  "strategy": "standard",
+  "change": "mandates plus open search no critic",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.2918608822839481,
+  "avg_answer_relevance": 0.7008750449182316,
+  "avg_input_tokens": 3526,
+  "avg_output_tokens": 2502,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

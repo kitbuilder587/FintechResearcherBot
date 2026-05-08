@@ -1,4 +1,4 @@
-.PHONY: run build test test-race test-integration lint docker-up docker-down docker-build db-up db-down migrate
+.PHONY: run build test test-race test-integration lint docker-up docker-down docker-build db-up db-down wait-db migrate up infra-up bot-up logs restart ps health searxng-smoke tavily-smoke eval-score
 
 export GOPROXY=https://proxy.golang.org,direct
 
@@ -25,19 +25,54 @@ lint:
 	golangci-lint run
 
 docker-up:
-	docker-compose up -d
+	docker compose up -d
 
 docker-down:
-	docker-compose down
+	docker compose down
 
 docker-build:
-	docker-compose build
+	docker compose build
 
 db-up:
-	docker-compose up -d db
+	docker compose up -d db
 
 db-down:
-	docker-compose stop db
+	docker compose stop db
 
-migrate:
-	docker exec -i fintech-db psql -U fintech -d fintech_bot < migrations/001_init.up.sql
+wait-db:
+	@echo "Waiting for Postgres..."
+	@until docker exec fintech-db pg_isready -U $${DB_USER:-fintech} -d $${DB_NAME:-fintech_bot} >/dev/null 2>&1; do sleep 1; done
+
+migrate: wait-db
+	docker exec -i fintech-db psql -U $${DB_USER:-fintech} -d $${DB_NAME:-fintech_bot} < migrations/001_init.up.sql
+	docker exec -i fintech-db psql -U $${DB_USER:-fintech} -d $${DB_NAME:-fintech_bot} < migrations/002_world_model.up.sql
+
+infra-up:
+	docker compose up -d db searxng
+
+bot-up:
+	docker compose up -d --build bot
+
+up: infra-up migrate bot-up
+
+restart:
+	docker compose down
+	$(MAKE) up
+
+logs:
+	docker logs -f fintech-bot
+
+ps:
+	docker compose ps
+
+health:
+	curl -sS http://localhost:$${BOT_HTTP_PORT:-8081}/health
+
+searxng-smoke:
+	python3 tests/eval/searxng_smoke.py
+
+tavily-smoke:
+	python3 tests/eval/tavily_smoke.py
+
+eval-score:
+	python3 tests/eval/score_answers.py

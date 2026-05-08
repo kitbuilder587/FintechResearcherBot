@@ -1,0 +1,26 @@
+{
+  "run_id": "tavily-h-maxq5-20260507-1744",
+  "strategy": "standard",
+  "change": "Tavily five search queries no critic",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "answer_relevance_mode": "llm",
+  "metrics": [
+    "relevance",
+    "faithfulness"
+  ],
+  "metric_counts": {
+    "relevance": 10,
+    "faithfulness": 10
+  },
+  "question_count": 10,
+  "scored_question_count": 10,
+  "avg_faithfulness": 0.2407173808586054,
+  "avg_answer_relevance": 0.76,
+  "avg_input_tokens": 9270,
+  "avg_output_tokens": 1209,
+  "avg_llm_requests": 3.0,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

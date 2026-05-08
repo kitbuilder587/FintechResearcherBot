@@ -1,0 +1,15 @@
+{
+  "run_id": "exp-d-open-no-critic-20260505-1951",
+  "strategy": "standard",
+  "change": "open search plus no critic",
+  "llm_provider": "openrouter",
+  "eval_judge_model": "gpt-5.4-mini",
+  "question_count": 10,
+  "avg_faithfulness": 0.30828474173439274,
+  "avg_answer_relevance": 0.7275554784620938,
+  "avg_input_tokens": 3358,
+  "avg_output_tokens": 2924,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

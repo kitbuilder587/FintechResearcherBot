@@ -1,0 +1,17 @@
+{
+  "run_id": "tavily-k-structured-20260507-1911",
+  "strategy": "standard",
+  "change": "Tavily structured agent output no critic",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "answer_relevance_mode": "llm",
+  "question_count": 10,
+  "avg_faithfulness": 0.2385509588450765,
+  "avg_answer_relevance": 0.8200000000000001,
+  "avg_input_tokens": 4033,
+  "avg_output_tokens": 950,
+  "avg_llm_requests": 3.0,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

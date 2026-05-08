@@ -108,11 +108,13 @@ func TestClient_Search_IncludeDomains(t *testing.T) {
 	logger := zap.NewNop()
 
 	var receivedDomains []string
+	var receivedAuth string
 
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		var req tavilyRequest
 		json.NewDecoder(r.Body).Decode(&req)
 		receivedDomains = req.IncludeDomains
+		receivedAuth = r.Header.Get("Authorization")
 
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(tavilyResponse{
@@ -138,6 +140,9 @@ func TestClient_Search_IncludeDomains(t *testing.T) {
 
 	if len(receivedDomains) != 2 {
 		t.Errorf("include_domains = %v, want 2 domains", receivedDomains)
+	}
+	if receivedAuth != "Bearer test-key" {
+		t.Errorf("Authorization = %q, want Bearer test-key", receivedAuth)
 	}
 }
 

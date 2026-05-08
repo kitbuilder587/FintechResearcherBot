@@ -1,0 +1,17 @@
+{
+  "run_id": "exp-gigachat-current-ragas55-20260507-1221",
+  "strategy": "standard",
+  "change": "current flow, GigaChat service, gpt-5.5 judge",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "answer_relevance_mode": "llm",
+  "question_count": 10,
+  "avg_faithfulness": 0.04059101556694625,
+  "avg_answer_relevance": 0.8200000000000001,
+  "avg_input_tokens": 11022,
+  "avg_output_tokens": 2953,
+  "avg_llm_requests": 7.8,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

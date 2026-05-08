@@ -4,7 +4,8 @@
 *.dll
 *.so
 *.dylib
-bot
+/bot
+/bin/
 
 # Test binary
 *.test
@@ -15,6 +16,16 @@ coverage.html
 
 # Dependency directories
 vendor/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
 
 # IDE
 .idea/

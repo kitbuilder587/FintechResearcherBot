@@ -1,0 +1,17 @@
+{
+  "run_id": "tavily-f-open-no-coord-20260507-1715",
+  "strategy": "standard",
+  "change": "Tavily open search direct analyze no critic",
+  "llm_provider": "gigachat",
+  "eval_judge_model": "gpt-5.5",
+  "answer_relevance_mode": "llm",
+  "question_count": 10,
+  "avg_faithfulness": 0.373015441951725,
+  "avg_answer_relevance": 0.8800000000000001,
+  "avg_input_tokens": 4511,
+  "avg_output_tokens": 547,
+  "avg_llm_requests": 2.0,
+  "avg_cost_usd": 0.0,
+  "avg_citation_validity": 1.0,
+  "status": "valid"
+}

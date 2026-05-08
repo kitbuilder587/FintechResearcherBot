@@ -12,6 +12,7 @@ type Client struct {
 	Response string
 	Error    error
 	Delay    time.Duration
+	Usage    llm.Usage
 
 	CallCount  int
 	LastSystem string
@@ -46,6 +47,11 @@ func (c *Client) WithDelay(delay time.Duration) *Client {
 }
 
 func (c *Client) CompleteWithSystem(ctx context.Context, system, prompt string) (string, error) {
+	content, _, err := c.CompleteWithSystemUsage(ctx, system, prompt)
+	return content, err
+}
+
+func (c *Client) CompleteWithSystemUsage(ctx context.Context, system, prompt string) (string, llm.Usage, error) {
 	c.CallCount++
 	c.LastSystem = system
 	c.LastPrompt = prompt
@@ -54,16 +60,16 @@ func (c *Client) CompleteWithSystem(ctx context.Context, system, prompt string) 
 	if c.Delay > 0 {
 		select {
 		case <-ctx.Done():
-			return "", ctx.Err()
+			return "", llm.Usage{}, ctx.Err()
 		case <-time.After(c.Delay):
 		}
 	}
 
 	if c.Error != nil {
-		return "", c.Error
+		return "", llm.Usage{}, c.Error
 	}
 
-	return c.Response, nil
+	return c.Response, c.Usage, nil
 }
 
 func (c *Client) Reset() {
@@ -83,3 +89,4 @@ func (c *Client) HasCriticCall() bool {
 }
 
 var _ llm.Client = (*Client)(nil)
+var _ llm.UsageClient = (*Client)(nil)

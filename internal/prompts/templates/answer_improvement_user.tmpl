@@ -1,22 +1,22 @@
-=== REVIEWER FEEDBACK ===
-The answer was reviewed and has the following issues:
+=== ЗАМЕЧАНИЯ РЕЦЕНЗЕНТА ===
+Ответ был проверен, обнаружены следующие проблемы:
 
 {{range .Issues}}{{.Index}}. {{.Text}}
 {{end}}{{if .Suggestions}}
 
-Suggestions for improvement:
+Предложения по улучшению:
 {{range .Suggestions}}- {{.}}
 {{end}}{{end}}
 
-=== ORIGINAL ANSWER ===
+=== ИСХОДНЫЙ ОТВЕТ ===
 {{.CurrentAnswer}}
 
-=== SOURCES ===
+=== ИСТОЧНИКИ ===
 {{range .Sources}}[S{{.Index}}] {{.Title}} ({{.URL}})
 {{.Content}}
 
-{{end}}=== ORIGINAL QUESTION ===
+{{end}}=== ИСХОДНЫЙ ВОПРОС ===
 {{.Question}}
 
-=== INSTRUCTIONS ===
-Please fix these issues and provide an improved answer. Keep using only the provided sources. Make sure all claims are properly cited.
+=== ИНСТРУКЦИИ ===
+Исправьте перечисленные проблемы и подготовьте улучшенный ответ. Используйте только предоставленные источники. Убедитесь, что все фактические утверждения корректно подкреплены ссылками на источники.
