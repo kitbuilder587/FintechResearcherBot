@@ -76,9 +76,9 @@ func StandardStrategy() Strategy {
 	return Strategy{
 		Type:                  StrategyStandard,
 		MaxQueries:            3,
-		MaxResults:            15,
+		MaxResults:            5,
 		MaxAnalysisIterations: 1,
-		UseCritic:             true,
+		UseCritic:             false,
 		TimeoutSeconds:        60,
 	}
 }

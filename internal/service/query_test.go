@@ -1023,11 +1023,11 @@ func TestQueryService_StandardStrategy(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Process() error = %v", err)
 	}
-	if searchClient.LastRequest.MaxResults != 15 {
-		t.Errorf("Standard maxResults = %d, want 15", searchClient.LastRequest.MaxResults)
+	if searchClient.LastRequest.MaxResults != 5 {
+		t.Errorf("Standard maxResults = %d, want 5", searchClient.LastRequest.MaxResults)
 	}
-	if mockCritic.CallCount == 0 {
-		t.Error("Standard: critic should be called")
+	if mockCritic.CallCount != 0 {
+		t.Errorf("Standard: critic should NOT be called, got %d calls", mockCritic.CallCount)
 	}
 }
 
