@@ -194,14 +194,14 @@ func TestStandardStrategy(t *testing.T) {
 	if s.MaxQueries != 3 {
 		t.Errorf("StandardStrategy().MaxQueries = %v, want %v", s.MaxQueries, 3)
 	}
-	if s.MaxResults != 15 {
-		t.Errorf("StandardStrategy().MaxResults = %v, want %v", s.MaxResults, 15)
+	if s.MaxResults != 5 {
+		t.Errorf("StandardStrategy().MaxResults = %v, want %v", s.MaxResults, 5)
 	}
 	if s.MaxAnalysisIterations != 1 {
 		t.Errorf("StandardStrategy().MaxAnalysisIterations = %v, want %v", s.MaxAnalysisIterations, 1)
 	}
-	if s.UseCritic != true {
-		t.Errorf("StandardStrategy().UseCritic = %v, want %v", s.UseCritic, true)
+	if s.UseCritic != false {
+		t.Errorf("StandardStrategy().UseCritic = %v, want %v", s.UseCritic, false)
 	}
 	if s.TimeoutSeconds != 60 {
 		t.Errorf("StandardStrategy().TimeoutSeconds = %v, want %v", s.TimeoutSeconds, 60)

@@ -1,4 +1,4 @@
-.PHONY: run build test test-race test-integration lint docker-up docker-down docker-build db-up db-down wait-db migrate up infra-up bot-up logs restart ps health searxng-smoke tavily-smoke eval-score
+.PHONY: run build test test-race test-integration lint docker-up docker-down docker-build db-up db-down wait-db migrate up infra-up bot-up observability-up observability-logs logs restart ps health prometheus-health grafana-health searxng-smoke tavily-smoke eval-score
 
 export GOPROXY=https://proxy.golang.org,direct
 
@@ -53,7 +53,13 @@ infra-up:
 bot-up:
 	docker compose up -d --build bot
 
-up: infra-up migrate bot-up
+observability-up:
+	docker compose up -d prometheus grafana
+
+observability-logs:
+	docker compose logs -f prometheus grafana
+
+up: infra-up migrate bot-up observability-up
 
 restart:
 	docker compose down
@@ -67,6 +73,12 @@ ps:
 
 health:
 	curl -sS http://localhost:$${BOT_HTTP_PORT:-8081}/health
+
+prometheus-health:
+	curl -sS http://localhost:$${PROMETHEUS_PORT:-9090}/-/healthy
+
+grafana-health:
+	curl -sS http://localhost:$${GRAFANA_PORT:-3000}/api/health
 
 searxng-smoke:
 	python3 tests/eval/searxng_smoke.py
